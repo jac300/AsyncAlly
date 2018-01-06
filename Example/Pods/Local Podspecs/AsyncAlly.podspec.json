@@ -1,0 +1,23 @@
+{
+  "name": "AsyncAlly",
+  "version": "0.0.1",
+  "xcconfig": {
+    "SWIFT_VERSION": "4.0"
+  },
+  "summary": "Simplify Asynchronous Tasks",
+  "description": "Utilities which support converging of asynchronous tasks",
+  "homepage": "https://github.com/jac300/AsyncAlly",
+  "license": "MIT",
+  "authors": {
+    "Jennifer Clark": "www.linkedin.com/in/jennifer-clark-0249863"
+  },
+  "source": {
+    "git": "https://github.com/jac300/AsyncAlly.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "9.3"
+  },
+  "requires_arc": true,
+  "source_files": "AsyncAlly/Classes"
+}
