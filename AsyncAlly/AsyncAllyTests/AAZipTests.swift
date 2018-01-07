@@ -147,32 +147,32 @@ class AsyncAllyZipTests: XCTestCase {
         AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_2_str, MockZips.zip_3_bool, MockZips.zip_3_strArr, MockZips.zip_2_intArr,
                       completion: { value, error in
 
-            XCTAssertTrue(error.isEmpty, "0 errors produced.")
-            XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
-            XCTAssertTrue(value.1.count == 2, "2 String values were produced.")
-            XCTAssertTrue(value.2.count == 3, "3 Bool values were produced.")
-            XCTAssertTrue(value.3.count == 3, "3 [String] values were produced.")
-            XCTAssertTrue(value.4.count == 2, "2 [Int] values were produced.")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
+                        XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
+                        XCTAssertTrue(value.1.count == 2, "2 String values were produced.")
+                        XCTAssertTrue(value.2.count == 3, "3 Bool values were produced.")
+                        XCTAssertTrue(value.3.count == 3, "3 [String] values were produced.")
+                        XCTAssertTrue(value.4.count == 2, "2 [Int] values were produced.")
 
-            XCTAssertTrue(value.0[0] == 6, "Int with value 4 was stored in the 0.0 position.")
-            XCTAssertTrue(value.0[1] == 7, "Int with value 5 was stored in the 0.1 position.")
-            XCTAssertTrue(value.0[2] == 8, "Int with value 8 was stored in the 0.2 position.")
+                        XCTAssertTrue(value.0[0] == 6, "Int with value 4 was stored in the 0.0 position.")
+                        XCTAssertTrue(value.0[1] == 7, "Int with value 5 was stored in the 0.1 position.")
+                        XCTAssertTrue(value.0[2] == 8, "Int with value 8 was stored in the 0.2 position.")
 
-            XCTAssertTrue(value.1[0] == "4", "String with value 4 was stored in the 1.1 position.")
-            XCTAssertTrue(value.1[1] == "5", "String with value 5 was stored in the 1.2 position.")
+                        XCTAssertTrue(value.1[0] == "4", "String with value 4 was stored in the 1.1 position.")
+                        XCTAssertTrue(value.1[1] == "5", "String with value 5 was stored in the 1.2 position.")
 
-            XCTAssertTrue(value.2[0] == true, "Bool with value true was stored in the 2.0 position.")
-            XCTAssertTrue(value.2[1] == false, "String with value true was stored in the 2.1 position.")
-            XCTAssertTrue(value.2[2] == true, "String with value true was stored in the 2.2 position.")
+                        XCTAssertTrue(value.2[0] == true, "Bool with value true was stored in the 2.0 position.")
+                        XCTAssertTrue(value.2[1] == false, "String with value true was stored in the 2.1 position.")
+                        XCTAssertTrue(value.2[2] == true, "String with value true was stored in the 2.2 position.")
 
-            XCTAssertTrue(value.3[0]?[0] == "12", "[String] with value [12] was stored in the 3.0 position.")
-            XCTAssertTrue(value.3[1]?[0] == "13", "[String] with value [13] was stored in the 3.1 position.")
-            XCTAssertTrue(value.3[2]?[0] == "14", "[String] with value [14] was stored in the 3.2 position.")
+                        XCTAssertTrue(value.3[0]?[0] == "12", "[String] with value [12] was stored in the 3.0 position.")
+                        XCTAssertTrue(value.3[1]?[0] == "13", "[String] with value [13] was stored in the 3.1 position.")
+                        XCTAssertTrue(value.3[2]?[0] == "14", "[String] with value [14] was stored in the 3.2 position.")
 
-            XCTAssertTrue(value.4[0]?[0] == 15, "[Int] with value [15] was stored in the 4.0 position.")
-            XCTAssertTrue(value.4[1]?[0] == 16, "[Int] with value [16] was stored in the 4.1 position.")
+                        XCTAssertTrue(value.4[0]?[0] == 15, "[Int] with value [15] was stored in the 4.0 position.")
+                        XCTAssertTrue(value.4[1]?[0] == 16, "[Int] with value [16] was stored in the 4.1 position.")
 
-            expectation.fulfill()
+                        expectation.fulfill()
         })
 
         wait(for: [expectation], timeout: 100.0)
@@ -183,8 +183,8 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int] with failures
         let expectation = XCTestExpectation(description: "test_zip_7")
 
-        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_4_str, MockZips.zip_3_bool, MockZips.zip_4_strArr, MockZips.zip_2_intArr,
-                      completion: { value, error in
+        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_4_str, MockZips.zip_3_bool, MockZips.zip_4_strArr,
+                      MockZips.zip_2_intArr, completion: { value, error in
 
                         XCTAssertTrue(error.count == 1, "1 error produced.")
                         XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
