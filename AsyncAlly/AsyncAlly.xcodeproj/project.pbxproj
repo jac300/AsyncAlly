@@ -70,6 +70,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73B83E0C20029CA000260BC4 /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				73F332632001A4AE00A75CBD /* AAMergeTests.swift */,
+				73F332612001A49F00A75CBD /* AACombineTests.swift */,
+				73CFE23A20008D72005A014D /* AAZipTests.swift */,
+			);
+			path = TestFiles;
+			sourceTree = "<group>";
+		};
 		73CFE22220008D72005A014D = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				73F332652001A4BF00A75CBD /* TestUtilities */,
-				73CFE23A20008D72005A014D /* AAZipTests.swift */,
-				73F332612001A49F00A75CBD /* AACombineTests.swift */,
-				73F332632001A4AE00A75CBD /* AAMergeTests.swift */,
+				73B83E0C20029CA000260BC4 /* TestFiles */,
 				73CFE23C20008D72005A014D /* Info.plist */,
 			);
 			path = AsyncAllyTests;
