@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		73CFE23620008D72005A014D /* AsyncAlly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CFE22C20008D72005A014D /* AsyncAlly.framework */; };
-		73CFE23B20008D72005A014D /* AsyncAllyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFE23A20008D72005A014D /* AsyncAllyTests.swift */; };
+		73CFE23B20008D72005A014D /* AsyncAllyZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFE23A20008D72005A014D /* AsyncAllyZipTests.swift */; };
 		73CFE23D20008D72005A014D /* AsyncAlly.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CFE22F20008D72005A014D /* AsyncAlly.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73F3325920019B7D00A75CBD /* AATaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325520019B7C00A75CBD /* AATaskObject.swift */; };
 		73F3325A20019B7D00A75CBD /* AsyncAlly+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */; };
 		73F3325B20019B7D00A75CBD /* AsyncAlly+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */; };
 		73F3325C20019B7D00A75CBD /* AsyncAlly+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325820019B7C00A75CBD /* AsyncAlly+Merge.swift */; };
+		73F3325E20019F5300A75CBD /* MockAsyncFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325D20019F5300A75CBD /* MockAsyncFunctions.swift */; };
+		73F332602001A18500A75CBD /* TaskObjectGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325F2001A18500A75CBD /* TaskObjectGenerator.swift */; };
+		73F332622001A49F00A75CBD /* AsyncAllyCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F332612001A49F00A75CBD /* AsyncAllyCombineTests.swift */; };
+		73F332642001A4AE00A75CBD /* AsyncAllyMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F332632001A4AE00A75CBD /* AsyncAllyMergeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,12 +35,16 @@
 		73CFE22F20008D72005A014D /* AsyncAlly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncAlly.h; sourceTree = "<group>"; };
 		73CFE23020008D72005A014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CFE23520008D72005A014D /* AsyncAllyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncAllyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73CFE23A20008D72005A014D /* AsyncAllyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAllyTests.swift; sourceTree = "<group>"; };
+		73CFE23A20008D72005A014D /* AsyncAllyZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAllyZipTests.swift; sourceTree = "<group>"; };
 		73CFE23C20008D72005A014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F3325520019B7C00A75CBD /* AATaskObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskObject.swift; sourceTree = "<group>"; };
 		73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Zip.swift"; sourceTree = "<group>"; };
 		73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Combine.swift"; sourceTree = "<group>"; };
 		73F3325820019B7C00A75CBD /* AsyncAlly+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Merge.swift"; sourceTree = "<group>"; };
+		73F3325D20019F5300A75CBD /* MockAsyncFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAsyncFunctions.swift; sourceTree = "<group>"; };
+		73F3325F2001A18500A75CBD /* TaskObjectGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObjectGenerator.swift; sourceTree = "<group>"; };
+		73F332612001A49F00A75CBD /* AsyncAllyCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAllyCombineTests.swift; sourceTree = "<group>"; };
+		73F332632001A4AE00A75CBD /* AsyncAllyMergeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAllyMergeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +97,11 @@
 		73CFE23920008D72005A014D /* AsyncAllyTests */ = {
 			isa = PBXGroup;
 			children = (
-				73CFE23A20008D72005A014D /* AsyncAllyTests.swift */,
+				73F332652001A4BF00A75CBD /* TestUtilities */,
+				73CFE23A20008D72005A014D /* AsyncAllyZipTests.swift */,
+				73F332612001A49F00A75CBD /* AsyncAllyCombineTests.swift */,
 				73CFE23C20008D72005A014D /* Info.plist */,
+				73F332632001A4AE00A75CBD /* AsyncAllyMergeTests.swift */,
 			);
 			path = AsyncAllyTests;
 			sourceTree = "<group>";
@@ -104,6 +115,15 @@
 				73F3325820019B7C00A75CBD /* AsyncAlly+Merge.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		73F332652001A4BF00A75CBD /* TestUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				73F3325D20019F5300A75CBD /* MockAsyncFunctions.swift */,
+				73F3325F2001A18500A75CBD /* TaskObjectGenerator.swift */,
+			);
+			path = TestUtilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CFE23B20008D72005A014D /* AsyncAllyTests.swift in Sources */,
+				73F332602001A18500A75CBD /* TaskObjectGenerator.swift in Sources */,
+				73F3325E20019F5300A75CBD /* MockAsyncFunctions.swift in Sources */,
+				73F332622001A49F00A75CBD /* AsyncAllyCombineTests.swift in Sources */,
+				73F332642001A4AE00A75CBD /* AsyncAllyMergeTests.swift in Sources */,
+				73CFE23B20008D72005A014D /* AsyncAllyZipTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
