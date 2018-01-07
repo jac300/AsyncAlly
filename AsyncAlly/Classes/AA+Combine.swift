@@ -1,9 +1,17 @@
+//
+//  AA+Combine.swift
+//  AsyncAllyTests
+//
+//  Created by Jennifer Clark on 1/6/18.
+//  Copyright © 2018 Jennifer Clark. All rights reserved.
+//
+
 import Foundation
 
 extension AsyncAlly {
 
-    @discardableResult static func combine<A, B>(_ a: [AATaskObject<A>],
-                                                 _ b: AATaskObject<B>,
+    @discardableResult static func combine<A, B>(_ a: [AATask<A>],
+                                                 _ b: AATask<B>,
                                                  observeOn: DispatchQueue = DispatchQueue.main,
                                                  completion: @escaping (([A?], B?), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -20,7 +28,7 @@ extension AsyncAlly {
         })
 
         dispatchGroup.enter()
-        sessionDataTasks.append(b.task({ value in
+        sessionDataTasks.append(b({ value in
             results.1 = value
             dispatchGroup.leave()
         }, { error in
@@ -32,9 +40,9 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func combine<A, B, C>(_ a: [AATaskObject<A>],
-                                                    _ b: [AATaskObject<B>],
-                                                    _ c: AATaskObject<C>,
+    @discardableResult static func combine<A, B, C>(_ a: [AATask<A>],
+                                                    _ b: [AATask<B>],
+                                                    _ c: AATask<C>,
                                                     observeOn: DispatchQueue = DispatchQueue.main,
                                                     completion: @escaping (([A?], [B?], C?), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -52,7 +60,7 @@ extension AsyncAlly {
         })
 
         dispatchGroup.enter()
-        sessionDataTasks.append(c.task({ value in
+        sessionDataTasks.append(c({ value in
             results.2 = value
             dispatchGroup.leave()
         }, { error in
@@ -64,9 +72,9 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func combine<A, B, C>(_ a: [AATaskObject<A>],
-                                                    _ b: AATaskObject<B>,
-                                                    _ c: AATaskObject<C>,
+    @discardableResult static func combine<A, B, C>(_ a: [AATask<A>],
+                                                    _ b: AATask<B>,
+                                                    _ c: AATask<C>,
                                                     observeOn: DispatchQueue = DispatchQueue.main,
                                                     completion: @escaping (([A?], B?, C?), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -94,10 +102,10 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func combine<A, B, C, D>(_ a: [AATaskObject<A>],
-                                                       _ b: [AATaskObject<B>],
-                                                       _ c: AATaskObject<C>,
-                                                       _ d: AATaskObject<D>,
+    @discardableResult static func combine<A, B, C, D>(_ a: [AATask<A>],
+                                                       _ b: [AATask<B>],
+                                                       _ c: AATask<C>,
+                                                       _ d: AATask<D>,
                                                        observeOn: DispatchQueue = DispatchQueue.main,
                                                        completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) -> [URLSessionDataTask] {
 

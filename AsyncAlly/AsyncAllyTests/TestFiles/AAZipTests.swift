@@ -1,5 +1,5 @@
 //
-//  AsyncAllyTests.swift
+//  AAZipTests.swift
 //  AsyncAllyTests
 //
 //  Created by Jennifer Clark on 1/5/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import AsyncAlly
 
-class AsyncAllyZipTests: XCTestCase {
+class AAZipTests: XCTestCase {
 
     func test_zip_1() {
 

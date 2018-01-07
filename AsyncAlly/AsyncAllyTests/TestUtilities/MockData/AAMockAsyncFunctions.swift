@@ -1,5 +1,5 @@
 //
-//  MockAsyncFunctions.swift
+//  AAMockAsyncFunctions.swift
 //  AsyncAllyTests
 //
 //  Created by Jennifer Clark on 1/6/18.

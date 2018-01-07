@@ -1,5 +1,5 @@
 //
-//  AsyncAllyTests.swift
+//  AACombineTests.swift
 //  AsyncAllyTests
 //
 //  Created by Jennifer Clark on 1/5/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import AsyncAlly
 
-class AsyncAllyCombineTests: XCTestCase {
+class AACombineTests: XCTestCase {
 
     func test_combine_1() {
 

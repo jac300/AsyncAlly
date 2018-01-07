@@ -12,11 +12,11 @@
 		73CFE23D20008D72005A014D /* AsyncAlly.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CFE22F20008D72005A014D /* AsyncAlly.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73E85F932001C08100F36721 /* AAMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E85F922001C08100F36721 /* AAMockZips.swift */; };
 		73F3325920019B7D00A75CBD /* AATaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325520019B7C00A75CBD /* AATaskObject.swift */; };
-		73F3325A20019B7D00A75CBD /* AsyncAlly+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */; };
-		73F3325B20019B7D00A75CBD /* AsyncAlly+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */; };
-		73F3325C20019B7D00A75CBD /* AsyncAlly+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325820019B7C00A75CBD /* AsyncAlly+Merge.swift */; };
+		73F3325A20019B7D00A75CBD /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325620019B7C00A75CBD /* AA+Zip.swift */; };
+		73F3325B20019B7D00A75CBD /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325720019B7C00A75CBD /* AA+Combine.swift */; };
+		73F3325C20019B7D00A75CBD /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325820019B7C00A75CBD /* AA+Merge.swift */; };
 		73F3325E20019F5300A75CBD /* AAMockAsyncFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325D20019F5300A75CBD /* AAMockAsyncFunctions.swift */; };
-		73F332602001A18500A75CBD /* AATaskObject+Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325F2001A18500A75CBD /* AATaskObject+Generate.swift */; };
+		73F332602001A18500A75CBD /* AATaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325F2001A18500A75CBD /* AATaskGenerator.swift */; };
 		73F332622001A49F00A75CBD /* AACombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F332612001A49F00A75CBD /* AACombineTests.swift */; };
 		73F332642001A4AE00A75CBD /* AAMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F332632001A4AE00A75CBD /* AAMergeTests.swift */; };
 		73F332672001AB3200A75CBD /* AAMockTaskObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F332662001AB3200A75CBD /* AAMockTaskObjects.swift */; };
@@ -41,11 +41,11 @@
 		73CFE23C20008D72005A014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E85F922001C08100F36721 /* AAMockZips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMockZips.swift; sourceTree = "<group>"; };
 		73F3325520019B7C00A75CBD /* AATaskObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskObject.swift; sourceTree = "<group>"; };
-		73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Zip.swift"; sourceTree = "<group>"; };
-		73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Combine.swift"; sourceTree = "<group>"; };
-		73F3325820019B7C00A75CBD /* AsyncAlly+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Merge.swift"; sourceTree = "<group>"; };
+		73F3325620019B7C00A75CBD /* AA+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Zip.swift"; sourceTree = "<group>"; };
+		73F3325720019B7C00A75CBD /* AA+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Combine.swift"; sourceTree = "<group>"; };
+		73F3325820019B7C00A75CBD /* AA+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Merge.swift"; sourceTree = "<group>"; };
 		73F3325D20019F5300A75CBD /* AAMockAsyncFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMockAsyncFunctions.swift; sourceTree = "<group>"; };
-		73F3325F2001A18500A75CBD /* AATaskObject+Generate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AATaskObject+Generate.swift"; sourceTree = "<group>"; };
+		73F3325F2001A18500A75CBD /* AATaskGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AATaskGenerator.swift; sourceTree = "<group>"; };
 		73F332612001A49F00A75CBD /* AACombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACombineTests.swift; sourceTree = "<group>"; };
 		73F332632001A4AE00A75CBD /* AAMergeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMergeTests.swift; sourceTree = "<group>"; };
 		73F332662001AB3200A75CBD /* AAMockTaskObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMockTaskObjects.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		73B83E0D20029D3E00260BC4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				73F3325F2001A18500A75CBD /* AATaskObject+Generate.swift */,
+				73F3325F2001A18500A75CBD /* AATaskGenerator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				73F3325520019B7C00A75CBD /* AATaskObject.swift */,
-				73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */,
-				73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */,
-				73F3325820019B7C00A75CBD /* AsyncAlly+Merge.swift */,
+				73F3325620019B7C00A75CBD /* AA+Zip.swift */,
+				73F3325720019B7C00A75CBD /* AA+Combine.swift */,
+				73F3325820019B7C00A75CBD /* AA+Merge.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -267,10 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F3325A20019B7D00A75CBD /* AsyncAlly+Zip.swift in Sources */,
-				73F3325B20019B7D00A75CBD /* AsyncAlly+Combine.swift in Sources */,
+				73F3325A20019B7D00A75CBD /* AA+Zip.swift in Sources */,
+				73F3325B20019B7D00A75CBD /* AA+Combine.swift in Sources */,
 				73F3325920019B7D00A75CBD /* AATaskObject.swift in Sources */,
-				73F3325C20019B7D00A75CBD /* AsyncAlly+Merge.swift in Sources */,
+				73F3325C20019B7D00A75CBD /* AA+Merge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F332602001A18500A75CBD /* AATaskObject+Generate.swift in Sources */,
+				73F332602001A18500A75CBD /* AATaskGenerator.swift in Sources */,
 				73F3325E20019F5300A75CBD /* AAMockAsyncFunctions.swift in Sources */,
 				73E85F932001C08100F36721 /* AAMockZips.swift in Sources */,
 				73F332622001A49F00A75CBD /* AACombineTests.swift in Sources */,

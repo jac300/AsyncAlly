@@ -1,9 +1,17 @@
+//
+//  AA+Merge.swift
+//  AsyncAllyTests
+//
+//  Created by Jennifer Clark on 1/6/18.
+//  Copyright © 2018 Jennifer Clark. All rights reserved.
+//
+
 import Foundation
 
 extension AsyncAlly {
     
-    @discardableResult static func merge<A, B>(_ a: AATaskObject<A>,
-                                               _ b: AATaskObject<B>,
+    @discardableResult static func merge<A, B>(_ a: AATask<A>,
+                                               _ b: AATask<B>,
                                                observeOn: DispatchQueue = DispatchQueue.main,
                                                completion: @escaping ((A?, B?), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -13,7 +21,7 @@ extension AsyncAlly {
         var results: (A?, B?) = (nil, nil)
         
         dispatchGroup.enter()
-        sessionDataTasks.append(a.task({ value in
+        sessionDataTasks.append(a({ value in
             results.0 = value
             dispatchGroup.leave()
         }, { error in
@@ -22,7 +30,7 @@ extension AsyncAlly {
         }))
         
         dispatchGroup.enter()
-        sessionDataTasks.append(b.task({ value in
+        sessionDataTasks.append(b({ value in
             results.1 = value
             dispatchGroup.leave()
         }, { error in
@@ -34,9 +42,9 @@ extension AsyncAlly {
         return sessionDataTasks
     }
     
-    @discardableResult static func merge<A, B, C>(_ a: AATaskObject<A>,
-                                                  _ b: AATaskObject<B>,
-                                                  _ c: AATaskObject<C>,
+    @discardableResult static func merge<A, B, C>(_ a: AATask<A>,
+                                                  _ b: AATask<B>,
+                                                  _ c: AATask<C>,
                                                   observeOn: DispatchQueue = DispatchQueue.main,
                                                   completion: @escaping ((A?, B?, C?), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -54,7 +62,7 @@ extension AsyncAlly {
         })
         
         dispatchGroup.enter()
-        sessionDataTasks.append(c.task({ value in
+        sessionDataTasks.append(c({ value in
             results.2 = value
             dispatchGroup.leave()
         }, { error in
@@ -66,10 +74,10 @@ extension AsyncAlly {
         return sessionDataTasks
     }
     
-    @discardableResult static func merge<A, B, C, D>(_ a: AATaskObject<A>,
-                                                     _ b: AATaskObject<B>,
-                                                     _ c: AATaskObject<C>,
-                                                     _ d: AATaskObject<D>,
+    @discardableResult static func merge<A, B, C, D>(_ a: AATask<A>,
+                                                     _ b: AATask<B>,
+                                                     _ c: AATask<C>,
+                                                     _ d: AATask<D>,
                                                      observeOn: DispatchQueue = DispatchQueue.main,
                                                      completion: @escaping ((A?, B?, C?, D?), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -98,11 +106,11 @@ extension AsyncAlly {
         return sessionDataTasks
     }
     
-    @discardableResult static func merge<A, B, C, D, E>(_ a: AATaskObject<A>,
-                                                        _ b: AATaskObject<B>,
-                                                        _ c: AATaskObject<C>,
-                                                        _ d: AATaskObject<D>,
-                                                        _ e: AATaskObject<E>,
+    @discardableResult static func merge<A, B, C, D, E>(_ a: AATask<A>,
+                                                        _ b: AATask<B>,
+                                                        _ c: AATask<C>,
+                                                        _ d: AATask<D>,
+                                                        _ e: AATask<E>,
                                                         observeOn: DispatchQueue = DispatchQueue.main,
                                                         completion: @escaping ((A?, B?, C?, D?, E?), [Error]) -> Void) -> [URLSessionDataTask] {
         

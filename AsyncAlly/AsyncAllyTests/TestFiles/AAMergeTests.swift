@@ -1,5 +1,5 @@
 //
-//  AsyncAllyTests.swift
+//  AAMergeTests.swift
 //  AsyncAllyTests
 //
 //  Created by Jennifer Clark on 1/5/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import AsyncAlly
 
-class AsyncAllyMergeTests: XCTestCase {
+class AAMergeTests: XCTestCase {
 
     func test_merge_1() {
 

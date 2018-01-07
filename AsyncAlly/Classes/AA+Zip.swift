@@ -1,8 +1,16 @@
+//
+//  AA+Combine.swift
+//  AsyncAllyTests
+//
+//  Created by Jennifer Clark on 1/6/18.
+//  Copyright © 2018 Jennifer Clark. All rights reserved.
+//
+
 import Foundation
 
 extension AsyncAlly {
 
-    @discardableResult static func zip<A>(_ tasks: [AATaskObject<A>],
+    @discardableResult static func zip<A>(_ tasks: [AATask<A>],
                                           observeOn: DispatchQueue = DispatchQueue.main,
                                           completion: @escaping (([A?]), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -12,9 +20,9 @@ extension AsyncAlly {
         var results = [A?](repeating: nil, count: tasks.count)
 
         for i in 0..<tasks.count {
-            let taskObj = tasks[i]
+            let task = tasks[i]
             dispatchGroup.enter()
-            sessionDataTasks.append(taskObj.task({ value in
+            sessionDataTasks.append(task({ value in
                 results[i] = value
                 dispatchGroup.leave()
             }, { error in
@@ -27,8 +35,8 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func zip<A, B>(_ a: [AATaskObject<A>],
-                                             _ b: [AATaskObject<B>],
+    @discardableResult static func zip<A, B>(_ a: [AATask<A>],
+                                             _ b: [AATask<B>],
                                              observeOn: DispatchQueue = DispatchQueue.main,
                                              completion: @escaping (([A?], [B?]), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -55,9 +63,9 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func zip<A, B, C>(_ a: [AATaskObject<A>],
-                                                _ b: [AATaskObject<B>],
-                                                _ c: [AATaskObject<C>],
+    @discardableResult static func zip<A, B, C>(_ a: [AATask<A>],
+                                                _ b: [AATask<B>],
+                                                _ c: [AATask<C>],
                                                 observeOn: DispatchQueue = DispatchQueue.main,
                                                 completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -85,10 +93,10 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func zip<A, B, C, D>(_ a: [AATaskObject<A>],
-                                                   _ b: [AATaskObject<B>],
-                                                   _ c: [AATaskObject<C>],
-                                                   _ d: [AATaskObject<D>],
+    @discardableResult static func zip<A, B, C, D>(_ a: [AATask<A>],
+                                                   _ b: [AATask<B>],
+                                                   _ c: [AATask<C>],
+                                                   _ d: [AATask<D>],
                                                    observeOn: DispatchQueue = DispatchQueue.main,
                                                    completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) -> [URLSessionDataTask] {
 
@@ -117,11 +125,11 @@ extension AsyncAlly {
         return sessionDataTasks
     }
 
-    @discardableResult static func zip<A, B, C, D, E>(_ a: [AATaskObject<A>],
-                                                      _ b: [AATaskObject<B>],
-                                                      _ c: [AATaskObject<C>],
-                                                      _ d: [AATaskObject<D>],
-                                                      _ e: [AATaskObject<E>],
+    @discardableResult static func zip<A, B, C, D, E>(_ a: [AATask<A>],
+                                                      _ b: [AATask<B>],
+                                                      _ c: [AATask<C>],
+                                                      _ d: [AATask<D>],
+                                                      _ e: [AATask<E>],
                                                       observeOn: DispatchQueue = DispatchQueue.main,
                                                       completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) -> [URLSessionDataTask] {
 
