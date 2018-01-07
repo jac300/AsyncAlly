@@ -1,0 +1,22 @@
+{
+  "name": "Asyncify",
+  "version": "0.1.0",
+  "summary": "A short description of Asyncify.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jac300/Asyncify",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jac300": "jac300@nyu.edu"
+  },
+  "source": {
+    "git": "https://github.com/jac300/Asyncify.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Asyncify/Classes/**/*"
+}

@@ -1,6 +1,0 @@
-use_frameworks!
-target 'AsyncAlly_Tests' do
-  pod 'AsyncAlly', :path => '../'
-  
-  
-end

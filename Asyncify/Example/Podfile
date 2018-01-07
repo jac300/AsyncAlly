@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Asyncify_Tests' do
+  pod 'Asyncify', :path => '../'
+  
+  
+end
