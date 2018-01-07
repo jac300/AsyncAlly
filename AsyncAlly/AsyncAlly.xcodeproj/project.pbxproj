@@ -11,7 +11,7 @@
 		73CFE23B20008D72005A014D /* AAZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFE23A20008D72005A014D /* AAZipTests.swift */; };
 		73CFE23D20008D72005A014D /* AsyncAlly.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CFE22F20008D72005A014D /* AsyncAlly.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73E85F932001C08100F36721 /* AAMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E85F922001C08100F36721 /* AAMockZips.swift */; };
-		73F3325920019B7D00A75CBD /* AATaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325520019B7C00A75CBD /* AATaskObject.swift */; };
+		73F3325920019B7D00A75CBD /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325520019B7C00A75CBD /* AATask.swift */; };
 		73F3325A20019B7D00A75CBD /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325620019B7C00A75CBD /* AA+Zip.swift */; };
 		73F3325B20019B7D00A75CBD /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325720019B7C00A75CBD /* AA+Combine.swift */; };
 		73F3325C20019B7D00A75CBD /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325820019B7C00A75CBD /* AA+Merge.swift */; };
@@ -40,7 +40,7 @@
 		73CFE23A20008D72005A014D /* AAZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAZipTests.swift; sourceTree = "<group>"; };
 		73CFE23C20008D72005A014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E85F922001C08100F36721 /* AAMockZips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMockZips.swift; sourceTree = "<group>"; };
-		73F3325520019B7C00A75CBD /* AATaskObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskObject.swift; sourceTree = "<group>"; };
+		73F3325520019B7C00A75CBD /* AATask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATask.swift; sourceTree = "<group>"; };
 		73F3325620019B7C00A75CBD /* AA+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Zip.swift"; sourceTree = "<group>"; };
 		73F3325720019B7C00A75CBD /* AA+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Combine.swift"; sourceTree = "<group>"; };
 		73F3325820019B7C00A75CBD /* AA+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Merge.swift"; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		73F3325420019B7C00A75CBD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				73F3325520019B7C00A75CBD /* AATaskObject.swift */,
+				73F3325520019B7C00A75CBD /* AATask.swift */,
 				73F3325620019B7C00A75CBD /* AA+Zip.swift */,
 				73F3325720019B7C00A75CBD /* AA+Combine.swift */,
 				73F3325820019B7C00A75CBD /* AA+Merge.swift */,
@@ -269,7 +269,7 @@
 			files = (
 				73F3325A20019B7D00A75CBD /* AA+Zip.swift in Sources */,
 				73F3325B20019B7D00A75CBD /* AA+Combine.swift in Sources */,
-				73F3325920019B7D00A75CBD /* AATaskObject.swift in Sources */,
+				73F3325920019B7D00A75CBD /* AATask.swift in Sources */,
 				73F3325C20019B7D00A75CBD /* AA+Merge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

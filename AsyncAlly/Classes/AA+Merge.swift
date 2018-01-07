@@ -1,6 +1,5 @@
 //
 //  AA+Merge.swift
-//  AsyncAllyTests
 //
 //  Created by Jennifer Clark on 1/6/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
@@ -9,6 +8,24 @@
 import Foundation
 
 extension AsyncAlly {
+
+    /// - description: Executes two tasks and waits for completion of both tasks, collecting valid results and errors.
+    ///
+    /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
+
+    /// - parameters:
+    ///   - a: Asynchronous AATask.
+    ///   - b: Asynchronous AATask.
+    ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
+    ///     is performed. Default value is main unless you specify otherwise.
+    ///   - completion: Completion block which is executed when all tasks have completed.
+    ///   NOTE:
+    ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
+    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
+    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
+    ///
+    /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
     @discardableResult static func merge<A, B>(_ a: AATask<A>,
                                                _ b: AATask<B>,
@@ -41,7 +58,26 @@ extension AsyncAlly {
         dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
         return sessionDataTasks
     }
-    
+
+    /// - description: Executes three tasks and waits for completion of all tasks, collecting valid results and errors.
+    ///
+    /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
+
+    /// - parameters:
+    ///   - a: Asynchronous AATask.
+    ///   - b: Asynchronous AATask.
+    ///   - c: Asynchronous AATask.
+    ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
+    ///     is performed. Default value is main unless you specify otherwise.
+    ///   - completion: Completion block which is executed when all tasks have completed.
+    ///   NOTE:
+    ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
+    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
+    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
+    ///
+    /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
+
     @discardableResult static func merge<A, B, C>(_ a: AATask<A>,
                                                   _ b: AATask<B>,
                                                   _ c: AATask<C>,
@@ -73,7 +109,27 @@ extension AsyncAlly {
         dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
         return sessionDataTasks
     }
-    
+
+    /// - description: Executes four tasks and waits for completion of all tasks, collecting valid results and errors.
+    ///
+    /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
+
+    /// - parameters:
+    ///   - a: Asynchronous AATask.
+    ///   - b: Asynchronous AATask.
+    ///   - c: Asynchronous AATask.
+    ///   - d: Asynchronous AATask.
+    ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
+    ///     is performed. Default value is main unless you specify otherwise.
+    ///   - completion: Completion block which is executed when all tasks have completed.
+    ///   NOTE:
+    ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
+    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
+    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
+    ///
+    /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
+
     @discardableResult static func merge<A, B, C, D>(_ a: AATask<A>,
                                                      _ b: AATask<B>,
                                                      _ c: AATask<C>,
@@ -105,6 +161,26 @@ extension AsyncAlly {
         dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
         return sessionDataTasks
     }
+
+    /// - description: Executes five tasks and waits for completion of all tasks, collecting valid results and errors.
+    ///
+    /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
+
+    /// - parameters:
+    ///   - a: Asynchronous AATask.
+    ///   - b: Asynchronous AATask.
+    ///   - c: Asynchronous AATask.
+    ///   - d: Asynchronous AATask.
+    ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
+    ///     is performed. Default value is main unless you specify otherwise.
+    ///   - completion: Completion block which is executed when all tasks have completed.
+    ///   NOTE:
+    ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
+    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
+    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
+    ///
+    /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
     @discardableResult static func merge<A, B, C, D, E>(_ a: AATask<A>,
                                                         _ b: AATask<B>,
