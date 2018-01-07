@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0A2204C5840CA479F238AC6FD2B8228B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		188324E3325890E1BDE5E7C58833F399 /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FB574DBAEF5421CA2E0FD76C3CAC5F /* AA+Merge.swift */; };
-		247DD6054C03911F30DF8D7D52AF9C20 /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD23878166C401DB5372A98D4F9D72 /* AA+Zip.swift */; };
-		3D80BE2E238DF0A8493AF10D6786942A /* Asyncify-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89BB4697A326D1A81EE7D9FE646279A1 /* Asyncify-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B8A02FFB6DB69F7476BDCADE0572092 /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA05C1B61F8D38A00B33DC22D7021 /* AATask.swift */; };
-		712D63680AFFE2785C562C6802C14DB9 /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249409A74D94AB5E8FE93206CB3684D6 /* AA+Combine.swift */; };
+		188324E3325890E1BDE5E7C58833F399 /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381ECDDF6B19E89B69611D31C8720F6F /* AA+Merge.swift */; };
+		247DD6054C03911F30DF8D7D52AF9C20 /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517BF592930E114403FC94B256E226DC /* AA+Zip.swift */; };
+		3D80BE2E238DF0A8493AF10D6786942A /* Asyncify-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AABBA4196B35DA3F1600101E92C76A0 /* Asyncify-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8A02FFB6DB69F7476BDCADE0572092 /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E85B0F1D80B05AE4F251A5A9A792B3 /* AATask.swift */; };
+		712D63680AFFE2785C562C6802C14DB9 /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292E5DCF89CA70D3162CFAA14ED03A5 /* AA+Combine.swift */; };
 		72F8D5245EC3A250F5FC33B5DA69538C /* Pods-Asyncify_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A234C9404705989A9CD625596EDAED0C /* Pods-Asyncify_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94702240605F39375BDE62B26515AA1B /* Pods-Asyncify_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA8CF408E0F619E11C990948AEF48E /* Pods-Asyncify_Tests-dummy.m */; };
 		CA991726CE5995534E86A9E997602800 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		EF98CB079E51099743129C0DC196D0F8 /* Asyncify-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 098A7933A397802850E1EF8E97E7A268 /* Asyncify-dummy.m */; };
+		EF98CB079E51099743129C0DC196D0F8 /* Asyncify-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AD18D03ACCAE549FCB4E647DCD941C /* Asyncify-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,30 +30,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		098A7933A397802850E1EF8E97E7A268 /* Asyncify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Asyncify-dummy.m"; sourceTree = "<group>"; };
-		249409A74D94AB5E8FE93206CB3684D6 /* AA+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AA+Combine.swift"; path = "Asyncify/Classes/AA+Combine.swift"; sourceTree = "<group>"; };
-		25DDA05C1B61F8D38A00B33DC22D7021 /* AATask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AATask.swift; path = Asyncify/Classes/AATask.swift; sourceTree = "<group>"; };
+		09AD18D03ACCAE549FCB4E647DCD941C /* Asyncify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Asyncify-dummy.m"; sourceTree = "<group>"; };
+		22E85B0F1D80B05AE4F251A5A9A792B3 /* AATask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AATask.swift; path = Asyncify/Classes/AATask.swift; sourceTree = "<group>"; };
+		249157AF1AA002B9A37BDB48C1C7B267 /* Asyncify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Asyncify.modulemap; sourceTree = "<group>"; };
 		280807827C5C1FE2A1CB5473A561ABBF /* Pods-Asyncify_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Asyncify_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		29AB5ACC72186BE9AF6AF339E4CB86B6 /* Pods-Asyncify_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Asyncify_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		381ECDDF6B19E89B69611D31C8720F6F /* AA+Merge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AA+Merge.swift"; path = "Asyncify/Classes/AA+Merge.swift"; sourceTree = "<group>"; };
+		3828B749F8DA7C9EDFCDC1E9A41BCC05 /* Asyncify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Asyncify.xcconfig; sourceTree = "<group>"; };
 		397AEB47279E0EA104026DBBC72A90F1 /* Pods_Asyncify_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Asyncify_Tests.framework; path = "Pods-Asyncify_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		420A538C0B08F0C6093E00C4C6ADD398 /* Pods-Asyncify_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Asyncify_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		44BD23878166C401DB5372A98D4F9D72 /* AA+Zip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AA+Zip.swift"; path = "Asyncify/Classes/AA+Zip.swift"; sourceTree = "<group>"; };
-		4A8FDA15F0775E62A93586EC3526B95F /* Asyncify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Asyncify.xcconfig; sourceTree = "<group>"; };
 		4E1905A3117AB2335E2544C950011B68 /* Pods-Asyncify_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Asyncify_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		517BF592930E114403FC94B256E226DC /* AA+Zip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AA+Zip.swift"; path = "Asyncify/Classes/AA+Zip.swift"; sourceTree = "<group>"; };
 		56CD3A35FF51CB91BAFF5D3A588370E7 /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Asyncify.framework; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66DA8CF408E0F619E11C990948AEF48E /* Pods-Asyncify_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Asyncify_Tests-dummy.m"; sourceTree = "<group>"; };
+		6AABBA4196B35DA3F1600101E92C76A0 /* Asyncify-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asyncify-umbrella.h"; sourceTree = "<group>"; };
 		7494E965BB37EA6F658594B749A7E17F /* Pods-Asyncify_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Asyncify_Tests.modulemap"; sourceTree = "<group>"; };
-		7776F33A5A9991EA7A18C8B226B6A454 /* Asyncify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Asyncify.modulemap; sourceTree = "<group>"; };
-		85FB574DBAEF5421CA2E0FD76C3CAC5F /* AA+Merge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AA+Merge.swift"; path = "Asyncify/Classes/AA+Merge.swift"; sourceTree = "<group>"; };
-		89BB4697A326D1A81EE7D9FE646279A1 /* Asyncify-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asyncify-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FB99AD1A8EA9E50E4D59EF80ACE0E12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A131F5A5496A63445EC92D6B372E4116 /* Asyncify-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asyncify-prefix.pch"; sourceTree = "<group>"; };
 		A234C9404705989A9CD625596EDAED0C /* Pods-Asyncify_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Asyncify_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A793540BC73C4DA20E4019E258EB2D5D /* Pods-Asyncify_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Asyncify_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A993848EB81AFB29D7FA78D3A72F82E2 /* Asyncify-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asyncify-prefix.pch"; sourceTree = "<group>"; };
 		D8917C7023FA8BE72F0156EA6AF8779D /* Pods-Asyncify_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Asyncify_Tests-resources.sh"; sourceTree = "<group>"; };
-		FBF3E0965D6BAA6306322821EDA848C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80A3EE06B917899FA9A2E3CA4964D62 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F292E5DCF89CA70D3162CFAA14ED03A5 /* AA+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AA+Combine.swift"; path = "Asyncify/Classes/AA+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,23 +76,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08B7CAD345161612D476E299D0790FC1 /* Asyncify */ = {
-			isa = PBXGroup;
-			children = (
-				249409A74D94AB5E8FE93206CB3684D6 /* AA+Combine.swift */,
-				85FB574DBAEF5421CA2E0FD76C3CAC5F /* AA+Merge.swift */,
-				44BD23878166C401DB5372A98D4F9D72 /* AA+Zip.swift */,
-				25DDA05C1B61F8D38A00B33DC22D7021 /* AATask.swift */,
-				8A84B68D9704A31F70CB57BCBD7A1FDB /* Support Files */,
-			);
-			name = Asyncify;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		12BE98C2461E8F7DB2F9A0C31CAAA902 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				08B7CAD345161612D476E299D0790FC1 /* Asyncify */,
+				B47287D9877C58813DC2C3349199288F /* Asyncify */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -135,20 +122,6 @@
 			path = "Target Support Files/Pods-Asyncify_Tests";
 			sourceTree = "<group>";
 		};
-		8A84B68D9704A31F70CB57BCBD7A1FDB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7776F33A5A9991EA7A18C8B226B6A454 /* Asyncify.modulemap */,
-				4A8FDA15F0775E62A93586EC3526B95F /* Asyncify.xcconfig */,
-				098A7933A397802850E1EF8E97E7A268 /* Asyncify-dummy.m */,
-				A131F5A5496A63445EC92D6B372E4116 /* Asyncify-prefix.pch */,
-				89BB4697A326D1A81EE7D9FE646279A1 /* Asyncify-umbrella.h */,
-				FBF3E0965D6BAA6306322821EDA848C4 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Asyncify";
-			sourceTree = "<group>";
-		};
 		AA99D3CAB9D3B4CD7663D6432E0639BF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,12 +130,39 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		B47287D9877C58813DC2C3349199288F /* Asyncify */ = {
+			isa = PBXGroup;
+			children = (
+				F292E5DCF89CA70D3162CFAA14ED03A5 /* AA+Combine.swift */,
+				381ECDDF6B19E89B69611D31C8720F6F /* AA+Merge.swift */,
+				517BF592930E114403FC94B256E226DC /* AA+Zip.swift */,
+				22E85B0F1D80B05AE4F251A5A9A792B3 /* AATask.swift */,
+				CADDB4877E7FB4FB251A04E797E36D90 /* Support Files */,
+			);
+			name = Asyncify;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CADDB4877E7FB4FB251A04E797E36D90 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				249157AF1AA002B9A37BDB48C1C7B267 /* Asyncify.modulemap */,
+				3828B749F8DA7C9EDFCDC1E9A41BCC05 /* Asyncify.xcconfig */,
+				09AD18D03ACCAE549FCB4E647DCD941C /* Asyncify-dummy.m */,
+				A993848EB81AFB29D7FA78D3A72F82E2 /* Asyncify-prefix.pch */,
+				6AABBA4196B35DA3F1600101E92C76A0 /* Asyncify-umbrella.h */,
+				E80A3EE06B917899FA9A2E3CA4964D62 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "AsyncifyExample/Pods/Target Support Files/Asyncify";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -475,7 +475,7 @@
 		};
 		E6EDAB0DC9DBA84FCF584AD21BB36698 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A8FDA15F0775E62A93586EC3526B95F /* Asyncify.xcconfig */;
+			baseConfigurationReference = 3828B749F8DA7C9EDFCDC1E9A41BCC05 /* Asyncify.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -507,7 +507,7 @@
 		};
 		EDBB514F8652827C785F716EE72C70E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A8FDA15F0775E62A93586EC3526B95F /* Asyncify.xcconfig */;
+			baseConfigurationReference = 3828B749F8DA7C9EDFCDC1E9A41BCC05 /* Asyncify.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
