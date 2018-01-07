@@ -98,12 +98,8 @@
 		739958672002B4C900336837 /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
-				7399586A2002B4C900336837 /* AACombineTests.swift */,
-				739958872002C12300336837 /* AACombineVoidTests.swift */,
-				739958692002B4C900336837 /* AAMergeTests.swift */,
-				739958852002C10700336837 /* AAMergeVoidTests.swift */,
-				739958682002B4C900336837 /* AAZipTests.swift */,
-				739958832002C0F800336837 /* AAZipVoidTests.swift */,
+				7399588B2002CDF400336837 /* AATaskVoidTests */,
+				739958892002CDE200336837 /* AATaskTests */,
 			);
 			path = TestFiles;
 			sourceTree = "<group>";
@@ -133,6 +129,26 @@
 				739958712002B4C900336837 /* AATaskGenerator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		739958892002CDE200336837 /* AATaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				7399586A2002B4C900336837 /* AACombineTests.swift */,
+				739958692002B4C900336837 /* AAMergeTests.swift */,
+				739958682002B4C900336837 /* AAZipTests.swift */,
+			);
+			path = AATaskTests;
+			sourceTree = "<group>";
+		};
+		7399588B2002CDF400336837 /* AATaskVoidTests */ = {
+			isa = PBXGroup;
+			children = (
+				739958872002C12300336837 /* AACombineVoidTests.swift */,
+				739958852002C10700336837 /* AAMergeVoidTests.swift */,
+				739958832002C0F800336837 /* AAZipVoidTests.swift */,
+			);
+			path = AATaskVoidTests;
 			sourceTree = "<group>";
 		};
 		73CFE22220008D72005A014D = {
