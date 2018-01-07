@@ -1,6 +1,6 @@
 use_frameworks!
-target 'Asyncify_Tests' do
+platform :ios, '9.3'
+
+target 'AsyncifyExample' do
   pod 'Asyncify', :path => '../'
-  
-  
 end

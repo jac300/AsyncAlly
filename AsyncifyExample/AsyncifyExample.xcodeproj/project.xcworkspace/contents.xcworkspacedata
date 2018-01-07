@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Asyncify.xcodeproj">
+      location = "self:AsyncifyExample.xcodeproj">
    </FileRef>
 </Workspace>
