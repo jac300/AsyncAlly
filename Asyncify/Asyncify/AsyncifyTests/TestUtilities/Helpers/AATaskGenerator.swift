@@ -12,7 +12,7 @@ import Foundation
 func generateAATask<T>(from function: @escaping MockAsyncFunctions.FunctionType<T>) -> AATask<T> {
 
     return { success, failure in
-        function({ value in
+        return function({ value in
             success(value)
         }, { error in
             failure(error)
@@ -20,3 +20,13 @@ func generateAATask<T>(from function: @escaping MockAsyncFunctions.FunctionType<
     }
 }
 
+func generateAAVoidTask<T>(from function: @escaping MockAsyncFunctions.FunctionTypeVoid<T>) -> AATaskVoid<T> {
+
+    return { success, failure in
+        function({ value in
+            success(value)
+        }, { error in
+            failure(error)
+        })
+    }
+}

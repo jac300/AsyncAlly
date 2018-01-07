@@ -90,10 +90,10 @@ class AAMergeTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_merge_6() {
+    func test_merge_5() {
 
         //Merge String, Int, Bool, Int, String with errors
-        let expectation = XCTestExpectation(description: "test_merge_6")
+        let expectation = XCTestExpectation(description: "test_merge_5")
 
         Asyncify.merge(AAMockTasks.mockSuccess1, AAMockTasks.mockFailure2,
                         AAMockTasks.mockFailure3, AAMockTasks.mockSuccess6, AAMockTasks.mockSuccess2, completion: { value, error in
@@ -111,10 +111,10 @@ class AAMergeTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_merge_7() {
+    func test_merge_6() {
 
         //Merge String, Int, Bool with errors
-        let expectation = XCTestExpectation(description: "test_merge_7")
+        let expectation = XCTestExpectation(description: "test_merge_6")
 
         Asyncify.merge(AAMockTasks.mockFailure1, AAMockTasks.mockFailure2,
                         AAMockTasks.mockFailure3, completion: { value, error in

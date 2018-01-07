@@ -15,6 +15,9 @@
 		739958802002B72E00336837 /* AAZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739958682002B4C900336837 /* AAZipTests.swift */; };
 		739958812002B73200336837 /* AAMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739958692002B4C900336837 /* AAMergeTests.swift */; };
 		739958822002B73600336837 /* AACombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7399586A2002B4C900336837 /* AACombineTests.swift */; };
+		739958842002C0F800336837 /* AAZipVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739958832002C0F800336837 /* AAZipVoidTests.swift */; };
+		739958862002C10700336837 /* AAMergeVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739958852002C10700336837 /* AAMergeVoidTests.swift */; };
+		739958882002C12300336837 /* AACombineVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739958872002C12300336837 /* AACombineVoidTests.swift */; };
 		73CFE23620008D72005A014D /* Asyncify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CFE22C20008D72005A014D /* Asyncify.framework */; };
 		73F3325920019B7D00A75CBD /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325520019B7C00A75CBD /* AATask.swift */; };
 		73F3325A20019B7D00A75CBD /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325620019B7C00A75CBD /* AA+Zip.swift */; };
@@ -43,6 +46,9 @@
 		7399586F2002B4C900336837 /* AAMockTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockTasks.swift; sourceTree = "<group>"; };
 		739958712002B4C900336837 /* AATaskGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskGenerator.swift; sourceTree = "<group>"; };
 		739958722002B4C900336837 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739958832002C0F800336837 /* AAZipVoidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAZipVoidTests.swift; sourceTree = "<group>"; };
+		739958852002C10700336837 /* AAMergeVoidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMergeVoidTests.swift; sourceTree = "<group>"; };
+		739958872002C12300336837 /* AACombineVoidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACombineVoidTests.swift; sourceTree = "<group>"; };
 		73CFE22C20008D72005A014D /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CFE23520008D72005A014D /* AsyncifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F3325520019B7C00A75CBD /* AATask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATask.swift; sourceTree = "<group>"; };
@@ -92,9 +98,12 @@
 		739958672002B4C900336837 /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
-				739958682002B4C900336837 /* AAZipTests.swift */,
-				739958692002B4C900336837 /* AAMergeTests.swift */,
 				7399586A2002B4C900336837 /* AACombineTests.swift */,
+				739958872002C12300336837 /* AACombineVoidTests.swift */,
+				739958692002B4C900336837 /* AAMergeTests.swift */,
+				739958852002C10700336837 /* AAMergeVoidTests.swift */,
+				739958682002B4C900336837 /* AAZipTests.swift */,
+				739958832002C0F800336837 /* AAZipVoidTests.swift */,
 			);
 			path = TestFiles;
 			sourceTree = "<group>";
@@ -279,12 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				739958802002B72E00336837 /* AAZipTests.swift in Sources */,
+				739958862002C10700336837 /* AAMergeVoidTests.swift in Sources */,
+				739958842002C0F800336837 /* AAZipVoidTests.swift in Sources */,
 				7399587E2002B6F000336837 /* AATaskGenerator.swift in Sources */,
 				7399587C2002B6E800336837 /* AAMockAsyncFunctions.swift in Sources */,
 				7399587B2002B6E400336837 /* AAMockTasks.swift in Sources */,
 				739958812002B73200336837 /* AAMergeTests.swift in Sources */,
 				7399587D2002B6EB00336837 /* AAMockZips.swift in Sources */,
 				739958822002B73600336837 /* AACombineTests.swift in Sources */,
+				739958882002C12300336837 /* AACombineVoidTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
