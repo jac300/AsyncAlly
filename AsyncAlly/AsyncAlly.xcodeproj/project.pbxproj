@@ -10,7 +10,7 @@
 		73CFE23620008D72005A014D /* AsyncAlly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CFE22C20008D72005A014D /* AsyncAlly.framework */; };
 		73CFE23B20008D72005A014D /* AAZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFE23A20008D72005A014D /* AAZipTests.swift */; };
 		73CFE23D20008D72005A014D /* AsyncAlly.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CFE22F20008D72005A014D /* AsyncAlly.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73E85F932001C08100F36721 /* MockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E85F922001C08100F36721 /* MockZips.swift */; };
+		73E85F932001C08100F36721 /* AAMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E85F922001C08100F36721 /* AAMockZips.swift */; };
 		73F3325920019B7D00A75CBD /* AATaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325520019B7C00A75CBD /* AATaskObject.swift */; };
 		73F3325A20019B7D00A75CBD /* AsyncAlly+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */; };
 		73F3325B20019B7D00A75CBD /* AsyncAlly+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */; };
@@ -39,7 +39,7 @@
 		73CFE23520008D72005A014D /* AsyncAllyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncAllyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CFE23A20008D72005A014D /* AAZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAZipTests.swift; sourceTree = "<group>"; };
 		73CFE23C20008D72005A014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73E85F922001C08100F36721 /* MockZips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockZips.swift; sourceTree = "<group>"; };
+		73E85F922001C08100F36721 /* AAMockZips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAMockZips.swift; sourceTree = "<group>"; };
 		73F3325520019B7C00A75CBD /* AATaskObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskObject.swift; sourceTree = "<group>"; };
 		73F3325620019B7C00A75CBD /* AsyncAlly+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Zip.swift"; sourceTree = "<group>"; };
 		73F3325720019B7C00A75CBD /* AsyncAlly+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsyncAlly+Combine.swift"; sourceTree = "<group>"; };
@@ -80,6 +80,14 @@
 			path = TestFiles;
 			sourceTree = "<group>";
 		};
+		73B83E0D20029D3E00260BC4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				73F3325F2001A18500A75CBD /* AATaskObject+Generate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		73CFE22220008D72005A014D = {
 			isa = PBXGroup;
 			children = (
@@ -118,22 +126,14 @@
 			path = AsyncAllyTests;
 			sourceTree = "<group>";
 		};
-		73E85F8E2001C03900F36721 /* General */ = {
+		73E85F8E2001C03900F36721 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
+				73E85F922001C08100F36721 /* AAMockZips.swift */,
 				73F3325D20019F5300A75CBD /* AAMockAsyncFunctions.swift */,
-				73F3325F2001A18500A75CBD /* AATaskObject+Generate.swift */,
 				73F332662001AB3200A75CBD /* AAMockTaskObjects.swift */,
 			);
-			path = General;
-			sourceTree = "<group>";
-		};
-		73E85F8F2001C04100F36721 /* Zip */ = {
-			isa = PBXGroup;
-			children = (
-				73E85F922001C08100F36721 /* MockZips.swift */,
-			);
-			path = Zip;
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		73F3325420019B7C00A75CBD /* Classes */ = {
@@ -150,8 +150,8 @@
 		73F332652001A4BF00A75CBD /* TestUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				73E85F8E2001C03900F36721 /* General */,
-				73E85F8F2001C04100F36721 /* Zip */,
+				73B83E0D20029D3E00260BC4 /* Helpers */,
+				73E85F8E2001C03900F36721 /* MockData */,
 			);
 			path = TestUtilities;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 			files = (
 				73F332602001A18500A75CBD /* AATaskObject+Generate.swift in Sources */,
 				73F3325E20019F5300A75CBD /* AAMockAsyncFunctions.swift in Sources */,
-				73E85F932001C08100F36721 /* MockZips.swift in Sources */,
+				73E85F932001C08100F36721 /* AAMockZips.swift in Sources */,
 				73F332622001A49F00A75CBD /* AACombineTests.swift in Sources */,
 				73F332642001A4AE00A75CBD /* AAMergeTests.swift in Sources */,
 				73CFE23B20008D72005A014D /* AAZipTests.swift in Sources */,

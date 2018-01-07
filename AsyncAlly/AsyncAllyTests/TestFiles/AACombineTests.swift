@@ -16,7 +16,7 @@ class AsyncAllyCombineTests: XCTestCase {
         //Combine [Int], String
         let expectation = XCTestExpectation(description: "test_combine_1")
 
-        AsyncAlly.combine(MockZips.zip_3_int, AAMockTaskObjects.mockSuccess1, completion: { value, error in
+        AsyncAlly.combine(AAMockZips.zip_3_int, AAMockTaskObjects.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -35,7 +35,7 @@ class AsyncAllyCombineTests: XCTestCase {
         //Combine [Int], [String], String
         let expectation = XCTestExpectation(description: "test_combine_2")
 
-        AsyncAlly.combine(MockZips.zip_3_int, MockZips.zip_2_str, AAMockTaskObjects.mockSuccess1, completion: { value, error in
+        AsyncAlly.combine(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockTaskObjects.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -58,7 +58,7 @@ class AsyncAllyCombineTests: XCTestCase {
         //Combine [Int], Bool, String
         let expectation = XCTestExpectation(description: "test_combine_3")
 
-        AsyncAlly.combine(MockZips.zip_3_int, AAMockTaskObjects.mockSuccess11, AAMockTaskObjects.mockSuccess2,
+        AsyncAlly.combine(AAMockZips.zip_3_int, AAMockTaskObjects.mockSuccess11, AAMockTaskObjects.mockSuccess2,
                           completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -81,7 +81,7 @@ class AsyncAllyCombineTests: XCTestCase {
         //Combine [Int], [String], Bool, String
         let expectation = XCTestExpectation(description: "test_combine_4")
 
-        AsyncAlly.combine(MockZips.zip_3_int, MockZips.zip_2_str, AAMockTaskObjects.mockSuccess11, AAMockTaskObjects.mockSuccess2,
+        AsyncAlly.combine(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockTaskObjects.mockSuccess11, AAMockTaskObjects.mockSuccess2,
                           completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")

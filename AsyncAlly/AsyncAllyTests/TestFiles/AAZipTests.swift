@@ -16,7 +16,7 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 String
         let expectation = XCTestExpectation(description: "test_zip_1")
 
-        AsyncAlly.zip(MockZips.zip_3_str, completion: { value, error in
+        AsyncAlly.zip(AAMockZips.zip_3_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.count == 3, "3 String values were produced.")
@@ -35,7 +35,7 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 5 String
         let expectation = XCTestExpectation(description: "test_zip_2")
 
-        AsyncAlly.zip(MockZips.zip_5_str, completion: { value, error in
+        AsyncAlly.zip(AAMockZips.zip_5_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.count == 5, "5 String values were produced.")
@@ -57,7 +57,7 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 Int, 2 String
         let expectation = XCTestExpectation(description: "test_zip_3")
 
-        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_2_str, completion: { value, error in
+        AsyncAlly.zip(AAMockZips.zip_3_int, AAMockZips.zip_2_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -81,7 +81,7 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 Int, 2 String, 3 Bool
         let expectation = XCTestExpectation(description: "test_zip_4")
 
-        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_2_str, MockZips.zip_3_bool, completion: { value, error in
+        AsyncAlly.zip(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockZips.zip_3_bool, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -110,7 +110,7 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 Int, 2 String, 3 Bool, 3 [String]
         let expectation = XCTestExpectation(description: "test_zip_5")
 
-        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_2_str, MockZips.zip_3_bool, MockZips.zip_3_strArr, completion: { value, error in
+        AsyncAlly.zip(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockZips.zip_3_bool, AAMockZips.zip_3_strArr, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -144,7 +144,7 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int]
         let expectation = XCTestExpectation(description: "test_zip_6")
 
-        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_2_str, MockZips.zip_3_bool, MockZips.zip_3_strArr, MockZips.zip_2_intArr,
+        AsyncAlly.zip(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockZips.zip_3_bool, AAMockZips.zip_3_strArr, AAMockZips.zip_2_intArr,
                       completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -183,8 +183,8 @@ class AsyncAllyZipTests: XCTestCase {
         //Zip 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int] with failures
         let expectation = XCTestExpectation(description: "test_zip_7")
 
-        AsyncAlly.zip(MockZips.zip_3_int, MockZips.zip_4_str, MockZips.zip_3_bool, MockZips.zip_4_strArr,
-                      MockZips.zip_2_intArr, completion: { value, error in
+        AsyncAlly.zip(AAMockZips.zip_3_int, AAMockZips.zip_4_str, AAMockZips.zip_3_bool, AAMockZips.zip_4_strArr,
+                      AAMockZips.zip_2_intArr, completion: { value, error in
 
                         XCTAssertTrue(error.count == 1, "1 error produced.")
                         XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")

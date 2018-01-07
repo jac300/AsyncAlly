@@ -9,7 +9,7 @@
 import Foundation
 @testable import AsyncAlly
 
-struct MockZips {
+struct AAMockZips {
 
     static let zip_3_int = [AAMockTaskObjects.mockSuccess6, AAMockTaskObjects.mockSuccess7, AAMockTaskObjects.mockSuccess8]
     static let zip_3_bool = [AAMockTaskObjects.mockSuccess9, AAMockTaskObjects.mockSuccess10, AAMockTaskObjects.mockSuccess11]
