@@ -1,6 +1,6 @@
 coverage:
   ignore:
-    - "AsyncifyTests"
+    - "Asyncify/AsyncifyTests"
   status:
     project: yes
     patch: yes
