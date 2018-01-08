@@ -27,10 +27,10 @@ extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
 
-    @discardableResult static func combine<A, B>(_ a: [AATask<A>],
-                                                 _ b: AATask<B>,
-                                                 observeOn: DispatchQueue = DispatchQueue.main,
-                                                 completion: @escaping (([A?], B?), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func combine<A, B>(_ a: [AATask<A>],
+                                                        _ b: AATask<B>,
+                                                        observeOn: DispatchQueue = DispatchQueue.main,
+                                                        completion: @escaping (([A?], B?), [Error]) -> Void) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -76,11 +76,11 @@ extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
 
-    @discardableResult static func combine<A, B, C>(_ a: [AATask<A>],
-                                                    _ b: [AATask<B>],
-                                                    _ c: AATask<C>,
-                                                    observeOn: DispatchQueue = DispatchQueue.main,
-                                                    completion: @escaping (([A?], [B?], C?), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func combine<A, B, C>(_ a: [AATask<A>],
+                                                           _ b: [AATask<B>],
+                                                           _ c: AATask<C>,
+                                                           observeOn: DispatchQueue = DispatchQueue.main,
+                                                           completion: @escaping (([A?], [B?], C?), [Error]) -> Void) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -127,11 +127,11 @@ extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
 
-    @discardableResult static func combine<A, B, C>(_ a: [AATask<A>],
-                                                    _ b: AATask<B>,
-                                                    _ c: AATask<C>,
-                                                    observeOn: DispatchQueue = DispatchQueue.main,
-                                                    completion: @escaping (([A?], B?, C?), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func combine<A, B, C>(_ a: [AATask<A>],
+                                                           _ b: AATask<B>,
+                                                           _ c: AATask<C>,
+                                                           observeOn: DispatchQueue = DispatchQueue.main,
+                                                           completion: @escaping (([A?], B?, C?), [Error]) -> Void) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -177,12 +177,12 @@ extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
 
-    @discardableResult static func combine<A, B, C, D>(_ a: [AATask<A>],
-                                                       _ b: [AATask<B>],
-                                                       _ c: AATask<C>,
-                                                       _ d: AATask<D>,
-                                                       observeOn: DispatchQueue = DispatchQueue.main,
-                                                       completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func combine<A, B, C, D>(_ a: [AATask<A>],
+                                                              _ b: [AATask<B>],
+                                                              _ c: AATask<C>,
+                                                              _ d: AATask<D>,
+                                                              observeOn: DispatchQueue = DispatchQueue.main,
+                                                              completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -227,10 +227,10 @@ extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
 
-    static func combine<A, B>(_ a: [AATaskVoid<A>],
-                              _ b: AATaskVoid<B>,
-                              observeOn: DispatchQueue = DispatchQueue.main,
-                              completion: @escaping (([A?], B?), [Error]) -> Void) {
+    public static func combine<A, B>(_ a: [AATaskVoid<A>],
+                                     _ b: AATaskVoid<B>,
+                                     observeOn: DispatchQueue = DispatchQueue.main,
+                                     completion: @escaping (([A?], B?), [Error]) -> Void) {
 
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
@@ -271,11 +271,11 @@ extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
 
-    static func combine<A, B, C>(_ a: [AATaskVoid<A>],
-                                 _ b: [AATaskVoid<B>],
-                                 _ c: AATaskVoid<C>,
-                                 observeOn: DispatchQueue = DispatchQueue.main,
-                                 completion: @escaping (([A?], [B?], C?), [Error]) -> Void) {
+    public static func combine<A, B, C>(_ a: [AATaskVoid<A>],
+                                        _ b: [AATaskVoid<B>],
+                                        _ c: AATaskVoid<C>,
+                                        observeOn: DispatchQueue = DispatchQueue.main,
+                                        completion: @escaping (([A?], [B?], C?), [Error]) -> Void) {
 
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
@@ -317,11 +317,11 @@ extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
 
-    static func combine<A, B, C>(_ a: [AATaskVoid<A>],
-                                 _ b: AATaskVoid<B>,
-                                 _ c: AATaskVoid<C>,
-                                 observeOn: DispatchQueue = DispatchQueue.main,
-                                 completion: @escaping (([A?], B?, C?), [Error]) -> Void) {
+    public static func combine<A, B, C>(_ a: [AATaskVoid<A>],
+                                        _ b: AATaskVoid<B>,
+                                        _ c: AATaskVoid<C>,
+                                        observeOn: DispatchQueue = DispatchQueue.main,
+                                        completion: @escaping (([A?], B?, C?), [Error]) -> Void) {
 
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
@@ -361,13 +361,13 @@ extension Asyncify { //AATaskVoid functions
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
-
-    static func combine<A, B, C, D>(_ a: [AATaskVoid<A>],
-                                    _ b: [AATaskVoid<B>],
-                                    _ c: AATaskVoid<C>,
-                                    _ d: AATaskVoid<D>,
-                                    observeOn: DispatchQueue = DispatchQueue.main,
-                                    completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) {
+    
+    public static func combine<A, B, C, D>(_ a: [AATaskVoid<A>],
+                                           _ b: [AATaskVoid<B>],
+                                           _ c: AATaskVoid<C>,
+                                           _ d: AATaskVoid<D>,
+                                           observeOn: DispatchQueue = DispatchQueue.main,
+                                           completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) {
 
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()

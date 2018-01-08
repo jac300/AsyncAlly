@@ -18,7 +18,7 @@ public struct Asyncify {}
 /// - URLSessionDataTask: Task object returned from your asynchronous task - these are collected and returned
 ///   to the caller.
 
-typealias AATask<T> = (_ success: @escaping (T) -> Void,
+public typealias AATask<T> = (_ success: @escaping (T) -> Void,
     _ failure: @escaping (Error?) -> Void) -> URLSessionDataTask
 
 /// - description: Task wrapper for an asynchronous task.
@@ -28,6 +28,6 @@ typealias AATask<T> = (_ success: @escaping (T) -> Void,
 ///   - failure: Failure block which captures an optional error from your asynchronous task.
 ///
 
-typealias AATaskVoid<ValueType> = (_ success: @escaping (ValueType) -> Void,
+public typealias AATaskVoid<ValueType> = (_ success: @escaping (ValueType) -> Void,
     _ failure: @escaping (Error?) -> Void) -> Void
 
