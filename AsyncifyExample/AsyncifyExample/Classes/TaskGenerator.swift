@@ -12,7 +12,7 @@ import Asyncify
 typealias FunctionType<T> = (@escaping (T) -> Void, @escaping (Error?) -> Void) -> Void
 
 class TaskGenerator {
-    static func generateTask<T>(from function: @escaping FunctionType<T>) -> AATaskVoid<T> {
+    static func generateTask<T>(from function: @escaping FunctionType<T>) -> AsyncTaskVoid<T> {
         return { success, failure in
             function({ value in
                 success(value)
