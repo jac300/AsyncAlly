@@ -1,5 +1,6 @@
 # Asyncify
 
+[![codecov](https://codecov.io/gh/jac300/Asyncify/branch/master/graph/badge.svg)](https://codecov.io/gh/jac300/Asyncify)
 [![CI Status](http://img.shields.io/travis/jac300/Asyncify.svg?style=flat)](https://travis-ci.org/jac300/Asyncify)
 [![Version](https://img.shields.io/cocoapods/v/Asyncify.svg?style=flat)](http://cocoapods.org/pods/Asyncify)
 [![License](https://img.shields.io/cocoapods/l/Asyncify.svg?style=flat)](http://cocoapods.org/pods/Asyncify)
