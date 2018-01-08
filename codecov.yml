@@ -1,0 +1,7 @@
+coverage:
+  ignore:
+    - "AsyncifyTests"
+  status:
+    project: yes
+    patch: yes
+    changes: no
