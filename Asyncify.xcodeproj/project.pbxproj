@@ -7,23 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7384C135200353B90030D1EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CEF8DD2003504F00F5BBAF /* Info.plist */; };
-		7384C136200353C80030D1EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CEF8EB2003505F00F5BBAF /* Info.plist */; };
-		73CEF8C82003504300F5BBAF /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8C42003504300F5BBAF /* AATask.swift */; };
-		73CEF8C92003504300F5BBAF /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8C52003504300F5BBAF /* AA+Merge.swift */; };
-		73CEF8CA2003504300F5BBAF /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8C62003504300F5BBAF /* AA+Combine.swift */; };
-		73CEF8CB2003504300F5BBAF /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8C72003504300F5BBAF /* AA+Zip.swift */; };
-		73CEF8EC2003505F00F5BBAF /* Asyncify.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CEF8EA2003505F00F5BBAF /* Asyncify.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73CEF8EE2003519800F5BBAF /* AAZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8CF2003504F00F5BBAF /* AAZipTests.swift */; };
-		73CEF8EF2003519C00F5BBAF /* AAMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D02003504F00F5BBAF /* AAMergeTests.swift */; };
-		73CEF8F02003519F00F5BBAF /* AACombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D12003504F00F5BBAF /* AACombineTests.swift */; };
-		73CEF8F1200351A400F5BBAF /* AAMergeVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D32003504F00F5BBAF /* AAMergeVoidTests.swift */; };
-		73CEF8F2200351A700F5BBAF /* AAZipVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D42003504F00F5BBAF /* AAZipVoidTests.swift */; };
-		73CEF8F3200351AB00F5BBAF /* AACombineVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D52003504F00F5BBAF /* AACombineVoidTests.swift */; };
-		73CEF8F4200351B100F5BBAF /* AAMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D82003504F00F5BBAF /* AAMockZips.swift */; };
-		73CEF8F5200351B400F5BBAF /* AAMockAsyncFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8D92003504F00F5BBAF /* AAMockAsyncFunctions.swift */; };
-		73CEF8F6200351B700F5BBAF /* AAMockTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8DA2003504F00F5BBAF /* AAMockTasks.swift */; };
-		73CEF8F7200351BD00F5BBAF /* AATaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8DC2003504F00F5BBAF /* AATaskGenerator.swift */; };
+		73316DC42003EEB300F3EE62 /* Asyncify.h in Headers */ = {isa = PBXBuildFile; fileRef = 73316DC12003EEB300F3EE62 /* Asyncify.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73316DDD2003F54200F3EE62 /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC72003F54100F3EE62 /* AATask.swift */; };
+		73316DDE2003F54200F3EE62 /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC82003F54100F3EE62 /* AA+Merge.swift */; };
+		73316DDF2003F54200F3EE62 /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC92003F54100F3EE62 /* AA+Combine.swift */; };
+		73316DE02003F54200F3EE62 /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCA2003F54100F3EE62 /* AA+Zip.swift */; };
+		73316DEB2003F54200F3EE62 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73316DDC2003F54200F3EE62 /* Info.plist */; };
+		73316DEC2003F56000F3EE62 /* AAZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCE2003F54200F3EE62 /* AAZipTests.swift */; };
+		73316DED2003F56400F3EE62 /* AAMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCF2003F54200F3EE62 /* AAMergeTests.swift */; };
+		73316DEE2003F56700F3EE62 /* AACombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD02003F54200F3EE62 /* AACombineTests.swift */; };
+		73316DEF2003F56B00F3EE62 /* AAMergeVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD22003F54200F3EE62 /* AAMergeVoidTests.swift */; };
+		73316DF02003F56E00F3EE62 /* AAZipVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD32003F54200F3EE62 /* AAZipVoidTests.swift */; };
+		73316DF12003F57000F3EE62 /* AACombineVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD42003F54200F3EE62 /* AACombineVoidTests.swift */; };
+		73316DF22003F57700F3EE62 /* AAMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD72003F54200F3EE62 /* AAMockZips.swift */; };
+		73316DF32003F57B00F3EE62 /* AAMockAsyncFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD82003F54200F3EE62 /* AAMockAsyncFunctions.swift */; };
+		73316DF42003F57E00F3EE62 /* AAMockTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD92003F54200F3EE62 /* AAMockTasks.swift */; };
+		73316DF52003F58300F3EE62 /* AATaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DDB2003F54200F3EE62 /* AATaskGenerator.swift */; };
 		73CFE23620008D72005A014D /* Asyncify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CFE22C20008D72005A014D /* Asyncify.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,23 +37,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		73CEF8C42003504300F5BBAF /* AATask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATask.swift; sourceTree = "<group>"; };
-		73CEF8C52003504300F5BBAF /* AA+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Merge.swift"; sourceTree = "<group>"; };
-		73CEF8C62003504300F5BBAF /* AA+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Combine.swift"; sourceTree = "<group>"; };
-		73CEF8C72003504300F5BBAF /* AA+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Zip.swift"; sourceTree = "<group>"; };
-		73CEF8CF2003504F00F5BBAF /* AAZipTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAZipTests.swift; sourceTree = "<group>"; };
-		73CEF8D02003504F00F5BBAF /* AAMergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMergeTests.swift; sourceTree = "<group>"; };
-		73CEF8D12003504F00F5BBAF /* AACombineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACombineTests.swift; sourceTree = "<group>"; };
-		73CEF8D32003504F00F5BBAF /* AAMergeVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMergeVoidTests.swift; sourceTree = "<group>"; };
-		73CEF8D42003504F00F5BBAF /* AAZipVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAZipVoidTests.swift; sourceTree = "<group>"; };
-		73CEF8D52003504F00F5BBAF /* AACombineVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACombineVoidTests.swift; sourceTree = "<group>"; };
-		73CEF8D82003504F00F5BBAF /* AAMockZips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockZips.swift; sourceTree = "<group>"; };
-		73CEF8D92003504F00F5BBAF /* AAMockAsyncFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockAsyncFunctions.swift; sourceTree = "<group>"; };
-		73CEF8DA2003504F00F5BBAF /* AAMockTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockTasks.swift; sourceTree = "<group>"; };
-		73CEF8DC2003504F00F5BBAF /* AATaskGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskGenerator.swift; sourceTree = "<group>"; };
-		73CEF8DD2003504F00F5BBAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73CEF8EA2003505F00F5BBAF /* Asyncify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asyncify.h; sourceTree = "<group>"; };
-		73CEF8EB2003505F00F5BBAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73316DC12003EEB300F3EE62 /* Asyncify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asyncify.h; sourceTree = "<group>"; };
+		73316DC22003EEB300F3EE62 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73316DC72003F54100F3EE62 /* AATask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATask.swift; sourceTree = "<group>"; };
+		73316DC82003F54100F3EE62 /* AA+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Merge.swift"; sourceTree = "<group>"; };
+		73316DC92003F54100F3EE62 /* AA+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Combine.swift"; sourceTree = "<group>"; };
+		73316DCA2003F54100F3EE62 /* AA+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Zip.swift"; sourceTree = "<group>"; };
+		73316DCE2003F54200F3EE62 /* AAZipTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAZipTests.swift; sourceTree = "<group>"; };
+		73316DCF2003F54200F3EE62 /* AAMergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMergeTests.swift; sourceTree = "<group>"; };
+		73316DD02003F54200F3EE62 /* AACombineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACombineTests.swift; sourceTree = "<group>"; };
+		73316DD22003F54200F3EE62 /* AAMergeVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMergeVoidTests.swift; sourceTree = "<group>"; };
+		73316DD32003F54200F3EE62 /* AAZipVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAZipVoidTests.swift; sourceTree = "<group>"; };
+		73316DD42003F54200F3EE62 /* AACombineVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACombineVoidTests.swift; sourceTree = "<group>"; };
+		73316DD72003F54200F3EE62 /* AAMockZips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockZips.swift; sourceTree = "<group>"; };
+		73316DD82003F54200F3EE62 /* AAMockAsyncFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockAsyncFunctions.swift; sourceTree = "<group>"; };
+		73316DD92003F54200F3EE62 /* AAMockTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockTasks.swift; sourceTree = "<group>"; };
+		73316DDB2003F54200F3EE62 /* AATaskGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskGenerator.swift; sourceTree = "<group>"; };
+		73316DDC2003F54200F3EE62 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CFE22C20008D72005A014D /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CFE23520008D72005A014D /* AsyncifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,99 +77,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		73CEF8C32003504300F5BBAF /* Classes */ = {
+		73316DBF2003EEB300F3EE62 /* Asyncify */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8C42003504300F5BBAF /* AATask.swift */,
-				73CEF8C52003504300F5BBAF /* AA+Merge.swift */,
-				73CEF8C62003504300F5BBAF /* AA+Combine.swift */,
-				73CEF8C72003504300F5BBAF /* AA+Zip.swift */,
+				73316DC12003EEB300F3EE62 /* Asyncify.h */,
+				73316DC22003EEB300F3EE62 /* Info.plist */,
+			);
+			path = Asyncify;
+			sourceTree = "<group>";
+		};
+		73316DC62003F54100F3EE62 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				73316DC72003F54100F3EE62 /* AATask.swift */,
+				73316DC82003F54100F3EE62 /* AA+Merge.swift */,
+				73316DC92003F54100F3EE62 /* AA+Combine.swift */,
+				73316DCA2003F54100F3EE62 /* AA+Zip.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		73CEF8CC2003504F00F5BBAF /* AsyncifyTests */ = {
+		73316DCB2003F54200F3EE62 /* AsyncifyTests */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8CD2003504F00F5BBAF /* TestFiles */,
-				73CEF8D62003504F00F5BBAF /* TestUtilities */,
-				73CEF8DD2003504F00F5BBAF /* Info.plist */,
+				73316DCC2003F54200F3EE62 /* TestFiles */,
+				73316DD52003F54200F3EE62 /* TestUtilities */,
+				73316DDC2003F54200F3EE62 /* Info.plist */,
 			);
 			path = AsyncifyTests;
 			sourceTree = "<group>";
 		};
-		73CEF8CD2003504F00F5BBAF /* TestFiles */ = {
+		73316DCC2003F54200F3EE62 /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8CE2003504F00F5BBAF /* AATaskTests */,
-				73CEF8D22003504F00F5BBAF /* AATaskVoidTests */,
+				73316DCD2003F54200F3EE62 /* AATaskTests */,
+				73316DD12003F54200F3EE62 /* AATaskVoidTests */,
 			);
 			path = TestFiles;
 			sourceTree = "<group>";
 		};
-		73CEF8CE2003504F00F5BBAF /* AATaskTests */ = {
+		73316DCD2003F54200F3EE62 /* AATaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8CF2003504F00F5BBAF /* AAZipTests.swift */,
-				73CEF8D02003504F00F5BBAF /* AAMergeTests.swift */,
-				73CEF8D12003504F00F5BBAF /* AACombineTests.swift */,
+				73316DCE2003F54200F3EE62 /* AAZipTests.swift */,
+				73316DCF2003F54200F3EE62 /* AAMergeTests.swift */,
+				73316DD02003F54200F3EE62 /* AACombineTests.swift */,
 			);
 			path = AATaskTests;
 			sourceTree = "<group>";
 		};
-		73CEF8D22003504F00F5BBAF /* AATaskVoidTests */ = {
+		73316DD12003F54200F3EE62 /* AATaskVoidTests */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8D32003504F00F5BBAF /* AAMergeVoidTests.swift */,
-				73CEF8D42003504F00F5BBAF /* AAZipVoidTests.swift */,
-				73CEF8D52003504F00F5BBAF /* AACombineVoidTests.swift */,
+				73316DD22003F54200F3EE62 /* AAMergeVoidTests.swift */,
+				73316DD32003F54200F3EE62 /* AAZipVoidTests.swift */,
+				73316DD42003F54200F3EE62 /* AACombineVoidTests.swift */,
 			);
 			path = AATaskVoidTests;
 			sourceTree = "<group>";
 		};
-		73CEF8D62003504F00F5BBAF /* TestUtilities */ = {
+		73316DD52003F54200F3EE62 /* TestUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8D72003504F00F5BBAF /* MockData */,
-				73CEF8DB2003504F00F5BBAF /* Helpers */,
+				73316DD62003F54200F3EE62 /* MockData */,
+				73316DDA2003F54200F3EE62 /* Helpers */,
 			);
 			path = TestUtilities;
 			sourceTree = "<group>";
 		};
-		73CEF8D72003504F00F5BBAF /* MockData */ = {
+		73316DD62003F54200F3EE62 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8D82003504F00F5BBAF /* AAMockZips.swift */,
-				73CEF8D92003504F00F5BBAF /* AAMockAsyncFunctions.swift */,
-				73CEF8DA2003504F00F5BBAF /* AAMockTasks.swift */,
+				73316DD72003F54200F3EE62 /* AAMockZips.swift */,
+				73316DD82003F54200F3EE62 /* AAMockAsyncFunctions.swift */,
+				73316DD92003F54200F3EE62 /* AAMockTasks.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
 		};
-		73CEF8DB2003504F00F5BBAF /* Helpers */ = {
+		73316DDA2003F54200F3EE62 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				73CEF8DC2003504F00F5BBAF /* AATaskGenerator.swift */,
+				73316DDB2003F54200F3EE62 /* AATaskGenerator.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		73CEF8E92003505F00F5BBAF /* Asyncify */ = {
-			isa = PBXGroup;
-			children = (
-				73CEF8EA2003505F00F5BBAF /* Asyncify.h */,
-				73CEF8EB2003505F00F5BBAF /* Info.plist */,
-			);
-			name = Asyncify;
-			path = Asyncify/Asyncify;
 			sourceTree = "<group>";
 		};
 		73CFE22220008D72005A014D = {
 			isa = PBXGroup;
 			children = (
-				73CEF8E92003505F00F5BBAF /* Asyncify */,
-				73CEF8CC2003504F00F5BBAF /* AsyncifyTests */,
-				73CEF8C32003504300F5BBAF /* Classes */,
+				73316DC62003F54100F3EE62 /* Classes */,
+				73316DCB2003F54200F3EE62 /* AsyncifyTests */,
+				73316DBF2003EEB300F3EE62 /* Asyncify */,
 				73CFE22D20008D72005A014D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,7 +189,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CEF8EC2003505F00F5BBAF /* Asyncify.h in Headers */,
+				73316DC42003EEB300F3EE62 /* Asyncify.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7384C136200353C80030D1EC /* Info.plist in Resources */,
+				73316DEB2003F54200F3EE62 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7384C135200353B90030D1EC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,10 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CEF8C92003504300F5BBAF /* AA+Merge.swift in Sources */,
-				73CEF8C82003504300F5BBAF /* AATask.swift in Sources */,
-				73CEF8CA2003504300F5BBAF /* AA+Combine.swift in Sources */,
-				73CEF8CB2003504300F5BBAF /* AA+Zip.swift in Sources */,
+				73316DDE2003F54200F3EE62 /* AA+Merge.swift in Sources */,
+				73316DDD2003F54200F3EE62 /* AATask.swift in Sources */,
+				73316DDF2003F54200F3EE62 /* AA+Combine.swift in Sources */,
+				73316DE02003F54200F3EE62 /* AA+Zip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,16 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CEF8F5200351B400F5BBAF /* AAMockAsyncFunctions.swift in Sources */,
-				73CEF8F1200351A400F5BBAF /* AAMergeVoidTests.swift in Sources */,
-				73CEF8F7200351BD00F5BBAF /* AATaskGenerator.swift in Sources */,
-				73CEF8EF2003519C00F5BBAF /* AAMergeTests.swift in Sources */,
-				73CEF8EE2003519800F5BBAF /* AAZipTests.swift in Sources */,
-				73CEF8F3200351AB00F5BBAF /* AACombineVoidTests.swift in Sources */,
-				73CEF8F4200351B100F5BBAF /* AAMockZips.swift in Sources */,
-				73CEF8F02003519F00F5BBAF /* AACombineTests.swift in Sources */,
-				73CEF8F6200351B700F5BBAF /* AAMockTasks.swift in Sources */,
-				73CEF8F2200351A700F5BBAF /* AAZipVoidTests.swift in Sources */,
+				73316DF32003F57B00F3EE62 /* AAMockAsyncFunctions.swift in Sources */,
+				73316DEF2003F56B00F3EE62 /* AAMergeVoidTests.swift in Sources */,
+				73316DF52003F58300F3EE62 /* AATaskGenerator.swift in Sources */,
+				73316DED2003F56400F3EE62 /* AAMergeTests.swift in Sources */,
+				73316DEC2003F56000F3EE62 /* AAZipTests.swift in Sources */,
+				73316DF12003F57000F3EE62 /* AACombineVoidTests.swift in Sources */,
+				73316DF22003F57700F3EE62 /* AAMockZips.swift in Sources */,
+				73316DEE2003F56700F3EE62 /* AACombineTests.swift in Sources */,
+				73316DF42003F57E00F3EE62 /* AAMockTasks.swift in Sources */,
+				73316DF02003F56E00F3EE62 /* AAZipVoidTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +453,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Asyncify/Asyncify/Info.plist;
+				INFOPLIST_FILE = Asyncify/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -480,7 +477,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Asyncify/Asyncify/Info.plist;
+				INFOPLIST_FILE = Asyncify/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
