@@ -1,6 +1,6 @@
 language: swift
 osx_image: xcode9.2
-script: 
-  - xcodebuild -workspace Asyncify.xcworkspace -scheme Asyncify CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest' test  
+script:
+  - xcodebuild -scheme Asyncify -project Asyncify.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest' build test
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'Asyncify'
+  - bash <(curl -s https://codecov.io/bash)
