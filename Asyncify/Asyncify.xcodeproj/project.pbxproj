@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73316DC42003EEB300F3EE62 /* Asyncify.h in Headers */ = {isa = PBXBuildFile; fileRef = 73316DC12003EEB300F3EE62 /* Asyncify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73316DDD2003F54200F3EE62 /* AATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC72003F54100F3EE62 /* AATask.swift */; };
 		73316DDE2003F54200F3EE62 /* AA+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC82003F54100F3EE62 /* AA+Merge.swift */; };
 		73316DDF2003F54200F3EE62 /* AA+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC92003F54100F3EE62 /* AA+Combine.swift */; };
 		73316DE02003F54200F3EE62 /* AA+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCA2003F54100F3EE62 /* AA+Zip.swift */; };
-		73316DEB2003F54200F3EE62 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73316DDC2003F54200F3EE62 /* Info.plist */; };
 		73316DEC2003F56000F3EE62 /* AAZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCE2003F54200F3EE62 /* AAZipTests.swift */; };
 		73316DED2003F56400F3EE62 /* AAMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCF2003F54200F3EE62 /* AAMergeTests.swift */; };
 		73316DEE2003F56700F3EE62 /* AACombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD02003F54200F3EE62 /* AACombineTests.swift */; };
@@ -23,6 +21,7 @@
 		73316DF32003F57B00F3EE62 /* AAMockAsyncFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD82003F54200F3EE62 /* AAMockAsyncFunctions.swift */; };
 		73316DF42003F57E00F3EE62 /* AAMockTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD92003F54200F3EE62 /* AAMockTasks.swift */; };
 		73316DF52003F58300F3EE62 /* AATaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DDB2003F54200F3EE62 /* AATaskGenerator.swift */; };
+		739336492003FE4100C41C6E /* Asyncify.h in Headers */ = {isa = PBXBuildFile; fileRef = 739336482003FE4100C41C6E /* Asyncify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73CFE23620008D72005A014D /* Asyncify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CFE22C20008D72005A014D /* Asyncify.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		73316DC12003EEB300F3EE62 /* Asyncify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asyncify.h; sourceTree = "<group>"; };
-		73316DC22003EEB300F3EE62 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73316DC72003F54100F3EE62 /* AATask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATask.swift; sourceTree = "<group>"; };
 		73316DC82003F54100F3EE62 /* AA+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Merge.swift"; sourceTree = "<group>"; };
 		73316DC92003F54100F3EE62 /* AA+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AA+Combine.swift"; sourceTree = "<group>"; };
@@ -54,6 +51,8 @@
 		73316DD92003F54200F3EE62 /* AAMockTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAMockTasks.swift; sourceTree = "<group>"; };
 		73316DDB2003F54200F3EE62 /* AATaskGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATaskGenerator.swift; sourceTree = "<group>"; };
 		73316DDC2003F54200F3EE62 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739336482003FE4100C41C6E /* Asyncify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asyncify.h; sourceTree = "<group>"; };
+		7393364A2003FE7500C41C6E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CFE22C20008D72005A014D /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CFE23520008D72005A014D /* AsyncifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,15 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		73316DBF2003EEB300F3EE62 /* Asyncify */ = {
-			isa = PBXGroup;
-			children = (
-				73316DC12003EEB300F3EE62 /* Asyncify.h */,
-				73316DC22003EEB300F3EE62 /* Info.plist */,
-			);
-			path = Asyncify;
-			sourceTree = "<group>";
-		};
 		73316DC62003F54100F3EE62 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +153,21 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7393364C2003FE7F00C41C6E /* Asyncify */ = {
+			isa = PBXGroup;
+			children = (
+				7393364A2003FE7500C41C6E /* Info.plist */,
+				739336482003FE4100C41C6E /* Asyncify.h */,
+			);
+			path = Asyncify;
+			sourceTree = "<group>";
+		};
 		73CFE22220008D72005A014D = {
 			isa = PBXGroup;
 			children = (
+				7393364C2003FE7F00C41C6E /* Asyncify */,
 				73316DC62003F54100F3EE62 /* Classes */,
 				73316DCB2003F54200F3EE62 /* AsyncifyTests */,
-				73316DBF2003EEB300F3EE62 /* Asyncify */,
 				73CFE22D20008D72005A014D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -189,7 +188,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73316DC42003EEB300F3EE62 /* Asyncify.h in Headers */,
+				739336492003FE4100C41C6E /* Asyncify.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73316DEB2003F54200F3EE62 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
