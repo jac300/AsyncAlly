@@ -1,5 +1,5 @@
 //
-//  AAMergeTests.swift
+//  AsyncMergeTests.swift
 //  AsyncifyTests
 //
 //  Created by Jennifer Clark on 1/5/18.
@@ -9,14 +9,14 @@
 import XCTest
 @testable import Asyncify
 
-class AAMergeTests: XCTestCase {
+class AsyncMergeTests: XCTestCase {
 
     func test_merge_1() {
 
         //Merge String, Int
         let expectation = XCTestExpectation(description: "test_merge_1")
 
-        Asyncify.merge(AAMockTasks.mockSuccess1, AAMockTasks.mockSuccess6, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6, completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -33,8 +33,8 @@ class AAMergeTests: XCTestCase {
         //Merge String, Int, Bool
         let expectation = XCTestExpectation(description: "test_merge_2")
 
-        Asyncify.merge(AAMockTasks.mockSuccess1, AAMockTasks.mockSuccess6,
-                        AAMockTasks.mockSuccess10, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6,
+                        AsyncMockTasks.mockSuccess10, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -53,8 +53,8 @@ class AAMergeTests: XCTestCase {
         //Merge String, Int, Bool, Int
         let expectation = XCTestExpectation(description: "test_merge_3")
 
-        Asyncify.merge(AAMockTasks.mockSuccess1, AAMockTasks.mockSuccess6,
-                        AAMockTasks.mockSuccess9, AAMockTasks.mockSuccess7, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6,
+                        AsyncMockTasks.mockSuccess9, AsyncMockTasks.mockSuccess7, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -74,8 +74,8 @@ class AAMergeTests: XCTestCase {
         //Merge String, Int, Bool, Int
         let expectation = XCTestExpectation(description: "test_merge_4")
 
-        Asyncify.merge(AAMockTasks.mockSuccess1, AAMockTasks.mockSuccess6,
-                        AAMockTasks.mockSuccess9, AAMockTasks.mockSuccess10, AAMockTasks.mockSuccess7, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6,
+                        AsyncMockTasks.mockSuccess9, AsyncMockTasks.mockSuccess10, AsyncMockTasks.mockSuccess7, completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -95,8 +95,8 @@ class AAMergeTests: XCTestCase {
         //Merge String, Int, Bool, Int, String with errors
         let expectation = XCTestExpectation(description: "test_merge_5")
 
-        Asyncify.merge(AAMockTasks.mockSuccess1, AAMockTasks.mockFailure2,
-                        AAMockTasks.mockFailure3, AAMockTasks.mockSuccess6, AAMockTasks.mockSuccess2, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockFailure2,
+                        AsyncMockTasks.mockFailure3, AsyncMockTasks.mockSuccess6, AsyncMockTasks.mockSuccess2, completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -116,8 +116,8 @@ class AAMergeTests: XCTestCase {
         //Merge String, Int, Bool with errors
         let expectation = XCTestExpectation(description: "test_merge_6")
 
-        Asyncify.merge(AAMockTasks.mockFailure1, AAMockTasks.mockFailure2,
-                        AAMockTasks.mockFailure3, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
+                        AsyncMockTasks.mockFailure3, completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 

@@ -1,5 +1,5 @@
 //
-//  AAMockAsyncFunctions.swift
+//  AsyncMockFunctions.swift
 //  AsyncifyTests
 //
 //  Created by Jennifer Clark on 1/6/18.
@@ -9,7 +9,7 @@
 import Foundation
 @testable import Asyncify
 
-struct MockAsyncFunctions {
+struct AsyncMockFunctions {
 
     private static let queue = DispatchQueue(label: "Asyncify_test_queue", qos: .background)
     typealias FunctionType<T> = (@escaping (T) -> Void, @escaping (Error?) -> Void) -> URLSessionDataTask

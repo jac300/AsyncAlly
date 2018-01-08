@@ -1,5 +1,5 @@
 //
-//  AA+Zip.swift
+//  AsyncZip.swift
 //
 //  Created by Jennifer Clark on 1/6/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
@@ -26,7 +26,7 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A>(_ tasks: [AATask<A>],
+    @discardableResult public static func zip<A>(_ tasks: [AsyncTask<A>],
                                                  observeOn: DispatchQueue = DispatchQueue.main,
                                                  completion: @escaping (([A?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -69,8 +69,8 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B>(_ a: [AATask<A>],
-                                                    _ b: [AATask<B>],
+    @discardableResult public static func zip<A, B>(_ a: [AsyncTask<A>],
+                                                    _ b: [AsyncTask<B>],
                                                     observeOn: DispatchQueue = DispatchQueue.main,
                                                     completion: @escaping (([A?], [B?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -116,9 +116,9 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B, C>(_ a: [AATask<A>],
-                                                       _ b: [AATask<B>],
-                                                       _ c: [AATask<C>],
+    @discardableResult public static func zip<A, B, C>(_ a: [AsyncTask<A>],
+                                                       _ b: [AsyncTask<B>],
+                                                       _ c: [AsyncTask<C>],
                                                        observeOn: DispatchQueue = DispatchQueue.main,
                                                        completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -166,10 +166,10 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B, C, D>(_ a: [AATask<A>],
-                                                          _ b: [AATask<B>],
-                                                          _ c: [AATask<C>],
-                                                          _ d: [AATask<D>],
+    @discardableResult public static func zip<A, B, C, D>(_ a: [AsyncTask<A>],
+                                                          _ b: [AsyncTask<B>],
+                                                          _ c: [AsyncTask<C>],
+                                                          _ d: [AsyncTask<D>],
                                                           observeOn: DispatchQueue = DispatchQueue.main,
                                                           completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -219,11 +219,11 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B, C, D, E>(_ a: [AATask<A>],
-                                                             _ b: [AATask<B>],
-                                                             _ c: [AATask<C>],
-                                                             _ d: [AATask<D>],
-                                                             _ e: [AATask<E>],
+    @discardableResult public static func zip<A, B, C, D, E>(_ a: [AsyncTask<A>],
+                                                             _ b: [AsyncTask<B>],
+                                                             _ c: [AsyncTask<C>],
+                                                             _ d: [AsyncTask<D>],
+                                                             _ e: [AsyncTask<E>],
                                                              observeOn: DispatchQueue = DispatchQueue.main,
                                                              completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
@@ -285,7 +285,7 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A>(_ tasks: [AATaskVoid<A>],
+    public static func zip<A>(_ tasks: [AsyncTaskVoid<A>],
                               observeOn: DispatchQueue = DispatchQueue.main,
                               completion: @escaping (([A?]), [Error]) -> Void) {
         
@@ -323,8 +323,8 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B>(_ a: [AATaskVoid<A>],
-                                 _ b: [AATaskVoid<B>],
+    public static func zip<A, B>(_ a: [AsyncTaskVoid<A>],
+                                 _ b: [AsyncTaskVoid<B>],
                                  observeOn: DispatchQueue = DispatchQueue.main,
                                  completion: @escaping (([A?], [B?]), [Error]) -> Void) {
         
@@ -365,9 +365,9 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B, C>(_ a: [AATaskVoid<A>],
-                                    _ b: [AATaskVoid<B>],
-                                    _ c: [AATaskVoid<C>],
+    public static func zip<A, B, C>(_ a: [AsyncTaskVoid<A>],
+                                    _ b: [AsyncTaskVoid<B>],
+                                    _ c: [AsyncTaskVoid<C>],
                                     observeOn: DispatchQueue = DispatchQueue.main,
                                     completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) {
         
@@ -410,10 +410,10 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B, C, D>(_ a: [AATaskVoid<A>],
-                                       _ b: [AATaskVoid<B>],
-                                       _ c: [AATaskVoid<C>],
-                                       _ d: [AATaskVoid<D>],
+    public static func zip<A, B, C, D>(_ a: [AsyncTaskVoid<A>],
+                                       _ b: [AsyncTaskVoid<B>],
+                                       _ c: [AsyncTaskVoid<C>],
+                                       _ d: [AsyncTaskVoid<D>],
                                        observeOn: DispatchQueue = DispatchQueue.main,
                                        completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) {
         
@@ -458,11 +458,11 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B, C, D, E>(_ a: [AATaskVoid<A>],
-                                          _ b: [AATaskVoid<B>],
-                                          _ c: [AATaskVoid<C>],
-                                          _ d: [AATaskVoid<D>],
-                                          _ e: [AATaskVoid<E>],
+    public static func zip<A, B, C, D, E>(_ a: [AsyncTaskVoid<A>],
+                                          _ b: [AsyncTaskVoid<B>],
+                                          _ c: [AsyncTaskVoid<C>],
+                                          _ d: [AsyncTaskVoid<D>],
+                                          _ e: [AsyncTaskVoid<E>],
                                           observeOn: DispatchQueue = DispatchQueue.main,
                                           completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) {
         

@@ -1,22 +1,22 @@
 //
-//  AAZipVoidTests.swift
+//  AsyncZipTests.swift
 //  AsyncifyTests
 //
-//  Created by Jennifer Clark on 1/7/18.
+//  Created by Jennifer Clark on 1/5/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
 //
 
 import XCTest
 @testable import Asyncify
 
-class AAZipVoidTests: XCTestCase {
+class AsyncZipTests: XCTestCase {
 
-    func test_void_zip_1() {
+    func test_zip_1() {
 
         //Zip 3 String
-        let expectation = XCTestExpectation(description: "test_void_zip_1")
+        let expectation = XCTestExpectation(description: "test_zip_1")
 
-        Asyncify.zip(AAMockVoidZips.zip_3_str, completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_3_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.count == 3, "3 String values were produced.")
@@ -30,12 +30,12 @@ class AAZipVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_zip_2() {
+    func test_zip_2() {
 
         //Zip 5 String
-        let expectation = XCTestExpectation(description: "test_void_zip_2")
+        let expectation = XCTestExpectation(description: "test_zip_2")
 
-        Asyncify.zip(AAMockVoidZips.zip_5_str, completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_5_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.count == 5, "5 String values were produced.")
@@ -52,12 +52,12 @@ class AAZipVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_zip_3() {
+    func test_zip_3() {
 
         //Zip 3 Int, 2 String
-        let expectation = XCTestExpectation(description: "test_void_zip_2")
+        let expectation = XCTestExpectation(description: "test_zip_3")
 
-        Asyncify.zip(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_2_str, completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -76,12 +76,12 @@ class AAZipVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_zip_4() {
+    func test_zip_4() {
 
         //Zip 3 Int, 2 String, 3 Bool
-        let expectation = XCTestExpectation(description: "test_void_zip_4")
+        let expectation = XCTestExpectation(description: "test_zip_4")
 
-        Asyncify.zip(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_2_str, AAMockVoidZips.zip_3_bool, completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockZips.zip_3_bool, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -105,13 +105,12 @@ class AAZipVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_zip_5() {
+    func test_zip_5() {
 
         //Zip 3 Int, 2 String, 3 Bool, 3 [String]
-        let expectation = XCTestExpectation(description: "test_void_zip_5")
+        let expectation = XCTestExpectation(description: "test_zip_5")
 
-        Asyncify.zip(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_2_str, AAMockVoidZips.zip_3_bool,
-                     AAMockVoidZips.zip_3_strArr, completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockZips.zip_3_bool, AsyncMockZips.zip_3_strArr, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -140,14 +139,13 @@ class AAZipVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_zip_6() {
+    func test_zip_6() {
 
         //Zip 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int]
-        let expectation = XCTestExpectation(description: "test_void_zip_6")
+        let expectation = XCTestExpectation(description: "test_zip_6")
 
-        Asyncify.zip(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_2_str, AAMockVoidZips.zip_3_bool,
-                     AAMockVoidZips.zip_3_strArr, AAMockVoidZips.zip_2_intArr,
-                     completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockZips.zip_3_bool, AsyncMockZips.zip_3_strArr, AsyncMockZips.zip_2_intArr,
+                      completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
                         XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -180,13 +178,13 @@ class AAZipVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_zip_7() {
+    func test_zip_7() {
 
         //Zip 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int] with failures
-        let expectation = XCTestExpectation(description: "test_void_zip_7")
+        let expectation = XCTestExpectation(description: "test_zip_7")
 
-        Asyncify.zip(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_4_str, AAMockVoidZips.zip_3_bool,
-                     AAMockVoidZips.zip_4_strArr, AAMockVoidZips.zip_2_intArr, completion: { value, error in
+        Asyncify.zip(AsyncMockZips.zip_3_int, AsyncMockZips.zip_4_str, AsyncMockZips.zip_3_bool, AsyncMockZips.zip_4_strArr,
+                      AsyncMockZips.zip_2_intArr, completion: { value, error in
 
                         XCTAssertTrue(error.count == 1, "1 error produced.")
                         XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")

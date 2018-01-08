@@ -1,5 +1,5 @@
 //
-//  AATaskGenerator.swift
+//  AsyncTaskGenerator.swift
 //  AsyncifyTests
 //
 //  Created by Jennifer Clark on 1/6/18.
@@ -9,7 +9,7 @@
 import Foundation
 @testable import Asyncify
 
-func generateAATask<T>(from function: @escaping MockAsyncFunctions.FunctionType<T>) -> AATask<T> {
+func generateAsyncTask<T>(from function: @escaping AsyncMockFunctions.FunctionType<T>) -> AsyncTask<T> {
 
     return { success, failure in
         return function({ value in
@@ -20,7 +20,7 @@ func generateAATask<T>(from function: @escaping MockAsyncFunctions.FunctionType<
     }
 }
 
-func generateAAVoidTask<T>(from function: @escaping MockAsyncFunctions.FunctionTypeVoid<T>) -> AATaskVoid<T> {
+func generateAsyncVoidTask<T>(from function: @escaping AsyncMockFunctions.FunctionTypeVoid<T>) -> AsyncTaskVoid<T> {
 
     return { success, failure in
         function({ value in

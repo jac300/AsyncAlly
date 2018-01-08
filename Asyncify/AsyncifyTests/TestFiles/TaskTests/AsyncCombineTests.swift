@@ -1,5 +1,5 @@
 //
-//  AACombineTests.swift
+//  AsyncCombineTests.swift
 //  AsyncifyTests
 //
 //  Created by Jennifer Clark on 1/5/18.
@@ -9,14 +9,14 @@
 import XCTest
 @testable import Asyncify
 
-class AACombineTests: XCTestCase {
+class AsyncCombineTests: XCTestCase {
 
     func test_combine_1() {
 
         //Combine [Int], String
         let expectation = XCTestExpectation(description: "test_combine_1")
 
-        Asyncify.combine(AAMockZips.zip_3_int, AAMockTasks.mockSuccess1, completion: { value, error in
+        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -35,7 +35,7 @@ class AACombineTests: XCTestCase {
         //Combine [Int], [String], String
         let expectation = XCTestExpectation(description: "test_combine_2")
 
-        Asyncify.combine(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockTasks.mockSuccess1, completion: { value, error in
+        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -58,7 +58,7 @@ class AACombineTests: XCTestCase {
         //Combine [Int], Bool, String
         let expectation = XCTestExpectation(description: "test_combine_3")
 
-        Asyncify.combine(AAMockZips.zip_3_int, AAMockTasks.mockSuccess11, AAMockTasks.mockSuccess2,
+        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
                           completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -81,7 +81,7 @@ class AACombineTests: XCTestCase {
         //Combine [Int], [String], Bool, String
         let expectation = XCTestExpectation(description: "test_combine_4")
 
-        Asyncify.combine(AAMockZips.zip_3_int, AAMockZips.zip_2_str, AAMockTasks.mockSuccess11, AAMockTasks.mockSuccess2,
+        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
                           completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -107,7 +107,7 @@ class AACombineTests: XCTestCase {
         //Merge [Int], String, Int with errors
         let expectation = XCTestExpectation(description: "test_combine_5")
 
-        Asyncify.combine(AAMockZips.zip_1_intArr, AAMockTasks.mockFailure1, AAMockTasks.mockFailure2,
+        Asyncify.combine(AsyncMockZips.zip_1_intArr, AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
                          completion: { value, error in
 
                             XCTAssertTrue(error.count == 1, "1 errors produced.")

@@ -1,5 +1,5 @@
 //
-//  AAMergeVoidTests.swift
+//  ASyncMergeVoidTests.swift
 //  AsyncifyTests
 //
 //  Created by Jennifer Clark on 1/7/18.
@@ -9,14 +9,14 @@
 import XCTest
 @testable import Asyncify
 
-class AAMergeVoidTests: XCTestCase {
+class ASyncMergeVoidTests: XCTestCase {
 
     func test_void_merge_1() {
 
         //Merge String, Int
         let expectation = XCTestExpectation(description: "test_void_merge_1")
 
-        Asyncify.merge(AAMockTasks.mockVoidSuccess1, AAMockTasks.mockVoidSuccess6, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockVoidSuccess1, AsyncMockTasks.mockVoidSuccess6, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -33,8 +33,8 @@ class AAMergeVoidTests: XCTestCase {
         //Merge String, Int, Bool
         let expectation = XCTestExpectation(description: "test_void_merge_2")
 
-        Asyncify.merge(AAMockTasks.mockVoidSuccess1, AAMockTasks.mockVoidSuccess6,
-                       AAMockTasks.mockVoidSuccess10, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockVoidSuccess1, AsyncMockTasks.mockVoidSuccess6,
+                       AsyncMockTasks.mockVoidSuccess10, completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -53,8 +53,8 @@ class AAMergeVoidTests: XCTestCase {
         //Merge String, Int, Bool, Int
         let expectation = XCTestExpectation(description: "test_void_merge_3")
 
-        Asyncify.merge(AAMockTasks.mockVoidSuccess1, AAMockTasks.mockVoidSuccess6,
-                       AAMockTasks.mockVoidSuccess9, AAMockTasks.mockVoidSuccess7, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockVoidSuccess1, AsyncMockTasks.mockVoidSuccess6,
+                       AsyncMockTasks.mockVoidSuccess9, AsyncMockTasks.mockVoidSuccess7, completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -74,8 +74,8 @@ class AAMergeVoidTests: XCTestCase {
         //Merge String, Int, Bool, Int
         let expectation = XCTestExpectation(description: "test_void_merge_4")
 
-        Asyncify.merge(AAMockTasks.mockVoidSuccess1, AAMockTasks.mockVoidSuccess6,
-                       AAMockTasks.mockVoidSuccess9, AAMockTasks.mockVoidSuccess10, AAMockTasks.mockVoidSuccess7, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockVoidSuccess1, AsyncMockTasks.mockVoidSuccess6,
+                       AsyncMockTasks.mockVoidSuccess9, AsyncMockTasks.mockVoidSuccess10, AsyncMockTasks.mockVoidSuccess7, completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -95,8 +95,8 @@ class AAMergeVoidTests: XCTestCase {
         //Merge String, Int, Bool, Int, String with errors
         let expectation = XCTestExpectation(description: "test_void_merge_5")
 
-        Asyncify.merge(AAMockTasks.mockVoidSuccess1, AAMockTasks.mockVoidFailure2,
-                       AAMockTasks.mockVoidFailure3, AAMockTasks.mockVoidSuccess6, AAMockTasks.mockVoidSuccess2, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockVoidSuccess1, AsyncMockTasks.mockVoidFailure2,
+                       AsyncMockTasks.mockVoidFailure3, AsyncMockTasks.mockVoidSuccess6, AsyncMockTasks.mockVoidSuccess2, completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -116,8 +116,8 @@ class AAMergeVoidTests: XCTestCase {
         //Merge String, Int, Bool with errors
         let expectation = XCTestExpectation(description: "test_void_merge_6")
 
-        Asyncify.merge(AAMockTasks.mockVoidFailure1, AAMockTasks.mockVoidFailure2,
-                       AAMockTasks.mockVoidFailure3, completion: { value, error in
+        Asyncify.merge(AsyncMockTasks.mockVoidFailure1, AsyncMockTasks.mockVoidFailure2,
+                       AsyncMockTasks.mockVoidFailure3, completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
