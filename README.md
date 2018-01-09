@@ -12,8 +12,6 @@ Includes code and notes describing sample usage.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 Asyncify is available through [CocoaPods](http://cocoapods.org). To install
@@ -28,7 +26,7 @@ Ayncify includes unit tests which can be run on the Asyncify framework.
 
 ## Credits
 
-Much inspired by [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift).
+Much inspired by, and greatly simplified from [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift).
 
 ## Author
 
