@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		73316DDD2003F54200F3EE62 /* AsyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC72003F54100F3EE62 /* AsyncTask.swift */; };
-		73316DDE2003F54200F3EE62 /* AsyncMerge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC82003F54100F3EE62 /* AsyncMerge.swift */; };
+		73316DDE2003F54200F3EE62 /* Asyncify+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC82003F54100F3EE62 /* Asyncify+Merge.swift */; };
 		73316DDF2003F54200F3EE62 /* AsyncCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DC92003F54100F3EE62 /* AsyncCombine.swift */; };
-		73316DE02003F54200F3EE62 /* AsyncZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCA2003F54100F3EE62 /* AsyncZip.swift */; };
-		73316DEC2003F56000F3EE62 /* AsyncZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCE2003F54200F3EE62 /* AsyncZipTests.swift */; };
+		73316DE02003F54200F3EE62 /* Asyncify+MergeArr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCA2003F54100F3EE62 /* Asyncify+MergeArr.swift */; };
+		73316DEC2003F56000F3EE62 /* AsyncMergeArrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCE2003F54200F3EE62 /* AsyncMergeArrTests.swift */; };
 		73316DED2003F56400F3EE62 /* AsyncMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DCF2003F54200F3EE62 /* AsyncMergeTests.swift */; };
 		73316DEE2003F56700F3EE62 /* AsyncCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD02003F54200F3EE62 /* AsyncCombineTests.swift */; };
 		73316DEF2003F56B00F3EE62 /* AsyncMergeVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD22003F54200F3EE62 /* AsyncMergeVoidTests.swift */; };
-		73316DF02003F56E00F3EE62 /* AsyncZipVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD32003F54200F3EE62 /* AsyncZipVoidTests.swift */; };
+		73316DF02003F56E00F3EE62 /* AsyncMergeArrVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD32003F54200F3EE62 /* AsyncMergeArrVoidTests.swift */; };
 		73316DF12003F57000F3EE62 /* AsyncCombineVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD42003F54200F3EE62 /* AsyncCombineVoidTests.swift */; };
 		73316DF22003F57700F3EE62 /* AsyncMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD72003F54200F3EE62 /* AsyncMockZips.swift */; };
 		73316DF32003F57B00F3EE62 /* AsyncMockFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD82003F54200F3EE62 /* AsyncMockFunctions.swift */; };
@@ -37,14 +37,14 @@
 
 /* Begin PBXFileReference section */
 		73316DC72003F54100F3EE62 /* AsyncTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTask.swift; sourceTree = "<group>"; };
-		73316DC82003F54100F3EE62 /* AsyncMerge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMerge.swift; sourceTree = "<group>"; };
+		73316DC82003F54100F3EE62 /* Asyncify+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Asyncify+Merge.swift"; sourceTree = "<group>"; };
 		73316DC92003F54100F3EE62 /* AsyncCombine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncCombine.swift; sourceTree = "<group>"; };
-		73316DCA2003F54100F3EE62 /* AsyncZip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncZip.swift; sourceTree = "<group>"; };
-		73316DCE2003F54200F3EE62 /* AsyncZipTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncZipTests.swift; sourceTree = "<group>"; };
+		73316DCA2003F54100F3EE62 /* Asyncify+MergeArr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Asyncify+MergeArr.swift"; sourceTree = "<group>"; };
+		73316DCE2003F54200F3EE62 /* AsyncMergeArrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMergeArrTests.swift; sourceTree = "<group>"; };
 		73316DCF2003F54200F3EE62 /* AsyncMergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMergeTests.swift; sourceTree = "<group>"; };
 		73316DD02003F54200F3EE62 /* AsyncCombineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncCombineTests.swift; sourceTree = "<group>"; };
 		73316DD22003F54200F3EE62 /* AsyncMergeVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMergeVoidTests.swift; sourceTree = "<group>"; };
-		73316DD32003F54200F3EE62 /* AsyncZipVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncZipVoidTests.swift; sourceTree = "<group>"; };
+		73316DD32003F54200F3EE62 /* AsyncMergeArrVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMergeArrVoidTests.swift; sourceTree = "<group>"; };
 		73316DD42003F54200F3EE62 /* AsyncCombineVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncCombineVoidTests.swift; sourceTree = "<group>"; };
 		73316DD72003F54200F3EE62 /* AsyncMockZips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMockZips.swift; sourceTree = "<group>"; };
 		73316DD82003F54200F3EE62 /* AsyncMockFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMockFunctions.swift; sourceTree = "<group>"; };
@@ -80,9 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				73316DC72003F54100F3EE62 /* AsyncTask.swift */,
-				73316DC82003F54100F3EE62 /* AsyncMerge.swift */,
+				73316DC82003F54100F3EE62 /* Asyncify+Merge.swift */,
+				73316DCA2003F54100F3EE62 /* Asyncify+MergeArr.swift */,
 				73316DC92003F54100F3EE62 /* AsyncCombine.swift */,
-				73316DCA2003F54100F3EE62 /* AsyncZip.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -109,8 +109,8 @@
 		73316DCD2003F54200F3EE62 /* TaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				73316DCE2003F54200F3EE62 /* AsyncZipTests.swift */,
 				73316DCF2003F54200F3EE62 /* AsyncMergeTests.swift */,
+				73316DCE2003F54200F3EE62 /* AsyncMergeArrTests.swift */,
 				73316DD02003F54200F3EE62 /* AsyncCombineTests.swift */,
 			);
 			path = TaskTests;
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				73316DD22003F54200F3EE62 /* AsyncMergeVoidTests.swift */,
-				73316DD32003F54200F3EE62 /* AsyncZipVoidTests.swift */,
+				73316DD32003F54200F3EE62 /* AsyncMergeArrVoidTests.swift */,
 				73316DD42003F54200F3EE62 /* AsyncCombineVoidTests.swift */,
 			);
 			path = TaskVoidTests;
@@ -292,10 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73316DDE2003F54200F3EE62 /* AsyncMerge.swift in Sources */,
+				73316DDE2003F54200F3EE62 /* Asyncify+Merge.swift in Sources */,
 				73316DDD2003F54200F3EE62 /* AsyncTask.swift in Sources */,
 				73316DDF2003F54200F3EE62 /* AsyncCombine.swift in Sources */,
-				73316DE02003F54200F3EE62 /* AsyncZip.swift in Sources */,
+				73316DE02003F54200F3EE62 /* Asyncify+MergeArr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,12 +307,12 @@
 				73316DEF2003F56B00F3EE62 /* AsyncMergeVoidTests.swift in Sources */,
 				73316DF52003F58300F3EE62 /* AsyncTaskGenerator.swift in Sources */,
 				73316DED2003F56400F3EE62 /* AsyncMergeTests.swift in Sources */,
-				73316DEC2003F56000F3EE62 /* AsyncZipTests.swift in Sources */,
+				73316DEC2003F56000F3EE62 /* AsyncMergeArrTests.swift in Sources */,
 				73316DF12003F57000F3EE62 /* AsyncCombineVoidTests.swift in Sources */,
 				73316DF22003F57700F3EE62 /* AsyncMockZips.swift in Sources */,
 				73316DEE2003F56700F3EE62 /* AsyncCombineTests.swift in Sources */,
 				73316DF42003F57E00F3EE62 /* AsyncMockTasks.swift in Sources */,
-				73316DF02003F56E00F3EE62 /* AsyncZipVoidTests.swift in Sources */,
+				73316DF02003F56E00F3EE62 /* AsyncMergeArrVoidTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

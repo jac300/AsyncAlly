@@ -38,7 +38,7 @@ extension Asyncify { //AATask functions
         var results: ([A?], B?) = ([], nil)
 
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, completion: { zipResults, zipErrors in
+        sessionDataTasks += merge(a, completion: { zipResults, zipErrors in
             results.0 = zipResults
             errors += zipErrors
             dispatchGroup.leave()
@@ -88,7 +88,7 @@ extension Asyncify { //AATask functions
         var results: ([A?], [B?], C?) = ([], [], nil)
 
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, b, completion: { zipResults, zipErrors in
+        sessionDataTasks += merge(a, b, completion: { zipResults, zipErrors in
             results.0 = zipResults.0
             results.1 = zipResults.1
             errors += zipErrors
@@ -139,7 +139,7 @@ extension Asyncify { //AATask functions
         var results: ([A?], B?, C?) = ([], nil, nil)
 
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, completion: { zipResults, zipErrors in
+        sessionDataTasks += merge(a, completion: { zipResults, zipErrors in
             results.0 = zipResults
             errors += zipErrors
             dispatchGroup.leave()
@@ -190,7 +190,7 @@ extension Asyncify { //AATask functions
         var results: ([A?], [B?], C?, D?) = ([], [], nil, nil)
 
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, b, completion: { zipResults, zipErrors in
+        sessionDataTasks += merge(a, b, completion: { zipResults, zipErrors in
             results.0 = zipResults.0
             results.1 = zipResults.1
             errors += zipErrors
@@ -237,7 +237,7 @@ extension Asyncify { //AATaskVoid functions
         var results: ([A?], B?) = ([], nil)
 
         dispatchGroup.enter()
-        zip(a, completion: { zipResults, zipErrors in
+        merge(a, completion: { zipResults, zipErrors in
             results.0 = zipResults
             errors += zipErrors
             dispatchGroup.leave()
@@ -282,7 +282,7 @@ extension Asyncify { //AATaskVoid functions
         var results: ([A?], [B?], C?) = ([], [], nil)
 
         dispatchGroup.enter()
-        zip(a, b, completion: { zipResults, zipErrors in
+        merge(a, b, completion: { zipResults, zipErrors in
             results.0 = zipResults.0
             results.1 = zipResults.1
             errors += zipErrors
@@ -328,7 +328,7 @@ extension Asyncify { //AATaskVoid functions
         var results: ([A?], B?, C?) = ([], nil, nil)
 
         dispatchGroup.enter()
-        zip(a, completion: { zipResults, zipErrors in
+        merge(a, completion: { zipResults, zipErrors in
             results.0 = zipResults
             errors += zipErrors
             dispatchGroup.leave()
@@ -374,7 +374,7 @@ extension Asyncify { //AATaskVoid functions
         var results: ([A?], [B?], C?, D?) = ([], [], nil, nil)
 
         dispatchGroup.enter()
-        zip(a, b, completion: { zipResults, zipErrors in
+        merge(a, b, completion: { zipResults, zipErrors in
             results.0 = zipResults.0
             results.1 = zipResults.1
             errors += zipErrors

@@ -1,5 +1,5 @@
 //
-//  AsyncZip.swift
+//  Async+MergeArr.swift
 //
 //  Created by Jennifer Clark on 1/6/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
@@ -26,9 +26,9 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A>(_ tasks: [AsyncTask<A>],
-                                                 observeOn: DispatchQueue = DispatchQueue.main,
-                                                 completion: @escaping (([A?]), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func merge<A>(_ tasks: [AsyncTask<A>],
+                                                   observeOn: DispatchQueue = DispatchQueue.main,
+                                                   completion: @escaping (([A?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -69,10 +69,10 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B>(_ a: [AsyncTask<A>],
-                                                    _ b: [AsyncTask<B>],
-                                                    observeOn: DispatchQueue = DispatchQueue.main,
-                                                    completion: @escaping (([A?], [B?]), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func merge<A, B>(_ a: [AsyncTask<A>],
+                                                      _ b: [AsyncTask<B>],
+                                                      observeOn: DispatchQueue = DispatchQueue.main,
+                                                      completion: @escaping (([A?], [B?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -80,16 +80,16 @@ public extension Asyncify { //AATask functions
         var results: ([A?], [B?]) = ([], [])
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, completion: { zipResults, zipErrors in
-            results.0 = zipResults
-            errors += zipErrors
+        sessionDataTasks += merge(a, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(b, completion: { zipResults, zipErrors in
-            results.1 = zipResults
-            errors += zipErrors
+        sessionDataTasks += merge(b, completion: { mergeResults, mergeErrors in
+            results.1 = mergeResults
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -116,11 +116,11 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B, C>(_ a: [AsyncTask<A>],
-                                                       _ b: [AsyncTask<B>],
-                                                       _ c: [AsyncTask<C>],
-                                                       observeOn: DispatchQueue = DispatchQueue.main,
-                                                       completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func merge<A, B, C>(_ a: [AsyncTask<A>],
+                                                         _ b: [AsyncTask<B>],
+                                                         _ c: [AsyncTask<C>],
+                                                         observeOn: DispatchQueue = DispatchQueue.main,
+                                                         completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -128,17 +128,17 @@ public extension Asyncify { //AATask functions
         var results: ([A?], [B?], [C?]) = ([], [], [])
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, b, completion: { zipResults, zipErrors in
-            results.0 = zipResults.0
-            results.1 = zipResults.1
-            errors += zipErrors
+        sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults.0
+            results.1 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(c, completion: { zipResults, zipErrors in
-            results.2 = zipResults
-            errors += zipErrors
+        sessionDataTasks += merge(c, completion: { mergeResults, mergeErrors in
+            results.2 = mergeResults
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -166,12 +166,12 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B, C, D>(_ a: [AsyncTask<A>],
-                                                          _ b: [AsyncTask<B>],
-                                                          _ c: [AsyncTask<C>],
-                                                          _ d: [AsyncTask<D>],
-                                                          observeOn: DispatchQueue = DispatchQueue.main,
-                                                          completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func merge<A, B, C, D>(_ a: [AsyncTask<A>],
+                                                            _ b: [AsyncTask<B>],
+                                                            _ c: [AsyncTask<C>],
+                                                            _ d: [AsyncTask<D>],
+                                                            observeOn: DispatchQueue = DispatchQueue.main,
+                                                            completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -179,18 +179,18 @@ public extension Asyncify { //AATask functions
         var results: ([A?], [B?], [C?], [D?]) = ([], [], [], [])
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, b, completion: { zipResults, zipErrors in
-            results.0 = zipResults.0
-            results.1 = zipResults.1
-            errors += zipErrors
+        sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults.0
+            results.1 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(c, d, completion: { zipResults, zipErrors in
-            results.2 = zipResults.0
-            results.3 = zipResults.1
-            errors += zipErrors
+        sessionDataTasks += merge(c, d, completion: { mergeResults, mergeErrors in
+            results.2 = mergeResults.0
+            results.3 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -219,13 +219,13 @@ public extension Asyncify { //AATask functions
     ///
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
-    @discardableResult public static func zip<A, B, C, D, E>(_ a: [AsyncTask<A>],
-                                                             _ b: [AsyncTask<B>],
-                                                             _ c: [AsyncTask<C>],
-                                                             _ d: [AsyncTask<D>],
-                                                             _ e: [AsyncTask<E>],
-                                                             observeOn: DispatchQueue = DispatchQueue.main,
-                                                             completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) -> [URLSessionDataTask] {
+    @discardableResult public static func merge<A, B, C, D, E>(_ a: [AsyncTask<A>],
+                                                               _ b: [AsyncTask<B>],
+                                                               _ c: [AsyncTask<C>],
+                                                               _ d: [AsyncTask<D>],
+                                                               _ e: [AsyncTask<E>],
+                                                               observeOn: DispatchQueue = DispatchQueue.main,
+                                                               completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) -> [URLSessionDataTask] {
         
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
@@ -233,19 +233,19 @@ public extension Asyncify { //AATask functions
         var results: ([A?], [B?], [C?], [D?], [E?]) = ([], [], [], [], [])
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(a, b, c, completion: { zipResults, zipErrors in
-            results.0 = zipResults.0
-            results.1 = zipResults.1
-            results.2 = zipResults.2
-            errors += zipErrors
+        sessionDataTasks += merge(a, b, c, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults.0
+            results.1 = mergeResults.1
+            results.2 = mergeResults.2
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        sessionDataTasks += zip(d, e, completion: { zipResults, zipErrors in
-            results.3 = zipResults.0
-            results.4 = zipResults.1
-            errors += zipErrors
+        sessionDataTasks += merge(d, e, completion: { mergeResults, mergeErrors in
+            results.3 = mergeResults.0
+            results.4 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -285,9 +285,9 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A>(_ tasks: [AsyncTaskVoid<A>],
-                              observeOn: DispatchQueue = DispatchQueue.main,
-                              completion: @escaping (([A?]), [Error]) -> Void) {
+    public static func merge<A>(_ tasks: [AsyncTaskVoid<A>],
+                                observeOn: DispatchQueue = DispatchQueue.main,
+                                completion: @escaping (([A?]), [Error]) -> Void) {
         
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
@@ -323,26 +323,26 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B>(_ a: [AsyncTaskVoid<A>],
-                                 _ b: [AsyncTaskVoid<B>],
-                                 observeOn: DispatchQueue = DispatchQueue.main,
-                                 completion: @escaping (([A?], [B?]), [Error]) -> Void) {
+    public static func merge<A, B>(_ a: [AsyncTaskVoid<A>],
+                                   _ b: [AsyncTaskVoid<B>],
+                                   observeOn: DispatchQueue = DispatchQueue.main,
+                                   completion: @escaping (([A?], [B?]), [Error]) -> Void) {
         
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
         var results: ([A?], [B?]) = ([], [])
         
         dispatchGroup.enter()
-        zip(a, completion: { zipResults, zipErrors in
-            results.0 = zipResults
-            errors += zipErrors
+        merge(a, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        zip(b, completion: { zipResults, zipErrors in
-            results.1 = zipResults
-            errors += zipErrors
+        merge(b, completion: { mergeResults, mergeErrors in
+            results.1 = mergeResults
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -365,28 +365,28 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B, C>(_ a: [AsyncTaskVoid<A>],
-                                    _ b: [AsyncTaskVoid<B>],
-                                    _ c: [AsyncTaskVoid<C>],
-                                    observeOn: DispatchQueue = DispatchQueue.main,
-                                    completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) {
+    public static func merge<A, B, C>(_ a: [AsyncTaskVoid<A>],
+                                      _ b: [AsyncTaskVoid<B>],
+                                      _ c: [AsyncTaskVoid<C>],
+                                      observeOn: DispatchQueue = DispatchQueue.main,
+                                      completion: @escaping (([A?], [B?], [C?]), [Error]) -> Void) {
         
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
         var results: ([A?], [B?], [C?]) = ([], [], [])
         
         dispatchGroup.enter()
-        zip(a, b, completion: { zipResults, zipErrors in
-            results.0 = zipResults.0
-            results.1 = zipResults.1
-            errors += zipErrors
+        merge(a, b, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults.0
+            results.1 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        zip(c, completion: { zipResults, zipErrors in
-            results.2 = zipResults
-            errors += zipErrors
+        merge(c, completion: { mergeResults, mergeErrors in
+            results.2 = mergeResults
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -410,30 +410,30 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B, C, D>(_ a: [AsyncTaskVoid<A>],
-                                       _ b: [AsyncTaskVoid<B>],
-                                       _ c: [AsyncTaskVoid<C>],
-                                       _ d: [AsyncTaskVoid<D>],
-                                       observeOn: DispatchQueue = DispatchQueue.main,
-                                       completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) {
+    public static func merge<A, B, C, D>(_ a: [AsyncTaskVoid<A>],
+                                         _ b: [AsyncTaskVoid<B>],
+                                         _ c: [AsyncTaskVoid<C>],
+                                         _ d: [AsyncTaskVoid<D>],
+                                         observeOn: DispatchQueue = DispatchQueue.main,
+                                         completion: @escaping (([A?], [B?], [C?], [D?]), [Error]) -> Void) {
         
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
         var results: ([A?], [B?], [C?], [D?]) = ([], [], [], [])
         
         dispatchGroup.enter()
-        zip(a, b, completion: { zipResults, zipErrors in
-            results.0 = zipResults.0
-            results.1 = zipResults.1
-            errors += zipErrors
+        merge(a, b, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults.0
+            results.1 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        zip(c, d, completion: { zipResults, zipErrors in
-            results.2 = zipResults.0
-            results.3 = zipResults.1
-            errors += zipErrors
+        merge(c, d, completion: { mergeResults, mergeErrors in
+            results.2 = mergeResults.0
+            results.3 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
@@ -458,32 +458,32 @@ public extension Asyncify { //AATaskVoid functions
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
-    public static func zip<A, B, C, D, E>(_ a: [AsyncTaskVoid<A>],
-                                          _ b: [AsyncTaskVoid<B>],
-                                          _ c: [AsyncTaskVoid<C>],
-                                          _ d: [AsyncTaskVoid<D>],
-                                          _ e: [AsyncTaskVoid<E>],
-                                          observeOn: DispatchQueue = DispatchQueue.main,
-                                          completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) {
+    public static func merge<A, B, C, D, E>(_ a: [AsyncTaskVoid<A>],
+                                            _ b: [AsyncTaskVoid<B>],
+                                            _ c: [AsyncTaskVoid<C>],
+                                            _ d: [AsyncTaskVoid<D>],
+                                            _ e: [AsyncTaskVoid<E>],
+                                            observeOn: DispatchQueue = DispatchQueue.main,
+                                            completion: @escaping (([A?], [B?], [C?], [D?], [E?]), [Error]) -> Void) {
         
         let dispatchGroup = DispatchGroup()
         var errors = [Error]()
         var results: ([A?], [B?], [C?], [D?], [E?]) = ([], [], [], [], [])
         
         dispatchGroup.enter()
-        zip(a, b, c, completion: { zipResults, zipErrors in
-            results.0 = zipResults.0
-            results.1 = zipResults.1
-            results.2 = zipResults.2
-            errors += zipErrors
+        merge(a, b, c, completion: { mergeResults, mergeErrors in
+            results.0 = mergeResults.0
+            results.1 = mergeResults.1
+            results.2 = mergeResults.2
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         
         dispatchGroup.enter()
-        zip(d, e, completion: { zipResults, zipErrors in
-            results.3 = zipResults.0
-            results.4 = zipResults.1
-            errors += zipErrors
+        merge(d, e, completion: { mergeResults, mergeErrors in
+            results.3 = mergeResults.0
+            results.4 = mergeResults.1
+            errors += mergeErrors
             dispatchGroup.leave()
         })
         

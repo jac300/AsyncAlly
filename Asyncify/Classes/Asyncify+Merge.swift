@@ -1,5 +1,5 @@
 //
-//  AsyncMerge.swift
+//  Async+Merge.swift
 //
 //  Created by Jennifer Clark on 1/6/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
