@@ -16,7 +16,7 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 3 String
         let expectation = XCTestExpectation(description: "test_merge_1")
 
-        Asyncify.merge(AsyncMockZips.zip_3_str, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.count == 3, "3 String values were produced.")
@@ -35,7 +35,7 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 5 String
         let expectation = XCTestExpectation(description: "test_merge_2")
 
-        Asyncify.merge(AsyncMockZips.zip_5_str, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_5_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.count == 5, "5 String values were produced.")
@@ -57,7 +57,7 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 3 Int, 2 String
         let expectation = XCTestExpectation(description: "test_merge_3")
 
-        Asyncify.merge(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -81,7 +81,7 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 3 Int, 2 String, 3 Bool
         let expectation = XCTestExpectation(description: "test_merge_4")
 
-        Asyncify.merge(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockZips.zip_3_bool, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockData.merge_3_bool, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -110,7 +110,7 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 3 Int, 2 String, 3 Bool, 3 [String]
         let expectation = XCTestExpectation(description: "test_merge_5")
 
-        Asyncify.merge(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockZips.zip_3_bool, AsyncMockZips.zip_3_strArr, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_3_strArr, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
@@ -144,7 +144,7 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int]
         let expectation = XCTestExpectation(description: "test_merge_6")
 
-        Asyncify.merge(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockZips.zip_3_bool, AsyncMockZips.zip_3_strArr, AsyncMockZips.zip_2_intArr,
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_3_strArr, AsyncMockData.merge_2_intArr,
                        completion: { value, error in
 
                         XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -183,8 +183,8 @@ class AsyncMergeArrTests: XCTestCase {
         //Merge 3 Int, 2 String, 3 Bool, 3 [String], 2 [Int] with failures
         let expectation = XCTestExpectation(description: "test_merge_7")
 
-        Asyncify.merge(AsyncMockZips.zip_3_int, AsyncMockZips.zip_4_str, AsyncMockZips.zip_3_bool, AsyncMockZips.zip_4_strArr,
-                       AsyncMockZips.zip_2_intArr, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_4_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_4_strArr,
+                       AsyncMockData.merge_2_intArr, completion: { value, error in
 
                         XCTAssertTrue(error.count == 1, "1 error produced.")
                         XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")

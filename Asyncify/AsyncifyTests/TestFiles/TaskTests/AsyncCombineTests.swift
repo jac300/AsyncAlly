@@ -16,7 +16,7 @@ class AsyncCombineTests: XCTestCase {
         //Combine [Int], String
         let expectation = XCTestExpectation(description: "test_combine_1")
 
-        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockTasks.mockSuccess1, completion: { value, error in
+        Asyncify.combine(AsyncMockData.merge_3_int, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -35,7 +35,7 @@ class AsyncCombineTests: XCTestCase {
         //Combine [Int], [String], String
         let expectation = XCTestExpectation(description: "test_combine_2")
 
-        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockTasks.mockSuccess1, completion: { value, error in
+        Asyncify.combine(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -58,7 +58,7 @@ class AsyncCombineTests: XCTestCase {
         //Combine [Int], Bool, String
         let expectation = XCTestExpectation(description: "test_combine_3")
 
-        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
+        Asyncify.combine(AsyncMockData.merge_3_int, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
                           completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -81,7 +81,7 @@ class AsyncCombineTests: XCTestCase {
         //Combine [Int], [String], Bool, String
         let expectation = XCTestExpectation(description: "test_combine_4")
 
-        Asyncify.combine(AsyncMockZips.zip_3_int, AsyncMockZips.zip_2_str, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
+        Asyncify.combine(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
                           completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -107,7 +107,7 @@ class AsyncCombineTests: XCTestCase {
         //Merge [Int], String, Int with errors
         let expectation = XCTestExpectation(description: "test_combine_5")
 
-        Asyncify.combine(AsyncMockZips.zip_1_intArr, AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
+        Asyncify.combine(AsyncMockData.merge_1_intArr, AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
                          completion: { value, error in
 
                             XCTAssertTrue(error.count == 1, "1 errors produced.")

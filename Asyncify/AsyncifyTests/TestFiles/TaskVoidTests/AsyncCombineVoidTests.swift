@@ -16,7 +16,7 @@ class AsyncCombineVoidTests: XCTestCase {
         //Combine [Int], String
         let expectation = XCTestExpectation(description: "test_void_combine_1")
 
-        Asyncify.combine(AAMockVoidZips.zip_3_int, AsyncMockTasks.mockVoidSuccess1, completion: { value, error in
+        Asyncify.combine(AAMockVoidData.merge_3_int, AsyncMockTasks.mockVoidSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -35,7 +35,7 @@ class AsyncCombineVoidTests: XCTestCase {
         //Combine [Int], [String], String
         let expectation = XCTestExpectation(description: "test_void_combine_2")
 
-        Asyncify.combine(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_2_str, AsyncMockTasks.mockVoidSuccess1, completion: { value, error in
+        Asyncify.combine(AAMockVoidData.merge_3_int, AAMockVoidData.merge_2_str, AsyncMockTasks.mockVoidSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -58,7 +58,7 @@ class AsyncCombineVoidTests: XCTestCase {
         //Combine [Int], Bool, String
         let expectation = XCTestExpectation(description: "test_void_combine_3")
 
-        Asyncify.combine(AAMockVoidZips.zip_3_int, AsyncMockTasks.mockVoidSuccess11, AsyncMockTasks.mockVoidSuccess2,
+        Asyncify.combine(AAMockVoidData.merge_3_int, AsyncMockTasks.mockVoidSuccess11, AsyncMockTasks.mockVoidSuccess2,
                          completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
@@ -81,7 +81,7 @@ class AsyncCombineVoidTests: XCTestCase {
         //Combine [Int], [String], Bool, String
         let expectation = XCTestExpectation(description: "test_void_combine_4")
 
-        Asyncify.combine(AAMockVoidZips.zip_3_int, AAMockVoidZips.zip_2_str, AsyncMockTasks.mockVoidSuccess11,
+        Asyncify.combine(AAMockVoidData.merge_3_int, AAMockVoidData.merge_2_str, AsyncMockTasks.mockVoidSuccess11,
                          AsyncMockTasks.mockVoidSuccess2,
                          completion: { value, error in
 
@@ -108,7 +108,7 @@ class AsyncCombineVoidTests: XCTestCase {
         //Merge [Int], String, Int with errors
         let expectation = XCTestExpectation(description: "test_void_combine_5")
 
-        Asyncify.combine(AAMockVoidZips.zip_1_intArr, AsyncMockTasks.mockVoidFailure1,
+        Asyncify.combine(AAMockVoidData.merge_1_intArr, AsyncMockTasks.mockVoidFailure1,
                          AsyncMockTasks.mockVoidFailure2,
                          completion: { value, error in
 

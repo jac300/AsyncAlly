@@ -17,7 +17,7 @@
 		73316DEF2003F56B00F3EE62 /* AsyncMergeVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD22003F54200F3EE62 /* AsyncMergeVoidTests.swift */; };
 		73316DF02003F56E00F3EE62 /* AsyncMergeArrVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD32003F54200F3EE62 /* AsyncMergeArrVoidTests.swift */; };
 		73316DF12003F57000F3EE62 /* AsyncCombineVoidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD42003F54200F3EE62 /* AsyncCombineVoidTests.swift */; };
-		73316DF22003F57700F3EE62 /* AsyncMockZips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD72003F54200F3EE62 /* AsyncMockZips.swift */; };
+		73316DF22003F57700F3EE62 /* AsyncMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD72003F54200F3EE62 /* AsyncMockData.swift */; };
 		73316DF32003F57B00F3EE62 /* AsyncMockFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD82003F54200F3EE62 /* AsyncMockFunctions.swift */; };
 		73316DF42003F57E00F3EE62 /* AsyncMockTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD92003F54200F3EE62 /* AsyncMockTasks.swift */; };
 		73316DF52003F58300F3EE62 /* AsyncTaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DDB2003F54200F3EE62 /* AsyncTaskGenerator.swift */; };
@@ -46,7 +46,7 @@
 		73316DD22003F54200F3EE62 /* AsyncMergeVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMergeVoidTests.swift; sourceTree = "<group>"; };
 		73316DD32003F54200F3EE62 /* AsyncMergeArrVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMergeArrVoidTests.swift; sourceTree = "<group>"; };
 		73316DD42003F54200F3EE62 /* AsyncCombineVoidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncCombineVoidTests.swift; sourceTree = "<group>"; };
-		73316DD72003F54200F3EE62 /* AsyncMockZips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMockZips.swift; sourceTree = "<group>"; };
+		73316DD72003F54200F3EE62 /* AsyncMockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMockData.swift; sourceTree = "<group>"; };
 		73316DD82003F54200F3EE62 /* AsyncMockFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMockFunctions.swift; sourceTree = "<group>"; };
 		73316DD92003F54200F3EE62 /* AsyncMockTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMockTasks.swift; sourceTree = "<group>"; };
 		73316DDB2003F54200F3EE62 /* AsyncTaskGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTaskGenerator.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		73316DD62003F54200F3EE62 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
-				73316DD72003F54200F3EE62 /* AsyncMockZips.swift */,
+				73316DD72003F54200F3EE62 /* AsyncMockData.swift */,
 				73316DD82003F54200F3EE62 /* AsyncMockFunctions.swift */,
 				73316DD92003F54200F3EE62 /* AsyncMockTasks.swift */,
 			);
@@ -309,7 +309,7 @@
 				73316DED2003F56400F3EE62 /* AsyncMergeTests.swift in Sources */,
 				73316DEC2003F56000F3EE62 /* AsyncMergeArrTests.swift in Sources */,
 				73316DF12003F57000F3EE62 /* AsyncCombineVoidTests.swift in Sources */,
-				73316DF22003F57700F3EE62 /* AsyncMockZips.swift in Sources */,
+				73316DF22003F57700F3EE62 /* AsyncMockData.swift in Sources */,
 				73316DEE2003F56700F3EE62 /* AsyncCombineTests.swift in Sources */,
 				73316DF42003F57E00F3EE62 /* AsyncMockTasks.swift in Sources */,
 				73316DF02003F56E00F3EE62 /* AsyncMergeArrVoidTests.swift in Sources */,
