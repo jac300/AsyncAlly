@@ -1,22 +1,22 @@
 //
-//  AsyncCombineVoidTests.swift
+//  AsyncMergeVariedTests.swift
 //  AsyncifyTests
 //
-//  Created by Jennifer Clark on 1/7/18.
+//  Created by Jennifer Clark on 1/5/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
 //
 
 import XCTest
 @testable import Asyncify
 
-class AsyncCombineVoidTests: XCTestCase {
+class AsyncMergeVariedTests: XCTestCase {
 
-    func test_void_combine_1() {
+    func test_merge_1() {
 
-        //Combine [Int], String
-        let expectation = XCTestExpectation(description: "test_void_combine_1")
+        //Merge [Int], String
+        let expectation = XCTestExpectation(description: "test_merge_1")
 
-        Asyncify.combine(AAMockVoidData.merge_3_int, AsyncMockTasks.mockVoidSuccess1, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -30,12 +30,12 @@ class AsyncCombineVoidTests: XCTestCase {
 
         wait(for: [expectation], timeout: 100.0)
     }
-    func test_void_combine_2() {
+    func test_merge_2() {
 
-        //Combine [Int], [String], String
-        let expectation = XCTestExpectation(description: "test_void_combine_2")
+        //Merge [Int], [String], String
+        let expectation = XCTestExpectation(description: "test_merge_2")
 
-        Asyncify.combine(AAMockVoidData.merge_3_int, AAMockVoidData.merge_2_str, AsyncMockTasks.mockVoidSuccess1, completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -53,37 +53,36 @@ class AsyncCombineVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_combine_3() {
+    func test_merge_3() {
 
-        //Combine [Int], Bool, String
-        let expectation = XCTestExpectation(description: "test_void_combine_3")
+        //Merge [Int], Bool, String
+        let expectation = XCTestExpectation(description: "test_merge_3")
 
-        Asyncify.combine(AAMockVoidData.merge_3_int, AsyncMockTasks.mockVoidSuccess11, AsyncMockTasks.mockVoidSuccess2,
-                         completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
+                          completion: { value, error in
 
-                            XCTAssertTrue(error.isEmpty, "0 errors produced.")
+            XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
-                            XCTAssertTrue(value.0[0] == 6, "Int with value 6 was stored in the .0[0] position.")
-                            XCTAssertTrue(value.0[1] == 7, "Int with value 7 was stored in the .0[1] position.")
-                            XCTAssertTrue(value.0[2] == 8, "Int with value 8 was stored in the .0[2] position.")
+            XCTAssertTrue(value.0[0] == 6, "Int with value 6 was stored in the .0[0] position.")
+            XCTAssertTrue(value.0[1] == 7, "Int with value 7 was stored in the .0[1] position.")
+            XCTAssertTrue(value.0[2] == 8, "Int with value 8 was stored in the .0[2] position.")
 
-                            XCTAssertTrue(value.1 == true, "Bool with value true was stored in the .1 position.")
+            XCTAssertTrue(value.1 == true, "Bool with value true was stored in the .1 position.")
 
-                            XCTAssertTrue(value.2 == "2", "String with value 2 was stored in the .2 position.")
-                            expectation.fulfill()
+            XCTAssertTrue(value.2 == "2", "String with value 2 was stored in the .2 position.")
+            expectation.fulfill()
         })
 
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_combine_4() {
+    func test_merge_4() {
 
-        //Combine [Int], [String], Bool, String
-        let expectation = XCTestExpectation(description: "test_void_combine_4")
+        //Merge [Int], [String], Bool, String
+        let expectation = XCTestExpectation(description: "test_merge_4")
 
-        Asyncify.combine(AAMockVoidData.merge_3_int, AAMockVoidData.merge_2_str, AsyncMockTasks.mockVoidSuccess11,
-                         AsyncMockTasks.mockVoidSuccess2,
-                         completion: { value, error in
+        Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
+                          completion: { value, error in
 
                             XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
@@ -103,13 +102,12 @@ class AsyncCombineVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 
-    func test_void_combine_5() {
+    func test_merge_5() {
 
         //Merge [Int], String, Int with errors
-        let expectation = XCTestExpectation(description: "test_void_combine_5")
+        let expectation = XCTestExpectation(description: "test_merge_5")
 
-        Asyncify.combine(AAMockVoidData.merge_1_intArr, AsyncMockTasks.mockVoidFailure1,
-                         AsyncMockTasks.mockVoidFailure2,
+        Asyncify.merge(AsyncMockData.merge_1_intArr, AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
                          completion: { value, error in
 
                             XCTAssertTrue(error.count == 1, "1 errors produced.")
@@ -123,3 +121,4 @@ class AsyncCombineVoidTests: XCTestCase {
         wait(for: [expectation], timeout: 100.0)
     }
 }
+

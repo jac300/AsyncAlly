@@ -1,5 +1,5 @@
 //
-//  Async+MergeArr.swift
+//  Asyncify+MergeArrayType.swift
 //
 //  Created by Jennifer Clark on 1/6/18.
 //  Copyright © 2018 Jennifer Clark. All rights reserved.
