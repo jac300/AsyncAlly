@@ -8,6 +8,8 @@
 
 ## Example
 
+Includes code and notes describing sample usage.
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
@@ -20,6 +22,13 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'Asyncify'
 ```
+## Unit Tests
+
+Ayncify includes unit tests which can be run on the Asyncify framework.
+
+## Credits
+
+Much inspired by [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift).
 
 ## Author
 
