@@ -18,7 +18,7 @@ class ExampleViewController: UIViewController {
     lazy var displayLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.frame = view.frame
+        label.frame = self.view.frame
         label.backgroundColor = .white
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
