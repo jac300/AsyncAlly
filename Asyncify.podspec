@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Asyncify"
   s.version          = "0.0.2"
-  s.xcconfig         = { 'SWIFT_VERSION' => '4.0' }
+  s.pod_target_xcconfig = { 'CLANG_CXX_LANGUAGE_STANDARD' => 'compiler-default', 'OTHER_CPLUSPLUSFLAGS' => '-std=c++1y $(inherited)' }
   s.summary          = "Simplify Asynchronous Tasking"
   s.description      = "Utilities which support the converging of asynchronous tasks"
   s.homepage         = "https://github.com/jac300/Asyncify"
