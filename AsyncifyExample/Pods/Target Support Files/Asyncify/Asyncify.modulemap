@@ -1,0 +1,6 @@
+framework module Asyncify {
+  umbrella header "Asyncify-umbrella.h"
+
+  export *
+  module * { export * }
+}
