@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,15 +31,15 @@
 
 /* Begin PBXFileReference section */
 		0C3A6807EADFD4ED103B39C38D70E7FB /* Pods-AsyncifyExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AsyncifyExample-umbrella.h"; sourceTree = "<group>"; };
-		1A67FB35FAFA1776F764BD268A5006F8 /* Pods_AsyncifyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AsyncifyExample.framework; path = "Pods-AsyncifyExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A67FB35FAFA1776F764BD268A5006F8 /* Pods_AsyncifyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsyncifyExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDF4D3175938024160AA0123175ED7C /* Pods-AsyncifyExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AsyncifyExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		37A13DAF9B48691F1C0296D1A530CC2A /* Asyncify-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asyncify-prefix.pch"; sourceTree = "<group>"; };
-		42961097268E17275B1E478002D7D210 /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Asyncify.framework; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42961097268E17275B1E478002D7D210 /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD1EF6ED81587AAB38F4F111DBE37FA /* Asyncify+MergeVariedType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Asyncify+MergeVariedType.swift"; path = "Asyncify/Classes/Asyncify+MergeVariedType.swift"; sourceTree = "<group>"; };
 		5B48BB20D94EA5E72BD658F7BB8C7859 /* Asyncify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Asyncify.xcconfig; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6D4809A3B9B0400D294DD4A55D1927C4 /* Asyncify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Asyncify-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		964B24AD4B32258A19F4FC8C3A934B61 /* Pods-AsyncifyExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AsyncifyExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA024D42AE81BF923A21FBB11003A15 /* Pods-AsyncifyExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AsyncifyExample-frameworks.sh"; sourceTree = "<group>"; };
 		A7EBC916AE7AE1A4DF95B99AE0708B0D /* Pods-AsyncifyExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AsyncifyExample-dummy.m"; sourceTree = "<group>"; };
@@ -49,11 +49,11 @@
 		C75F787F91E19CDC491FCF4E93C763C1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E770325D470C4D0E43FE4174F7FB93 /* Pods-AsyncifyExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AsyncifyExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		D0BB475A6C5CED76BA279C185D924C58 /* Pods-AsyncifyExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AsyncifyExample-resources.sh"; sourceTree = "<group>"; };
-		D95AC9F6634D2F28E1286E313FF339C4 /* Pods-AsyncifyExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AsyncifyExample.modulemap"; sourceTree = "<group>"; };
+		D95AC9F6634D2F28E1286E313FF339C4 /* Pods-AsyncifyExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AsyncifyExample.modulemap"; sourceTree = "<group>"; };
 		EF366F64C0E2984D1268842F97483BEE /* AsyncTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncTask.swift; path = Asyncify/Classes/AsyncTask.swift; sourceTree = "<group>"; };
 		EF7CDBAB9C8FA5F7247E4507D4E86E1B /* Pods-AsyncifyExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AsyncifyExample.release.xcconfig"; sourceTree = "<group>"; };
 		F1F59E4E44E64A5034EEB72E48E03E24 /* Asyncify-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asyncify-umbrella.h"; sourceTree = "<group>"; };
-		F5680B0A3F65988DC99E789B46938B0E /* Asyncify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Asyncify.modulemap; sourceTree = "<group>"; };
+		F5680B0A3F65988DC99E789B46938B0E /* Asyncify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Asyncify.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +314,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -346,7 +345,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -472,6 +470,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -532,6 +531,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
