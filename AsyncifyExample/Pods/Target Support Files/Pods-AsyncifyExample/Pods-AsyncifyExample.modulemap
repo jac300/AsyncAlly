@@ -1,6 +1,0 @@
-framework module Pods_AsyncifyExample {
-  umbrella header "Pods-AsyncifyExample-umbrella.h"
-
-  export *
-  module * { export * }
-}
