@@ -2,5 +2,6 @@ use_frameworks!
 platform :ios, '9.3'
 
 target 'AsyncifyExample' do
-  pod 'Asyncify', :path => '../'
+    pod 'Asyncify', '0.0.2'
+  #pod 'Asyncify', :path => '../'
 end
