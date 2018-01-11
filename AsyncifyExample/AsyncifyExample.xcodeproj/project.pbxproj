@@ -11,7 +11,6 @@
 		739958992002D63600336837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739958982002D63600336837 /* AppDelegate.swift */; };
 		7399589B2002D63600336837 /* ExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7399589A2002D63600336837 /* ExViewController.swift */; };
 		739958A02002D63600336837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7399589F2002D63600336837 /* Assets.xcassets */; };
-		739958A32002D63600336837 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739958A12002D63600336837 /* LaunchScreen.storyboard */; };
 		73CEF8BF2002FCB200F5BBAF /* ExViewController+LabelDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8BE2002FCB200F5BBAF /* ExViewController+LabelDisplay.swift */; };
 		73CEF8C12002FD6800F5BBAF /* TaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEF8C02002FD6800F5BBAF /* TaskGenerator.swift */; };
 /* End PBXBuildFile section */
@@ -23,7 +22,6 @@
 		739958982002D63600336837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7399589A2002D63600336837 /* ExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExViewController.swift; sourceTree = "<group>"; };
 		7399589F2002D63600336837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		739958A22002D63600336837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		739958A42002D63600336837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CEF8BE2002FCB200F5BBAF /* ExViewController+LabelDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExViewController+LabelDisplay.swift"; sourceTree = "<group>"; };
 		73CEF8C02002FD6800F5BBAF /* TaskGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGenerator.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				73CEF8C22002FD7400F5BBAF /* Classes */,
 				739958982002D63600336837 /* AppDelegate.swift */,
 				7399589F2002D63600336837 /* Assets.xcassets */,
-				739958A12002D63600336837 /* LaunchScreen.storyboard */,
 				739958A42002D63600336837 /* Info.plist */,
 			);
 			path = AsyncifyExample;
@@ -161,7 +158,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				739958A32002D63600336837 /* LaunchScreen.storyboard in Resources */,
 				739958A02002D63600336837 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,17 +232,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		739958A12002D63600336837 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				739958A22002D63600336837 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		739958A52002D63600336837 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -296,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -365,6 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K625858FBU;
 				INFOPLIST_FILE = AsyncifyExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JenniferClark.AsyncifyExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K625858FBU;
 				INFOPLIST_FILE = AsyncifyExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JenniferClark.AsyncifyExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,5 +1,5 @@
 PODS:
-  - Asyncify (0.0.1)
+  - Asyncify (0.0.2)
 
 DEPENDENCIES:
   - Asyncify (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Asyncify: 102fb6a47539989a98cb64883c947e2f9f5b7588
+  Asyncify: 52882a930e4e77c4417498b95fa2286dbcc970cf
 
 PODFILE CHECKSUM: eab3744175c43bc54ce281ca7eb020cecdd07b53
 
