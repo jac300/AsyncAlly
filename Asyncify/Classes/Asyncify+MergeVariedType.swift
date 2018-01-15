@@ -30,17 +30,19 @@ extension Asyncify { //AATask functions
     @discardableResult public static func merge<A, B>(_ a: [AsyncTask<A>],
                                                       _ b: AsyncTask<B>,
                                                       observeOn: DispatchQueue = DispatchQueue.main,
-                                                      completion: @escaping (([A?], B?), [Error]) -> Void) -> [URLSessionDataTask] {
+                                                      success: ((([A], B)) -> Void)? = nil,
+                                                      failure: ((([Error?], Error?)) -> Void)? = nil,
+                                                      completion: ((([A?], B?), ([Error?], Error?)) -> Void)? = nil) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], Error?) = ([Error?](repeating: nil, count: a.count), nil)
         var results: ([A?], B?) = ([], nil)
 
         dispatchGroup.enter()
         sessionDataTasks += merge(a, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults
-            errors += mergeErrors
+            errors.0 = mergeErrors
             dispatchGroup.leave()
         })
 
@@ -49,11 +51,18 @@ extension Asyncify { //AATask functions
             results.1 = value
             dispatchGroup.leave()
         }, { error in
-            if let error = error { errors.append(error) }
+            errors.1 = error
             dispatchGroup.leave()
         }))
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, let b = results.1 {
+                success?((results.0.flatMap{ $0 }, b))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
         return sessionDataTasks
     }
 
@@ -80,18 +89,21 @@ extension Asyncify { //AATask functions
                                                          _ b: [AsyncTask<B>],
                                                          _ c: AsyncTask<C>,
                                                          observeOn: DispatchQueue = DispatchQueue.main,
-                                                         completion: @escaping (([A?], [B?], C?), [Error]) -> Void) -> [URLSessionDataTask] {
+                                                         success: ((([A], [B], C)) -> Void)? = nil,
+                                                         failure: ((([Error?], [Error?], Error?)) -> Void)? = nil,
+                                                         completion: ((([A?], [B?], C?), ([Error?], [Error?], Error?)) -> Void)? = nil) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], [Error?], Error?) = ([Error?](repeating: nil, count: a.count), [Error?](repeating: nil, count: b.count), nil)
         var results: ([A?], [B?], C?) = ([], [], nil)
 
         dispatchGroup.enter()
         sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors += mergeErrors
+            errors.0 = mergeErrors[0]
+            errors.1 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
@@ -100,11 +112,18 @@ extension Asyncify { //AATask functions
             results.2 = value
             dispatchGroup.leave()
         }, { error in
-            if let error = error { errors.append(error) }
+            errors.2 = error
             dispatchGroup.leave()
         }))
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, results.1.count == b.count, let c = results.2 {
+                success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
         return sessionDataTasks
     }
 
@@ -131,17 +150,19 @@ extension Asyncify { //AATask functions
                                                          _ b: AsyncTask<B>,
                                                          _ c: AsyncTask<C>,
                                                          observeOn: DispatchQueue = DispatchQueue.main,
-                                                         completion: @escaping (([A?], B?, C?), [Error]) -> Void) -> [URLSessionDataTask] {
+                                                         success: ((([A], B, C)) -> Void)? = nil,
+                                                         failure: ((([Error?], Error?, Error?)) -> Void)? = nil,
+                                                         completion: ((([A?], B?, C?), ([Error?], Error?, Error?)) -> Void)? = nil) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], Error?, Error?) = ([Error?](repeating: nil, count: a.count), nil, nil)
         var results: ([A?], B?, C?) = ([], nil, nil)
 
         dispatchGroup.enter()
         sessionDataTasks += merge(a, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults
-            errors += mergeErrors
+            errors.0 = mergeErrors
             dispatchGroup.leave()
         })
 
@@ -149,11 +170,19 @@ extension Asyncify { //AATask functions
         sessionDataTasks += merge(b, c, completion: { mergeResults, mergeErrors in
             results.1 = mergeResults.0
             results.2 = mergeResults.1
-            errors += mergeErrors
+            errors.1 = mergeErrors[0]
+            errors.2 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, let b = results.1, let c = results.2 {
+                success?((results.0.flatMap{ $0 }, b, c))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
         return sessionDataTasks
     }
 
@@ -182,18 +211,22 @@ extension Asyncify { //AATask functions
                                                             _ c: AsyncTask<C>,
                                                             _ d: AsyncTask<D>,
                                                             observeOn: DispatchQueue = DispatchQueue.main,
-                                                            completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) -> [URLSessionDataTask] {
+                                                            success: ((([A], [B], C, D)) -> Void)? = nil,
+                                                            failure: ((([Error?], [Error?], Error?, Error?)) -> Void)? = nil,
+                                                            completion: ((([A?], [B?], C?, D?), ([Error?], [Error?], Error?, Error?)) -> Void)? = nil) -> [URLSessionDataTask] {
 
         var sessionDataTasks = [URLSessionDataTask]()
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], [Error?], Error?, Error?) = ([Error?](repeating: nil, count: a.count),
+                                                            [Error?](repeating: nil, count: b.count), nil, nil)
         var results: ([A?], [B?], C?, D?) = ([], [], nil, nil)
 
         dispatchGroup.enter()
         sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors += mergeErrors
+            errors.0 = mergeErrors[0]
+            errors.1 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
@@ -201,11 +234,19 @@ extension Asyncify { //AATask functions
         sessionDataTasks += merge(c, d, completion: { mergeResults, mergeErrors in
             results.2 = mergeResults.0
             results.3 = mergeResults.1
-            errors += mergeErrors
+            errors.2 = mergeErrors[0]
+            errors.3 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, results.1.count == b.count, let c = results.2, let d = results.3 {
+                success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c, d))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
         return sessionDataTasks
     }
 }
@@ -230,16 +271,18 @@ extension Asyncify { //AATaskVoid functions
     public static func merge<A, B>(_ a: [AsyncTaskVoid<A>],
                                    _ b: AsyncTaskVoid<B>,
                                    observeOn: DispatchQueue = DispatchQueue.main,
-                                   completion: @escaping (([A?], B?), [Error]) -> Void) {
+                                   success: ((([A], B)) -> Void)? = nil,
+                                   failure: ((([Error?], Error?)) -> Void)? = nil,
+                                   completion: ((([A?], B?), ([Error?], Error?)) -> Void)? = nil) {
 
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], Error?) = ([Error?](repeating: nil, count: a.count), nil)
         var results: ([A?], B?) = ([], nil)
 
         dispatchGroup.enter()
         merge(a, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults
-            errors += mergeErrors
+            errors.0 = mergeErrors
             dispatchGroup.leave()
         })
 
@@ -248,11 +291,18 @@ extension Asyncify { //AATaskVoid functions
             results.1 = value
             dispatchGroup.leave()
         }, { error in
-            if let error = error { errors.append(error) }
+            errors.1 = error
             dispatchGroup.leave()
         })
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, let b = results.1 {
+                success?((results.0.flatMap{ $0 }, b))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
     }
 
     /// - description: Executes two arrays of tasks and a single task and waits for completion of all tasks, collecting valid results and errors.
@@ -275,17 +325,21 @@ extension Asyncify { //AATaskVoid functions
                                       _ b: [AsyncTaskVoid<B>],
                                       _ c: AsyncTaskVoid<C>,
                                       observeOn: DispatchQueue = DispatchQueue.main,
-                                      completion: @escaping (([A?], [B?], C?), [Error]) -> Void) {
+                                      success: ((([A], [B], C)) -> Void)? = nil,
+                                      failure: ((([Error?], [Error?], Error?)) -> Void)? = nil,
+                                      completion: ((([A?], [B?], C?), ([Error?], [Error?], Error?)) -> Void)? = nil) {
 
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], [Error?], Error?) = ([Error?](repeating: nil, count: a.count),
+                                             [Error?](repeating: nil, count: b.count), nil)
         var results: ([A?], [B?], C?) = ([], [], nil)
 
         dispatchGroup.enter()
         merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors += mergeErrors
+            errors.0 = mergeErrors[0]
+            errors.1 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
@@ -294,11 +348,18 @@ extension Asyncify { //AATaskVoid functions
             results.2 = value
             dispatchGroup.leave()
         }, { error in
-            if let error = error { errors.append(error) }
+            errors.2 = error
             dispatchGroup.leave()
         })
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, results.1.count == b.count, let c = results.2 {
+                success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
     }
 
     /// - description: Executes an array of tasks and two single tasks and waits for completion of all tasks, collecting valid results and errors.
@@ -321,16 +382,18 @@ extension Asyncify { //AATaskVoid functions
                                       _ b: AsyncTaskVoid<B>,
                                       _ c: AsyncTaskVoid<C>,
                                       observeOn: DispatchQueue = DispatchQueue.main,
-                                      completion: @escaping (([A?], B?, C?), [Error]) -> Void) {
+                                      success: ((([A], B, C)) -> Void)? = nil,
+                                      failure: ((([Error?], Error?, Error?)) -> Void)? = nil,
+                                      completion: ((([A?], B?, C?), ([Error?], Error?, Error?)) -> Void)? = nil) {
 
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], Error?, Error?) = ([Error?](repeating: nil, count: a.count), nil, nil)
         var results: ([A?], B?, C?) = ([], nil, nil)
 
         dispatchGroup.enter()
         merge(a, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults
-            errors += mergeErrors
+            errors.0 = mergeErrors
             dispatchGroup.leave()
         })
 
@@ -338,11 +401,19 @@ extension Asyncify { //AATaskVoid functions
         merge(b, c, completion: { mergeResults, mergeErrors in
             results.1 = mergeResults.0
             results.2 = mergeResults.1
-            errors += mergeErrors
+            errors.1 = mergeErrors[0]
+            errors.2 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, let b = results.1, let c = results.2 {
+                success?((results.0.flatMap{ $0 }, b, c))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
     }
 
     /// - description: Executes two arrays of tasks and two single tasks and waits for completion of all tasks, collecting valid results and errors.
@@ -367,17 +438,21 @@ extension Asyncify { //AATaskVoid functions
                                          _ c: AsyncTaskVoid<C>,
                                          _ d: AsyncTaskVoid<D>,
                                          observeOn: DispatchQueue = DispatchQueue.main,
-                                         completion: @escaping (([A?], [B?], C?, D?), [Error]) -> Void) {
+                                         success: ((([A], [B], C, D)) -> Void)? = nil,
+                                         failure: ((([Error?], [Error?], Error?, Error?)) -> Void)? = nil,
+                                         completion: ((([A?], [B?], C?, D?), ([Error?], [Error?], Error?, Error?)) -> Void)? = nil) {
 
         let dispatchGroup = DispatchGroup()
-        var errors = [Error]()
+        var errors: ([Error?], [Error?], Error?, Error?) = ([Error?](repeating: nil, count: a.count),
+                                                            [Error?](repeating: nil, count: b.count), nil, nil)
         var results: ([A?], [B?], C?, D?) = ([], [], nil, nil)
 
         dispatchGroup.enter()
         merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors += mergeErrors
+            errors.0 = mergeErrors[0]
+            errors.1 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
@@ -385,10 +460,18 @@ extension Asyncify { //AATaskVoid functions
         merge(c, d, completion: { mergeResults, mergeErrors in
             results.2 = mergeResults.0
             results.3 = mergeResults.1
-            errors += mergeErrors
+            errors.2 = mergeErrors[0]
+            errors.3 = mergeErrors[1]
             dispatchGroup.leave()
         })
 
-        dispatchGroup.notify(queue: observeOn) { completion(results, errors) }
+        dispatchGroup.notify(queue: observeOn) {
+            if results.0.count == a.count, results.1.count == b.count, let c = results.2, let d = results.3 {
+                success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c, d))
+            } else {
+                failure?(errors)
+            }
+            completion?(results, errors)
+        }
     }
 }
