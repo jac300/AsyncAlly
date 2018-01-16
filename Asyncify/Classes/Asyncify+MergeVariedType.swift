@@ -56,7 +56,7 @@ extension Asyncify { //AATask functions
         }))
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, let b = results.1 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, let b = results.1 {
                 success?((results.0.flatMap{ $0 }, b))
             } else {
                 failure?(errors)
@@ -117,7 +117,7 @@ extension Asyncify { //AATask functions
         }))
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, results.1.count == b.count, let c = results.2 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, Array(results.1.flatMap{ $0 }).count == b.count, let c = results.2 {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c))
             } else {
                 failure?(errors)
@@ -176,7 +176,7 @@ extension Asyncify { //AATask functions
         })
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, let b = results.1, let c = results.2 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, let b = results.1, let c = results.2 {
                 success?((results.0.flatMap{ $0 }, b, c))
             } else {
                 failure?(errors)
@@ -240,7 +240,7 @@ extension Asyncify { //AATask functions
         })
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, results.1.count == b.count, let c = results.2, let d = results.3 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, Array(results.1.flatMap{ $0 }).count == b.count, let c = results.2, let d = results.3 {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c, d))
             } else {
                 failure?(errors)
@@ -296,7 +296,7 @@ extension Asyncify { //AATaskVoid functions
         })
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, let b = results.1 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, let b = results.1 {
                 success?((results.0.flatMap{ $0 }, b))
             } else {
                 failure?(errors)
@@ -353,7 +353,7 @@ extension Asyncify { //AATaskVoid functions
         })
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, results.1.count == b.count, let c = results.2 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, Array(results.1.flatMap{ $0 }).count == b.count, let c = results.2 {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c))
             } else {
                 failure?(errors)
@@ -407,7 +407,7 @@ extension Asyncify { //AATaskVoid functions
         })
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, let b = results.1, let c = results.2 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, let b = results.1, let c = results.2 {
                 success?((results.0.flatMap{ $0 }, b, c))
             } else {
                 failure?(errors)
@@ -466,7 +466,7 @@ extension Asyncify { //AATaskVoid functions
         })
 
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count, results.1.count == b.count, let c = results.2, let d = results.3 {
+            if Array(results.0.flatMap{ $0 }).count == a.count, Array(results.1.flatMap{ $0 }).count == b.count, let c = results.2, let d = results.3 {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, c, d))
             } else {
                 failure?(errors)

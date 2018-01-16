@@ -50,7 +50,7 @@ public extension Asyncify { //AATask functions
         }
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.count == a.count {
+            if Array(results.flatMap{ $0 }).count == a.count {
                 success?(results.flatMap{ $0 })
             } else {
                 failure?(errors)
@@ -105,7 +105,7 @@ public extension Asyncify { //AATask functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }))
             } else {
                 failure?(errors)
@@ -152,7 +152,8 @@ public extension Asyncify { //AATask functions
         sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            for i in 0..<mergeErrors.count { errors[i] = mergeErrors[i] }
+            errors[0] = mergeErrors[0]
+            errors[1] = mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -164,7 +165,8 @@ public extension Asyncify { //AATask functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count && results.2.count == c.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count &&
+                results.2.count == c.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, results.2.flatMap{ $0 }))
             } else {
                 failure?(errors)
@@ -213,7 +215,8 @@ public extension Asyncify { //AATask functions
         sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            for i in 0..<mergeErrors.count { errors[i] = mergeErrors[i] }
+            errors[0] = mergeErrors[0]
+            errors[1] = mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -227,8 +230,9 @@ public extension Asyncify { //AATask functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count && results.2.count == c.count
-                && results.3.count == d.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count &&
+                results.2.count == c.count
+                && Array(results.3.flatMap{ $0 }).count == d.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, results.2.flatMap{ $0 }, results.3.flatMap{ $0 }))
             } else {
                 failure?(errors)
@@ -281,7 +285,9 @@ public extension Asyncify { //AATask functions
             results.0 = mergeResults.0
             results.1 = mergeResults.1
             results.2 = mergeResults.2
-            for i in 0..<mergeErrors.count { errors[i] = mergeErrors[i] }
+            errors[0] = mergeErrors[0]
+            errors[1] = mergeErrors[1]
+            errors[2] = mergeErrors[2]
             dispatchGroup.leave()
         })
         
@@ -295,8 +301,9 @@ public extension Asyncify { //AATask functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count && results.2.count == c.count
-                && results.3.count == d.count && results.4.count == e.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count &&
+                results.2.count == c.count
+                && Array(results.3.flatMap{ $0 }).count == d.count && Array(results.4.flatMap{ $0 }).count == e.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, results.2.flatMap{ $0 },
                           results.3.flatMap{ $0 }, results.4.flatMap{ $0 }))
             } else {
@@ -356,7 +363,7 @@ public extension Asyncify { //AATaskVoid functions
                 results[i] = value
                 dispatchGroup.leave()
             }, { error in
-                if let error = error { errors.append(error) }
+                errors[i] = error
                 dispatchGroup.leave()
             })
         }
@@ -412,7 +419,7 @@ public extension Asyncify { //AATaskVoid functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }))
             } else {
                 failure?(errors)
@@ -454,7 +461,8 @@ public extension Asyncify { //AATaskVoid functions
         merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            for i in 0..<mergeErrors.count { errors[i] = mergeErrors[i] }
+            errors[0] = mergeErrors[0]
+            errors[1] = mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -466,7 +474,8 @@ public extension Asyncify { //AATaskVoid functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count && results.2.count == c.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count &&
+                results.2.count == c.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, results.2.flatMap{ $0 }))
             } else {
                 failure?(errors)
@@ -510,7 +519,8 @@ public extension Asyncify { //AATaskVoid functions
         merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            for i in 0..<mergeErrors.count { errors[i] = mergeErrors[i] }
+            errors[0] = mergeErrors[0]
+            errors[1] = mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -524,8 +534,8 @@ public extension Asyncify { //AATaskVoid functions
         })
         
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count && results.2.count == c.count
-                && results.3.count == d.count {
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count && results.2.count == c.count
+                && Array(results.3.flatMap{ $0 }).count == d.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, results.2.flatMap{ $0 },
                           results.3.flatMap{ $0 }))
             } else {
@@ -554,30 +564,32 @@ public extension Asyncify { //AATaskVoid functions
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
     public static func merge<A, B, C, D, E>(_ a: [AsyncTaskVoid<A>],
-                                            _ b: [AsyncTaskVoid<B>],
-                                            _ c: [AsyncTaskVoid<C>],
-                                            _ d: [AsyncTaskVoid<D>],
-                                            _ e: [AsyncTaskVoid<E>],
-                                            observeOn: DispatchQueue = DispatchQueue.main,
-                                            success: ((([A], [B], [C], [D], [E])) -> Void)? = nil,
-                                            failure: (([[Error?]]) -> Void)? = nil,
-                                            completion: ((([A?], [B?], [C?], [D?], [E?]), [[Error?]]) -> Void)? = nil) {
-        
+                                                               _ b: [AsyncTaskVoid<B>],
+                                                               _ c: [AsyncTaskVoid<C>],
+                                                               _ d: [AsyncTaskVoid<D>],
+                                                               _ e: [AsyncTaskVoid<E>],
+                                                               observeOn: DispatchQueue = DispatchQueue.main,
+                                                               success: ((([A], [B], [C], [D], [E])) -> Void)? = nil,
+                                                               failure: (([[Error?]]) -> Void)? = nil,
+                                                               completion: ((([A?], [B?], [C?], [D?], [E?]), [[Error?]]) -> Void)? = nil) {
+
         let dispatchGroup = DispatchGroup()
         var errors = [[Error?](repeating: nil, count: a.count), [Error?](repeating: nil, count: b.count),
                       [Error?](repeating: nil, count: c.count), [Error?](repeating: nil, count: d.count),
                       [Error?](repeating: nil, count: e.count)]
         var results: ([A?], [B?], [C?], [D?], [E?]) = ([], [], [], [], [])
-        
+
         dispatchGroup.enter()
         merge(a, b, c, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
             results.2 = mergeResults.2
-            for i in 0..<mergeErrors.count { errors[i] = mergeErrors[i] }
+            errors[0] = mergeErrors[0]
+            errors[1] = mergeErrors[1]
+            errors[2] = mergeErrors[2]
             dispatchGroup.leave()
         })
-        
+
         dispatchGroup.enter()
         merge(d, e, completion: { mergeResults, mergeErrors in
             results.3 = mergeResults.0
@@ -586,10 +598,12 @@ public extension Asyncify { //AATaskVoid functions
             errors[4] = mergeErrors[1]
             dispatchGroup.leave()
         })
-        
+
         dispatchGroup.notify(queue: observeOn) {
-            if results.0.count == a.count && results.1.count == b.count && results.2.count == c.count
-                && results.3.count == d.count && results.4.count == e.count {
+            print(results)
+            if Array(results.0.flatMap{ $0 }).count == a.count && Array(results.1.flatMap{ $0 }).count == b.count &&
+                results.2.count == c.count
+                && Array(results.3.flatMap{ $0 }).count == d.count && Array(results.4.flatMap{ $0 }).count == e.count {
                 success?((results.0.flatMap{ $0 }, results.1.flatMap{ $0 }, results.2.flatMap{ $0 },
                           results.3.flatMap{ $0 }, results.4.flatMap{ $0 }))
             } else {
