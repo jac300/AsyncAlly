@@ -7,19 +7,21 @@
 
 import Foundation
 
-extension Asyncify { //AATask functions
+extension Asyncify { //AsyncTask functions
 
     /// - description: Executes an array of tasks of one type and a single task of an another type and waits for completion of all tasks, collecting valid results and errors.
     ///
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATasks associated with the same data type.
-    ///   - b: Asynchronous AATask.
+    ///   - a: Array of AsyncTasks associated with the same data type.
+    ///   - b: Asynchronous AsyncTask.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
@@ -71,13 +73,15 @@ extension Asyncify { //AATask functions
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATasks associated with the same data type.
-    ///   - b: Array of AATasks associated with the same data type.
-    ///   - c: Asynchronous AATask.
+    ///   - a: Array of AsyncTasks associated with the same data type.
+    ///   - b: Array of AsyncTasks associated with the same data type.
+    ///   - c: Asynchronous AsyncTask.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
@@ -132,13 +136,15 @@ extension Asyncify { //AATask functions
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATasks associated with the same data type.
-    ///   - b: Asynchronous AATask.
-    ///   - c: Asynchronous AATask.
+    ///   - a: Array of AsyncTasks associated with the same data type.
+    ///   - b: Asynchronous AsyncTask.
+    ///   - c: Asynchronous AsyncTask.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
@@ -191,14 +197,16 @@ extension Asyncify { //AATask functions
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATasks associated with the same data type.
-    ///   - b: Array of AATasks associated with the same data type.
-    ///   - c: Asynchronous AATask.
-    ///   - d: Asynchronous AATask.
+    ///   - a: Array of AsyncTasks associated with the same data type.
+    ///   - b: Array of AsyncTasks associated with the same data type.
+    ///   - c: Asynchronous AsyncTask.
+    ///   - d: Asynchronous AsyncTask.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
@@ -251,22 +259,25 @@ extension Asyncify { //AATask functions
     }
 }
 
-extension Asyncify { //AATaskVoid functions
+extension Asyncify { //AsyncTaskVoid functions
 
     /// - description: Executes an array of tasks of one type and a single task of an another type and waits for completion of all tasks, collecting valid results and errors.
     ///
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATaskVoids associated with the same data type.
-    ///   - b: Asynchronous AATaskVoid.
+    ///   - a: Array of AsyncTaskVoids associated with the same data type.
+    ///   - b: Asynchronous AsyncTaskVoid.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
 
     public static func merge<A, B>(_ a: [AsyncTaskVoid<A>],
                                    _ b: AsyncTaskVoid<B>,
@@ -310,16 +321,19 @@ extension Asyncify { //AATaskVoid functions
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATaskVoids associated with the same data type.
-    ///   - b: Array of AATaskVoids associated with the same data type.
-    ///   - c: Asynchronous AATaskVoid.
+    ///   - a: Array of AsyncTaskVoids associated with the same data type.
+    ///   - b: Array of AsyncTaskVoids associated with the same data type.
+    ///   - c: Asynchronous AsyncTaskVoid.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
 
     public static func merge<A, B, C>(_ a: [AsyncTaskVoid<A>],
                                       _ b: [AsyncTaskVoid<B>],
@@ -367,16 +381,19 @@ extension Asyncify { //AATaskVoid functions
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATaskVoids associated with the same data type.
-    ///   - b: Asynchronous AATaskVoid.
-    ///   - c: Asynchronous AATaskVoid.
+    ///   - a: Array of AsyncTaskVoids associated with the same data type.
+    ///   - b: Asynchronous AsyncTaskVoid.
+    ///   - c: Asynchronous AsyncTaskVoid.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
 
     public static func merge<A, B, C>(_ a: [AsyncTaskVoid<A>],
                                       _ b: AsyncTaskVoid<B>,
@@ -421,17 +438,20 @@ extension Asyncify { //AATaskVoid functions
     /// - NOTE: Be sure that your asynchronous tasks are performed on a different queue than completion is observed on.
 
     /// - parameters:
-    ///   - a: Array of AATaskVoids associated with the same data type.
-    ///   - b: Array of AATaskVoids associated with the same data type.
-    ///   - c: Asynchronous AATaskVoid.
-    ///   - d: Asynchronous AATaskVoid.
+    ///   - a: Array of AsyncTaskVoids associated with the same data type.
+    ///   - b: Array of AsyncTaskVoids associated with the same data type.
+    ///   - c: Asynchronous AsyncTaskVoid.
+    ///   - d: Asynchronous AsyncTaskVoid.
     ///   - observeOn: queue to observe completion on. This queue should be different from that which your asynchronous task
     ///     is performed. Default value is main unless you specify otherwise.
-    ///   - completion: Completion block which is executed when all tasks have completed.
-    ///   NOTE:
+    ///   - success: Completion block which is executed when all tasks have completed, ONLY if all included tasks are successful.
+    ///   - failure: Completion block which is executed when all tasks have completed, ONLY if at least one included task failed.
+    ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
+    ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
     ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+
     
     public static func merge<A, B, C, D>(_ a: [AsyncTaskVoid<A>],
                                          _ b: [AsyncTaskVoid<B>],
