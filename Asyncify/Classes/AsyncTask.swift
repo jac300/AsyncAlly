@@ -28,6 +28,6 @@ public typealias AsyncTask<T> = (_ success: @escaping (T) -> Void,
 ///   - failure: Failure block which captures an optional error from your asynchronous task.
 ///
 
-public typealias AsyncTaskVoid<ValueType> = (_ success: @escaping (ValueType) -> Void,
+public typealias AsyncTaskVoid<T> = (_ success: @escaping (T) -> Void,
     _ failure: @escaping (Error?) -> Void) -> Void
 
