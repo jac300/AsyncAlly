@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Asyncify"
-  s.version          = "0.0.3"
+  s.version          = "0.0.4"
   s.summary          = "Simplify Asynchronous Tasking"
   s.description      = "Utilities which support the converging of asynchronous tasks"
   s.homepage         = "https://github.com/jac300/Asyncify"
