@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/jac300/Asyncify.git", :tag => s.version.to_s }
   s.platform     = :ios, '9.3'
   s.requires_arc = true
-  s.source_files = 'Asyncify/Classes'
+  s.source_files = 'Asyncify/Classes/**/*'
 end
