@@ -18,11 +18,7 @@ class AsyncMergeVariedTests: XCTestCase {
 
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
-            XCTAssertNil(error.0[0], "0 errors produced at position .0[0].")
-            XCTAssertNil(error.0[1], "0 errors produced at position .0[1].")
-            XCTAssertNil(error.0[2], "0 errors produced at position .0[2].")
-            XCTAssertNil(error.1, "0 errors produced at position .1.")
-
+            XCTAssertTrue(error.0.isEmpty, "0 errors produced.")
             XCTAssertNil(error.1, "0 errors produced at position .1.")
 
             XCTAssertTrue(value.0[0] == 6, "Int with value 6 was stored in the .0[0] position.")
@@ -63,11 +59,9 @@ class AsyncMergeVariedTests: XCTestCase {
 
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockTasks.mockSuccess1, completion: { value, error in
 
-            XCTAssertNil(error.0[0], "0 errors produced at position .0[0].")
-            XCTAssertNil(error.0[1], "0 errors produced at position .0[1].")
-            XCTAssertNil(error.0[2], "0 errors produced at position .0[2].")
-            XCTAssertNil(error.1[0], "0 errors produced at position .1[0].")
-            XCTAssertNil(error.1[1], "0 errors produced at position .1[1].")
+            XCTAssertTrue(error.0.isEmpty, "0 errors produced at position .0.")
+            XCTAssertTrue(error.1.isEmpty, "0 errors produced at position .1.")
+            XCTAssertTrue(error.1.isEmpty, "0 errors produced at position .1[1].")
             XCTAssertNil(error.2, "0 errors produced at position .2.")
 
             XCTAssertTrue(value.0[0] == 6, "Int with value 6 was stored in the .0[0] position.")
@@ -115,9 +109,7 @@ class AsyncMergeVariedTests: XCTestCase {
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
                        completion: { value, error in
 
-                        XCTAssertNil(error.0[0], "0 errors produced at position .0[0].")
-                        XCTAssertNil(error.0[1], "0 errors produced at position .0[1].")
-                        XCTAssertNil(error.0[2], "0 errors produced at position .0[2].")
+                        XCTAssertTrue(error.0.isEmpty, "0 errors produced at position .0.")
                         XCTAssertNil(error.1, "0 errors produced at position .1.")
                         XCTAssertNil(error.2, "0 errors produced at position .2.")
 
@@ -165,11 +157,8 @@ class AsyncMergeVariedTests: XCTestCase {
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockTasks.mockSuccess11, AsyncMockTasks.mockSuccess2,
                        completion: { value, error in
 
-                        XCTAssertNil(error.0[0], "0 errors produced at position .0[0].")
-                        XCTAssertNil(error.0[1], "0 errors produced at position .0[1].")
-                        XCTAssertNil(error.0[2], "0 errors produced at position .0[2].")
-                        XCTAssertNil(error.1[0], "0 errors produced at position .1[0].")
-                        XCTAssertNil(error.1[1], "0 errors produced at position .1[1].")
+                        XCTAssertTrue(error.0.isEmpty, "0 errors produced at position .0.")
+                        XCTAssertTrue(error.1.isEmpty, "0 errors produced at position .1.")
                         XCTAssertNil(error.2, "0 errors produced at position .2.")
                         XCTAssertNil(error.3, "0 errors produced at position .3.")
 

@@ -18,8 +18,7 @@ class AsyncMergeTests: XCTestCase {
 
         Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6, completion: { value, error in
 
-            XCTAssertNil(error[0], "0 errors produced at position [0].")
-            XCTAssertNil(error[1], "0 errors produced at position [1].")
+            XCTAssertTrue(error.isEmpty, "0 errors produced.")
             
             XCTAssertTrue(value.0 == "1", "String with value 1 was stored in the .0 position.")
             XCTAssertTrue(value.1 == 6, "Int with value 6 was stored in the .1 position.")
@@ -52,9 +51,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6,
                        AsyncMockTasks.mockSuccess10, completion: { value, error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         XCTAssertTrue(value.0 == "1", "String with value 1 was stored in the .0 position.")
                         XCTAssertTrue(value.1 == 6, "Int with value 6 was stored in the .1 position.")
@@ -92,10 +89,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6,
                        AsyncMockTasks.mockSuccess9, AsyncMockTasks.mockSuccess7, completion: { value, error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
-                        XCTAssertNil(error[3], "0 errors produced at position [3].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         XCTAssertTrue(value.0 == "1", "String with value 1 was stored in the .0 position.")
                         XCTAssertTrue(value.1 == 6, "Int with value 6 was stored in the .1 position.")
@@ -135,11 +129,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockSuccess6,
                        AsyncMockTasks.mockSuccess9, AsyncMockTasks.mockSuccess10, AsyncMockTasks.mockSuccess7, completion: { value, error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
-                        XCTAssertNil(error[3], "0 errors produced at position [3].")
-                        XCTAssertNil(error[4], "0 errors produced at position [4].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         XCTAssertTrue(value.0 == "1", "String with value 1 was stored in the .0 position.")
                         XCTAssertTrue(value.1 == 6, "Int with value 6 was stored in the .1 position.")
@@ -181,11 +171,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockFailure2,
                        AsyncMockTasks.mockFailure3, AsyncMockTasks.mockSuccess6, AsyncMockTasks.mockSuccess2, completion: { value, error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
-                        XCTAssertNil(error[3], "0 errors produced at position [3].")
-                        XCTAssertNil(error[4], "0 errors produced at position [4].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         XCTAssertTrue(value.0 == "1", "String with value 1 was stored in the .0 position.")
                         XCTAssertNil(value.1, "nil was stored in the .1 position.")
@@ -207,11 +193,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockSuccess1, AsyncMockTasks.mockFailure2,
                        AsyncMockTasks.mockFailure3, AsyncMockTasks.mockSuccess6, AsyncMockTasks.mockSuccess2, failure: { error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
-                        XCTAssertNil(error[3], "0 errors produced at position [3].")
-                        XCTAssertNil(error[4], "0 errors produced at position [4].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         expectation.fulfill()
         })
@@ -227,9 +209,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
                        AsyncMockTasks.mockFailure3, completion: { value, error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         XCTAssertNil(value.0, "nil was stored in the .0 position.")
                         XCTAssertNil(value.1, "nil was stored in the .1 position.")
@@ -249,9 +229,7 @@ class AsyncMergeTests: XCTestCase {
         Asyncify.merge(AsyncMockTasks.mockFailure1, AsyncMockTasks.mockFailure2,
                        AsyncMockTasks.mockFailure3, failure: { error in
 
-                        XCTAssertNil(error[0], "0 errors produced at position [0].")
-                        XCTAssertNil(error[1], "0 errors produced at position [1].")
-                        XCTAssertNil(error[2], "0 errors produced at position [2].")
+                        XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
                         expectation.fulfill()
                         

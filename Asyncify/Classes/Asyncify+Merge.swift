@@ -23,7 +23,7 @@ public extension Asyncify { //AsyncTask functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil. If there is an error
     ///         returned from your asynchronous request, there will also be an error for that request in an error array.
     
     ///
@@ -63,9 +63,9 @@ public extension Asyncify { //AsyncTask functions
             if let a = results.0, let b = results.1 {
                 success?((a, b))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
         return sessionDataTasks
     }
@@ -85,9 +85,9 @@ public extension Asyncify { //AsyncTask functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
-
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
     @discardableResult public static func merge<A, B, C>(_ a: AsyncTask<A>,
@@ -107,8 +107,8 @@ public extension Asyncify { //AsyncTask functions
         sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors[0] = mergeErrors[0]
-            errors[1] = mergeErrors[1]
+            errors[0] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[1] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -125,9 +125,9 @@ public extension Asyncify { //AsyncTask functions
             if let a = results.0, let b = results.1, let c = results.2 {
                 success?((a, b, c))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
         return sessionDataTasks
     }
@@ -148,10 +148,9 @@ public extension Asyncify { //AsyncTask functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
-
-    ///
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
     @discardableResult public static func merge<A, B, C, D>(_ a: AsyncTask<A>,
@@ -172,8 +171,8 @@ public extension Asyncify { //AsyncTask functions
         sessionDataTasks += merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors[0] = mergeErrors[0]
-            errors[1] = mergeErrors[1]
+            errors[0] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[1] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -181,8 +180,8 @@ public extension Asyncify { //AsyncTask functions
         sessionDataTasks += merge(c, d, completion: { mergeResults, mergeErrors in
             results.2 = mergeResults.0
             results.3 = mergeResults.1
-            errors[2] = mergeErrors[0]
-            errors[3] = mergeErrors[1]
+            errors[2] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[3] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -190,9 +189,9 @@ public extension Asyncify { //AsyncTask functions
             if let a = results.0, let b = results.1, let c = results.2, let d = results.3 {
                 success?((a, b, c, d))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
         return sessionDataTasks
     }
@@ -213,10 +212,9 @@ public extension Asyncify { //AsyncTask functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
-
-    ///
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
     /// - [URLSessionDataTask]: Task objects collected and returned from your asynchronous tasks.
     
     @discardableResult public static func merge<A, B, C, D, E>(_ a: AsyncTask<A>,
@@ -239,9 +237,9 @@ public extension Asyncify { //AsyncTask functions
             results.0 = mergeResults.0
             results.1 = mergeResults.1
             results.2 = mergeResults.2
-            errors[0] = mergeErrors[0]
-            errors[1] = mergeErrors[1]
-            errors[2] = mergeErrors[2]
+            errors[0] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[1] = mergeErrors.isEmpty ? nil : mergeErrors[1]
+            errors[2] = mergeErrors.isEmpty ? nil : mergeErrors[2]
             dispatchGroup.leave()
         })
 
@@ -249,8 +247,8 @@ public extension Asyncify { //AsyncTask functions
         sessionDataTasks += merge(d, e, completion: { mergeResults, mergeErrors in
             results.3 = mergeResults.0
             results.4 = mergeResults.1
-            errors[3] = mergeErrors[0]
-            errors[4] = mergeErrors[1]
+            errors[3] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[4] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
 
@@ -258,9 +256,9 @@ public extension Asyncify { //AsyncTask functions
             if let a = results.0, let b = results.1, let c = results.2, let d = results.3, let e = results.4 {
                 success?((a, b, c, d, e))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
         return sessionDataTasks
     }
@@ -282,10 +280,10 @@ public extension Asyncify { //AsyncTaskVoid functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
 
-    
     public static func merge<A, B>(_ a: AsyncTaskVoid<A>,
                                    _ b: AsyncTaskVoid<B>,
                                    observeOn: DispatchQueue = DispatchQueue.main,
@@ -319,9 +317,9 @@ public extension Asyncify { //AsyncTaskVoid functions
             if let a = results.0, let b = results.1 {
                 success?((a, b))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
     }
     
@@ -340,8 +338,9 @@ public extension Asyncify { //AsyncTaskVoid functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
 
     public static func merge<A, B, C>(_ a: AsyncTaskVoid<A>,
                                       _ b: AsyncTaskVoid<B>,
@@ -359,8 +358,8 @@ public extension Asyncify { //AsyncTaskVoid functions
         merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors[0] = mergeErrors[0]
-            errors[1] = mergeErrors[1]
+            errors[0] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[1] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -377,9 +376,9 @@ public extension Asyncify { //AsyncTaskVoid functions
             if let a = results.0, let b = results.1, let c = results.2 {
                 success?((a, b, c))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
     }
     
@@ -399,8 +398,9 @@ public extension Asyncify { //AsyncTaskVoid functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
 
     
     public static func merge<A, B, C, D>(_ a: AsyncTaskVoid<A>,
@@ -420,8 +420,8 @@ public extension Asyncify { //AsyncTaskVoid functions
         merge(a, b, completion: { mergeResults, mergeErrors in
             results.0 = mergeResults.0
             results.1 = mergeResults.1
-            errors[0] = mergeErrors[0]
-            errors[1] = mergeErrors[1]
+            errors[0] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[1] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -429,8 +429,8 @@ public extension Asyncify { //AsyncTaskVoid functions
         merge(c, d, completion: { mergeResults, mergeErrors in
             results.2 = mergeResults.0
             results.3 = mergeResults.1
-            errors[2] = mergeErrors[0]
-            errors[3] = mergeErrors[1]
+            errors[2] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[3] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -438,9 +438,9 @@ public extension Asyncify { //AsyncTaskVoid functions
             if let a = results.0, let b = results.1, let c = results.2, let d = results.3 {
                 success?((a, b, c, d))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
     }
     
@@ -460,8 +460,9 @@ public extension Asyncify { //AsyncTaskVoid functions
     ///   - completion: Completion block which is executed when all tasks have completed, includes succesful response values and errors.
     ///   NOTE (applicable for success/failure/completion):
     ///     1) Successful values will be returned in the SAME ORDER as the tasks array. (i.e. a -> results.0)
-    ///     2) If a single request failed, the value at corresponding index in the results array will be nil. If there is an error
-    ///         returned from your asynchronous request, there will also be an error for that request in an error array.
+    ///     2) If a single request failed, the value at corresponding index in the results tuple will be nil.
+    ///     3) If a single request failed, the value at corresponding index in the errors array will be an optional error; other indices will have nil values.
+    ///     4) If no requests failed, the errors array will be empty.
     
     
     public static func merge<A, B, C, D, E>(_ a: AsyncTaskVoid<A>,
@@ -483,9 +484,9 @@ public extension Asyncify { //AsyncTaskVoid functions
             results.0 = mergeResults.0
             results.1 = mergeResults.1
             results.2 = mergeResults.2
-            errors[0] = mergeErrors[0]
-            errors[1] = mergeErrors[1]
-            errors[2] = mergeErrors[2]
+            errors[0] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[1] = mergeErrors.isEmpty ? nil : mergeErrors[1]
+            errors[2] = mergeErrors.isEmpty ? nil : mergeErrors[2]
             dispatchGroup.leave()
         })
         
@@ -493,8 +494,8 @@ public extension Asyncify { //AsyncTaskVoid functions
         merge(d, e, completion: { mergeResults, mergeErrors in
             results.3 = mergeResults.0
             results.4 = mergeResults.1
-            errors[3] = mergeErrors[0]
-            errors[4] = mergeErrors[1]
+            errors[3] = mergeErrors.isEmpty ? nil : mergeErrors[0]
+            errors[4] = mergeErrors.isEmpty ? nil : mergeErrors[1]
             dispatchGroup.leave()
         })
         
@@ -502,9 +503,9 @@ public extension Asyncify { //AsyncTaskVoid functions
             if let a = results.0, let b = results.1, let c = results.2, let d = results.3, let e = results.4 {
                 success?((a, b, c, d, e))
             } else {
-                failure?(errors)
+                failure?(errors.process())
             }
-            completion?(results, errors)
+            completion?(results, errors.process())
         }
     }
 }

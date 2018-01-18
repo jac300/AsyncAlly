@@ -18,9 +18,7 @@ class AsyncMergeArrTests: XCTestCase {
         
         Asyncify.merge(AsyncMockData.merge_3_str, completion: { value, error in
             
-            XCTAssertNil(error[0], "0 errors produced at position [0].")
-            XCTAssertNil(error[1], "0 errors produced at position [1].")
-            XCTAssertNil(error[2], "0 errors produced at position [2].")
+            XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
             XCTAssertTrue(value.count == 3, "3 String values were produced.")
             
@@ -59,12 +57,8 @@ class AsyncMergeArrTests: XCTestCase {
         let expectation = XCTestExpectation(description: "test_merge_2_a")
         
         Asyncify.merge(AsyncMockData.merge_5_str, completion: { value, error in
-            
-            XCTAssertNil(error[0], "0 errors produced at position [0].")
-            XCTAssertNil(error[1], "0 errors produced at position [1].")
-            XCTAssertNil(error[2], "0 errors produced at position [2].")
-            XCTAssertNil(error[3], "0 errors produced at position [3].")
-            XCTAssertNil(error[4], "0 errors produced at position [4].")
+
+            XCTAssertTrue(error.isEmpty, "0 errors produced.")
 
             XCTAssertTrue(value.count == 5, "5 String values were produced.")
             
@@ -108,11 +102,8 @@ class AsyncMergeArrTests: XCTestCase {
         
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, completion: { value, error in
             
-            XCTAssertNil(error[0][0], "0 errors produced at position [0][0].")
-            XCTAssertNil(error[0][1], "0 errors produced at position [0][1].")
-            XCTAssertNil(error[0][2], "0 errors produced at position [0][2].")
-            XCTAssertNil(error[1][0], "0 errors produced at position [1][0].")
-            XCTAssertNil(error[1][1], "0 errors produced at position [1][1].")
+            XCTAssertTrue(error[0].isEmpty, "0 errors produced at [0].")
+            XCTAssertTrue(error[1].isEmpty, "0 errors produced at [1].")
 
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
             XCTAssertTrue(value.1.count == 2, "2 String values were produced.")
@@ -160,14 +151,9 @@ class AsyncMergeArrTests: XCTestCase {
         
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockData.merge_3_bool, completion: { value, error in
             
-            XCTAssertNil(error[0][0], "0 errors produced at position [0][0].")
-            XCTAssertNil(error[0][1], "0 errors produced at position [0][1].")
-            XCTAssertNil(error[0][2], "0 errors produced at position [0][2].")
-            XCTAssertNil(error[1][0], "0 errors produced at position [1][0].")
-            XCTAssertNil(error[1][1], "0 errors produced at position [1][1].")
-            XCTAssertNil(error[2][0], "0 errors produced at position [2][0].")
-            XCTAssertNil(error[2][1], "0 errors produced at position [2][1].")
-            XCTAssertNil(error[2][2], "0 errors produced at position [2][2].")
+            XCTAssertTrue(error[0].isEmpty, "0 errors produced at [0].")
+            XCTAssertTrue(error[1].isEmpty, "0 errors produced at [1].")
+            XCTAssertTrue(error[2].isEmpty, "0 errors produced at [2].")
 
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
             XCTAssertTrue(value.1.count == 2, "2 String values were produced.")
@@ -225,17 +211,10 @@ class AsyncMergeArrTests: XCTestCase {
         
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_3_strArr, completion: { value, error in
             
-            XCTAssertNil(error[0][0], "0 errors produced at position [0][0].")
-            XCTAssertNil(error[0][1], "0 errors produced at position [0][1].")
-            XCTAssertNil(error[0][2], "0 errors produced at position [0][2].")
-            XCTAssertNil(error[1][0], "0 errors produced at position [1][0].")
-            XCTAssertNil(error[1][1], "0 errors produced at position [1][1].")
-            XCTAssertNil(error[2][0], "0 errors produced at position [2][0].")
-            XCTAssertNil(error[2][1], "0 errors produced at position [2][1].")
-            XCTAssertNil(error[2][2], "0 errors produced at position [2][2].")
-            XCTAssertNil(error[3][0], "0 errors produced at position [3][0].")
-            XCTAssertNil(error[3][1], "0 errors produced at position [3][1].")
-            XCTAssertNil(error[3][2], "0 errors produced at position [3][2].")
+            XCTAssertTrue(error[0].isEmpty, "0 errors produced at [0].")
+            XCTAssertTrue(error[1].isEmpty, "0 errors produced at [1].")
+            XCTAssertTrue(error[2].isEmpty, "0 errors produced at [2].")
+            XCTAssertTrue(error[3].isEmpty, "0 errors produced at [3].")
 
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
             XCTAssertTrue(value.1.count == 2, "2 String values were produced.")
@@ -304,23 +283,11 @@ class AsyncMergeArrTests: XCTestCase {
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_2_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_3_strArr, AsyncMockData.merge_2_intArr,
                        completion: { value, error in
                         
-                        XCTAssertNil(error[0][0], "0 errors produced at position [0][0].")
-                        XCTAssertNil(error[0][1], "0 errors produced at position [0][1].")
-                        XCTAssertNil(error[0][2], "0 errors produced at position [0][2].")
-
-                        XCTAssertNil(error[1][0], "0 errors produced at position [1][0].")
-                        XCTAssertNil(error[1][1], "0 errors produced at position [1][1].")
-
-                        XCTAssertNil(error[2][0], "0 errors produced at position [2][0].")
-                        XCTAssertNil(error[2][1], "0 errors produced at position [2][1].")
-                        XCTAssertNil(error[2][2], "0 errors produced at position [2][2].")
-
-                        XCTAssertNil(error[3][0], "0 errors produced at position [3][0].")
-                        XCTAssertNil(error[3][1], "0 errors produced at position [3][1].")
-                        XCTAssertNil(error[3][2], "0 errors produced at position [3][2].")
-
-                        XCTAssertNil(error[4][0], "0 errors produced at position [4][0].")
-                        XCTAssertNil(error[4][1], "0 errors produced at position [4][1].")
+                        XCTAssertTrue(error[0].isEmpty, "0 errors produced at [0].")
+                        XCTAssertTrue(error[1].isEmpty, "0 errors produced at [1].")
+                        XCTAssertTrue(error[2].isEmpty, "0 errors produced at [2].")
+                        XCTAssertTrue(error[3].isEmpty, "0 errors produced at [3].")
+                        XCTAssertTrue(error[4].isEmpty, "0 errors produced at [4].")
 
                         XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
                         XCTAssertTrue(value.1.count == 2, "2 String values were produced.")
@@ -397,26 +364,16 @@ class AsyncMergeArrTests: XCTestCase {
         
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_4_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_4_strArr, AsyncMockData.merge_2_intArr, completion: { value, error in
 
-            XCTAssertNil(error[0][0], "0 errors produced at position [0][0].")
-            XCTAssertNil(error[0][1], "0 errors produced at position [0][1].")
-            XCTAssertNil(error[0][2], "0 errors produced at position [0][2].")
-
-            XCTAssertNil(error[1][0], "0 errors produced at position [1][0].")
-            XCTAssertNil(error[1][1], "0 errors produced at position [1][1].")
-            XCTAssertNil(error[1][2], "0 errors produced at position [1][2].")
-            XCTAssertNil(error[1][3], "0 errors produced at position [1][3].")
-
-            XCTAssertNil(error[2][0], "0 errors produced at position [2][0].")
-            XCTAssertNil(error[2][1], "0 errors produced at position [2][1].")
-            XCTAssertNil(error[2][2], "0 errors produced at position [2][2].")
+            XCTAssertTrue(error[0].isEmpty, "0 errors produced at [0].")
+            XCTAssertTrue(error[1].isEmpty, "0 errors produced at [1].")
+            XCTAssertTrue(error[2].isEmpty, "0 errors produced at [2].")
 
             XCTAssertNil(error[3][0], "0 errors produced at position [3][0].")
             XCTAssertNil(error[3][1], "0 errors produced at position [3][1].")
             XCTAssertNil(error[3][2], "0 errors produced at position [3][2].")
             XCTAssertNotNil(error[3][3], "1 errors produced at position [3][3].")
 
-            XCTAssertNil(error[4][0], "0 errors produced at position [4][0].")
-            XCTAssertNil(error[4][1], "0 errors produced at position [4][1].")
+            XCTAssertTrue(error[4].isEmpty, "0 errors produced.")
 
             XCTAssertTrue(value.0.count == 3, "3 Int values were produced.")
             XCTAssertTrue(value.1.count == 4, "3 out of 4 String values were produced plus nil.")
@@ -458,26 +415,16 @@ class AsyncMergeArrTests: XCTestCase {
 
         Asyncify.merge(AsyncMockData.merge_3_int, AsyncMockData.merge_4_str, AsyncMockData.merge_3_bool, AsyncMockData.merge_4_strArr, AsyncMockData.merge_2_intArr, completion: { value, error in
 
-            XCTAssertNil(error[0][0], "0 errors produced at position [0][0].")
-            XCTAssertNil(error[0][1], "0 errors produced at position [0][1].")
-            XCTAssertNil(error[0][2], "0 errors produced at position [0][2].")
-
-            XCTAssertNil(error[1][0], "0 errors produced at position [1][0].")
-            XCTAssertNil(error[1][1], "0 errors produced at position [1][1].")
-            XCTAssertNil(error[1][2], "0 errors produced at position [1][2].")
-            XCTAssertNil(error[1][3], "0 errors produced at position [1][3].")
-
-            XCTAssertNil(error[2][0], "0 errors produced at position [2][0].")
-            XCTAssertNil(error[2][1], "0 errors produced at position [2][1].")
-            XCTAssertNil(error[2][2], "0 errors produced at position [2][2].")
+            XCTAssertTrue(error[0].isEmpty, "0 errors produced at [0].")
+            XCTAssertTrue(error[1].isEmpty, "0 errors produced at [1].")
+            XCTAssertTrue(error[2].isEmpty, "0 errors produced at [2].")
 
             XCTAssertNil(error[3][0], "0 errors produced at position [3][0].")
             XCTAssertNil(error[3][1], "0 errors produced at position [3][1].")
             XCTAssertNil(error[3][2], "0 errors produced at position [3][2].")
             XCTAssertNotNil(error[3][3], "1 errors produced at position [3][3].")
 
-            XCTAssertNil(error[4][0], "0 errors produced at position [4][0].")
-            XCTAssertNil(error[4][1], "0 errors produced at position [4][1].")
+            XCTAssertTrue(error[4].isEmpty, "0 errors produced.")
 
             expectation.fulfill()
         })

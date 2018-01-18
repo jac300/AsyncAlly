@@ -22,6 +22,7 @@
 		73316DF42003F57E00F3EE62 /* AsyncMockTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DD92003F54200F3EE62 /* AsyncMockTasks.swift */; };
 		73316DF52003F58300F3EE62 /* AsyncTaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73316DDB2003F54200F3EE62 /* AsyncTaskGenerator.swift */; };
 		739336492003FE4100C41C6E /* Asyncify.h in Headers */ = {isa = PBXBuildFile; fileRef = 739336482003FE4100C41C6E /* Asyncify.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73B37AD920101313000A545C /* Error+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B37AD820101313000A545C /* Error+Utility.swift */; };
 		73CFE23620008D72005A014D /* Asyncify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CFE22C20008D72005A014D /* Asyncify.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		73316DDC2003F54200F3EE62 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		739336482003FE4100C41C6E /* Asyncify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asyncify.h; sourceTree = "<group>"; };
 		7393364A2003FE7500C41C6E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73B37AD820101313000A545C /* Error+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Utility.swift"; sourceTree = "<group>"; };
 		73CFE22C20008D72005A014D /* Asyncify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asyncify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CFE23520008D72005A014D /* AsyncifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -162,11 +164,20 @@
 			path = Asyncify;
 			sourceTree = "<group>";
 		};
+		73B37AD7201012EA000A545C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				73B37AD820101313000A545C /* Error+Utility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		73CFE22220008D72005A014D = {
 			isa = PBXGroup;
 			children = (
 				7393364C2003FE7F00C41C6E /* Asyncify */,
 				73316DC62003F54100F3EE62 /* Classes */,
+				73B37AD7201012EA000A545C /* Utilities */,
 				73316DCB2003F54200F3EE62 /* AsyncifyTests */,
 				73CFE22D20008D72005A014D /* Products */,
 			);
@@ -294,6 +305,7 @@
 			files = (
 				73316DDE2003F54200F3EE62 /* Asyncify+Merge.swift in Sources */,
 				73316DDD2003F54200F3EE62 /* AsyncTask.swift in Sources */,
+				73B37AD920101313000A545C /* Error+Utility.swift in Sources */,
 				73316DDF2003F54200F3EE62 /* Asyncify+MergeVariedType.swift in Sources */,
 				73316DE02003F54200F3EE62 /* Asyncify+MergeArrayType.swift in Sources */,
 			);
