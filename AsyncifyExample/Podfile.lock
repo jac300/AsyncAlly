@@ -1,11 +1,11 @@
 PODS:
-  - Asyncify (0.0.4)
+  - Asyncify (0.0.5)
 
 DEPENDENCIES:
   - Asyncify
 
 SPEC CHECKSUMS:
-  Asyncify: ce7adaefb084ef1fd7281c30c9590407952bca87
+  Asyncify: 94e90f0153df4cf7d7c10e9bc4c8651416d25c51
 
 PODFILE CHECKSUM: 5b78267d22259a3111cbfaf72e5f2ae9ffea7a59
 

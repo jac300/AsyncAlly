@@ -85,6 +85,7 @@
 				73316DC82003F54100F3EE62 /* Asyncify+Merge.swift */,
 				73316DCA2003F54100F3EE62 /* Asyncify+MergeArrayType.swift */,
 				73316DC92003F54100F3EE62 /* Asyncify+MergeVariedType.swift */,
+				73B37AD7201012EA000A545C /* Utilities */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -177,7 +178,6 @@
 			children = (
 				7393364C2003FE7F00C41C6E /* Asyncify */,
 				73316DC62003F54100F3EE62 /* Classes */,
-				73B37AD7201012EA000A545C /* Utilities */,
 				73316DCB2003F54200F3EE62 /* AsyncifyTests */,
 				73CFE22D20008D72005A014D /* Products */,
 			);
