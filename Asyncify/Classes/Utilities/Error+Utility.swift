@@ -1,5 +1,5 @@
 //
-//  Error+Flatten.swift
+//  Error+Utility.swift
 //  Asyncify
 //
 //  Created by Jennifer Clark on 1/17/18.
