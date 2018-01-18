@@ -84,7 +84,7 @@ class ExampleViewController: UIViewController {
             self?.exampleFunction4(success: success, failure: failure)
         })
 
-        //5. perform a zip, merge or collect depending on your combination of tasks:
+        //5. merge tasks:
         Asyncify.merge(task1, task2, task3, task4, completion: { [weak self] results, error in
             self?.displayFinalResults(results.0, results.1, results.2, results.3, error)
         })
